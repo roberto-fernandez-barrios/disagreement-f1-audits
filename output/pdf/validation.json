@@ -1,0 +1,38 @@
+{
+  "pages": 6,
+  "sha256": "c642454b7670c7eedadf86e741e98c595d5835900938d43ee3c668d4d3debe93",
+  "sources": {
+    "build.py": "9df3329df642e224070fdbd39c6134ef447a63e15f6f93c1b1faf7dfd181db94",
+    "manuscript/paper.tex": "6adf655071964ec1b24f19ffc9faca4253a833bac5dff8a0dfd1d41f0c7a2d9e",
+    "manuscript/esannV2.cls": "36097ad5826ffbebfeea23f1675e63500e941fd273ef8fae765e8fca51639048",
+    "manuscript/interval_rows.tex": "dfb0e6e5346f302194a8c0ed763710d18ddadde8ac1d99b8f0136fc807ecb4ca",
+    "manuscript/cost_rows.tex": "477391c7b8dbbb42c61765c3597d5506d5e0d6a85335d87e5e7c79ec3ecadcdd"
+  },
+  "page_sizes_points": [
+    [
+      595.276,
+      841.89
+    ],
+    [
+      595.276,
+      841.89
+    ],
+    [
+      595.276,
+      841.89
+    ],
+    [
+      595.276,
+      841.89
+    ],
+    [
+      595.276,
+      841.89
+    ],
+    [
+      595.276,
+      841.89
+    ]
+  ],
+  "template_sha256": "36097ad5826ffbebfeea23f1675e63500e941fd273ef8fae765e8fca51639048"
+}

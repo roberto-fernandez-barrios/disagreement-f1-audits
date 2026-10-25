@@ -1,0 +1,113 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(paper.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-06-18>
+(esannV2.cls
+
+LaTeX Warning: You have requested document class `esannV2',
+               but the document class provides `esann'.
+
+Document Class: esann 1999/01/07 v1.4a Standard LaTeX document class
+
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.c
+lo))
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.
+sty)
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.st
+y)
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc
+.sty)
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/graphics\grap
+hicx.sty
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyv
+al.sty)
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/graphics\grap
+hics.sty
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig
+.sty)
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\
+graphics.cfg)
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\
+pdftex.def)))
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsma
+th.sty
+For additional information on amsmath, use the `?' option.
+
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amste
+xt.sty
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsge
+n.sty))
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbs
+y.sty)
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsop
+n.sty))
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amss
+ymb.sty
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsf
+onts.sty))
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.s
+ty)
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\book
+tabs.sty)
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty)
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd)
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3b
+ackend-pdftex.def)
+(C:\Users\masteria.DOMINE\RF\Tesis\exploraciones\congreso_esann_2026-10-24\outp
+ut\pdf\paper.aux)
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\s
+upp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\
+epstopdf-base.sty
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epst
+opdf-sys.cfg))
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd)
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd)
+
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+)
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+)
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa
+.fd)
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb
+.fd) [1{C:/Users/masteria.DOMINE/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.m
+ap}{C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/l
+m-ec.enc}{C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/enc/dvip
+s/lm/lm-rm.enc}{C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/en
+c/dvips/lm/lm-mathit.enc}{C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTe
+X/fonts/enc/dvips/lm/lm-mathsy.enc}] [2] [3{C:/Users/masteria.DOMINE/AppData/Lo
+cal/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] (interval_rows.tex)
+[4] (cost_rows.tex) [5]
+(C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd)
+[6]
+(C:\Users\masteria.DOMINE\RF\Tesis\exploraciones\congreso_esann_2026-10-24\outp
+ut\pdf\paper.aux) )<C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/font
+s/type1/public/lm/lmbx10.pfb><C:/Users/masteria.DOMINE/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/masteria.DOMINE/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb><C:/Users/masteria.DOMINE/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/masteria.DO
+MINE/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/m
+asteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C
+:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr
+10.pfb><C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/lm/lmr7.pfb><C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/lm/lmr8.pfb><C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/lm/lmr9.pfb><C:/Users/masteria.DOMINE/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/masteria.DOMINE/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/masteria.DOMINE/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/masteria.
+DOMINE/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/
+masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
+<C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
+mtt8.pfb><C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/symbols/msam10.pfb>
+Output written on C:\Users\masteria.DOMINE\RF\Tesis\exploraciones\congreso_esan
+n_2026-10-24\output\pdf\paper.pdf (6 pages, 360177 bytes).
+Transcript written on C:\Users\masteria.DOMINE\RF\Tesis\exploraciones\congreso_
+esann_2026-10-24\output\pdf\paper.log.
+

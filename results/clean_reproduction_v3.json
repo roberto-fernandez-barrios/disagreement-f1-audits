@@ -1,0 +1,41 @@
+{
+  "utc": "2026-10-25T13:28:13.772081+00:00",
+  "clean_extraction": "tmp/clean_v3_corrected",
+  "command": "python -B reproduce.py --pdf",
+  "status": "passed",
+  "byte_identical_csv_ties_and_tables": [
+    "results/pilot/pairs.csv",
+    "results/confirmation/pairs.csv",
+    "results/audit/pairs.csv",
+    "results/v3/intervals.csv",
+    "results/v3/costs.csv",
+    "results/v3/pairs.csv",
+    "results/v3/validation_ties.json",
+    "manuscript/interval_rows.tex",
+    "manuscript/cost_rows.tex"
+  ],
+  "all_stop_and_choice_arrays_identical": true,
+  "pdf_text_identical": true,
+  "pdf_binary_note": "Recompilation timestamps/IDs differ; delivery ZIP must contain the exact supplied PDF.",
+  "code_sha256": {
+    "audit.py": "00602d8a720dbc773f762c250690b522bc4e1ed16a5aa7ef9e26aab7f6825391",
+    "build.py": "9df3329df642e224070fdbd39c6134ef447a63e15f6f93c1b1faf7dfd181db94",
+    "decision.py": "142135946d3268c1e5bd193c84c019aee0a8dc817eee5d2741a6d86fd9f6a7ff",
+    "fetch_extra.py": "66b85cd95bd62ae9d414b89d2183e51577d01fff86e70de545d181be39817550",
+    "package.py": "f90acbf14ec18126f76e3ed092372a6174587a0a59a8d636712f225e864f42f2",
+    "pilot.py": "8e571c671b6e56a29560e8633388b91ab92375f25bede72691c5b92b76b4a234",
+    "prepare.py": "4205c2ab8c6742d56db6d4c94d2620bf89ba4197bb4381838daa0cefde88a8dc",
+    "prepare_validation_v3.py": "116cf37163a79a9a57f2446d50ae938fdcab4904f70fc68a8db6ab14e6ae5aa7",
+    "render_v3.py": "2705661019755d836929e69658156c0159c984b3d380ab2648f133f6d13c2ed3",
+    "reproduce.py": "026fad74b4f90a864b2264e9219d3191a47ae4c77be4e9612b7bdbe9ee408fda",
+    "revision_v3.py": "255ae6a22f252bbab1f5f241142329a0c71fc59941a08ed6c9698fe7dab921d9",
+    "summarize.py": "0923c11d7f8f0c12c84d0ab83ffbf75ce3d71fb3a11765cf74bc4996de46797f",
+    "test_decision.py": "81ca51a7b6422b39d9e8e78ed01cedb43ce82eb63c663da3ea1a4706a6438baf",
+    "test_tolerance.py": "9890f178e30d41e5dddebbcb0792b9191ef53b974ccc8c0c6557608f701ff1f9",
+    "tolerance.py": "fbac658b112fb99d1a83fbcaf1882ea7d112f2391be28f78674b47d2fafb83ac",
+    "verify.py": "202a1bef2539e9340e93a55f31a05347d5c96d53287dcd43a59e20705ca0b51a",
+    "verify_v3.py": "e86c17394472651a3c17ef579e6094f5564deaf027b2a74edea7810f68af3353"
+  },
+  "source_tex_sha256": "2e51ab16b5b17134905921bcc2899ae1560012ce6fd945f674dad1d5abee47a0",
+  "tested_pdf_sha256": "00ef86ce626678e6c86d5d7d9a49e4b9c3ded0c3d0458f7290973f81e412d891"
+}

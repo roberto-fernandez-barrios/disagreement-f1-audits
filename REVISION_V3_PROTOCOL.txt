@@ -1,0 +1,58 @@
+V3: retrospective analyses after external review, 25 October 2026
+
+This is an implementation plan, not a preregistration. The user supplied
+exploratory numerical hints before this plan; neither those hints nor the
+existing analytical holdout constitute new prospective evidence. The original
+pilot protocol and decisions remain unchanged and archived with V2.2.
+
+1. Primary new decision: epsilon=1/100 absolute positive-class F1. For the
+exact joint completion interval [L,U], Rq=max(0,-L), Rc=max(0,U). Choose q
+when Rq<=Rc (including equality), c otherwise. Stop if the smaller regret is
+<=epsilon. Epsilon zero is a weak-winner decision, different from the old
+three-way strict-winner/exact-tie goal. Use integer rational comparisons for
+boundary decisions. F1(0/0)=0, allow P=0,n in the query experiment.
+
+2. Same 3200 deduplicated pairs, 36 cells, three original policies and seeds
+0..31. Preserve their permutation generation and exact-sign stopping costs.
+Compute tolerance stops using only acquired counts, with no labels used to
+choose an order. Offline prefix computation/binary search may accelerate
+replay: it must return the first certifiable prefix; the preceding prefix
+must fail and all labels used in a certificate must be in that prefix.
+Full labels are used only in retrospective verification. Report all-pair
+common cohort, initially exact-undecided cohort and initially epsilon-
+undecided cohort separately; report D, extra agreement queries, total.
+Aggregate orders then pairs within cells then equal cells; retain pair means.
+
+3. Compare joint difference bounds with subtraction of marginal F1 bounds
+over exactly the same feasible completions: primary 0<P<n (original table
+domain), and boundary-inclusive sensitivity. Exact P is oracle information.
+Report widths and strict/tie, weak-winner and epsilon decisions. This is a
+dependency-preservation comparison, not a competitor to joint TDC/Polo.
+
+4. Recover validation records before examining new comparator target results.
+Use historical P1-style maximum source/ID-validation balanced accuracy,
+lexicographic configuration tie break, within the 115 classical candidates.
+This represents the original training/selection objective, not validation-
+optimal F1, and is a newly applied retrospective comparator rule. Do not use
+target labels, target F1, or target ambiguity to choose or exclude a candidate.
+If records are missing, report unavailable cells rather than infer metrics
+from hyperparameters. Freeze a validation-only selection manifest first.
+
+5. Mechanism: describe Q-C and |d|n00+|e|n11, initial affine width. At known
+P, gap width is 2|C-Q|(h-l)/((P+Q)(P+C)). Check identities, equal-Q cases,
+and effect of excluding constant classical predictions; avoid broad
+correlation searches. Keep nearest Hamming 3/36 if reproduced.
+
+6. Validate new exact intervals against exhaustive count/label enumeration,
+including empty feasible sets, P=0,n, zero denominators, boundary regrets,
+weak vs strict winner, and marginal inclusion. Reproduce all old stops.
+No further scientific expansion unless a concrete error requires it.
+
+AFTER CLAUDE ROUND 1 (25 October 2026; not preregistered):
+Record the actual model choice on each already defined epsilon trajectory,
+its realized regret and whether it selects the realized-worse model. Claude
+supplied indicative counts before this addition; they are independently
+recomputed here. Report pooled trajectory counts as dependent replays.
+List all maximum-validation-score ties and compute ranges across tied
+configurations, without changing the fixed lexicographic selection. No target
+outcomes are used to resolve a validation tie. These diagnostics address G1/G2.

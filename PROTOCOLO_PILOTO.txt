@@ -1,0 +1,62 @@
+PROTOCOLO A — 24 de octubre de 2026, anterior a ejecutar pilot.py
+
+Pregunta: una vez observadas TODAS las etiquetas donde dos predictores binarios
+fijos discrepan, ¿pueden las etiquetas todavía desconocidas en sus acuerdos
+invertir una comparación por F1 positivo o exactitud balanceada (BA)?
+No es una comparación entre métricas: para cada métrica se mantiene el mismo
+estimando y se varían sólo etiquetas compatibles con la información observada.
+
+Material: predicciones bloqueadas del proyecto target_domain_certificates (TDC).
+Evidencia reutilizada, retrospectiva para esta contribución; no nueva replicación
+prospectiva. No reentrenamiento ni uso de dispositivos. Copiar y verificar hashes.
+Cada unidad: tarea, semilla y clasificador; parejas q frente a cada una de las
+115 configuraciones clásicas. Deduplicar predicciones clásicas idénticas dentro
+de la unidad ANTES de resumir; conservar multiplicidades en tabla secundaria.
+No seleccionar comparadores por sus etiquetas o resultados. No interpretar las
+parejas ni semillas como datasets independientes.
+
+Piloto: BRFSS y ACS seed42, SVC y GPC, más las dos primeras carpetas por orden
+lexicográfico del panel histórico de seguridad (EMBER m1/m2), SVC y GPC: 8 celdas.
+Restantes 28 celdas reservadas para comprobación posterior sin ajustar criterios.
+Son datos ya analizados en trabajos previos: reserva analítica, NO datos inéditos.
+
+Información inicial: todas las etiquetas de desacuerdos D. Acuerdos 00 y 11
+completamente desconocidos. Evaluar todas las asignaciones mediante los conteos
+de positivos s en 00 y t en 11. Excluir P=0 o N para BA; para comparabilidad
+el análisis principal F1 usa también 0<P<N. Predictores constantes permitidos.
+Control de borde secundario F1: incluir P=0,N, convención 0/0=0.
+Controles: accuracy (intervalo puntual tras D); prevalencia total conocida como
+oráculo informativo (BA puntual; F1 puede conservar incertidumbre); predicción
+ingenua de todos los acuerdos como etiquetas (diagnóstico, no método garantizado).
+
+Resultados por pareja: tamaño D; intervalo exacto de diferencias BA y F1;
+ancho; inversión estricta L<0<U; inversión material L<=-0.01 y U>=0.01;
+diferencia realizada; extremos compatibles que atestiguan ambigüedad; mismos
+resultados condicionados en la prevalencia realmente observada (oráculo).
+La unidad de resumen es la celda; presentar fracciones por celda y agrupación
+por fuente; no pruebas de significación ni IC binomiales sobre las parejas.
+
+Continuar si: (a) exactitud de fórmulas frente a enumeración individual pequeña;
+(b) inversión material F1 en >=5% de parejas únicas como promedio de celdas en
+al menos DOS fuentes (entre BRFSS, ACS, EMBER), o una caracterización igualmente
+informativa de cuándo la prevalencia elimina/no elimina la ambigüedad;
+(c) antecedentes próximos no contienen ya esta caracterización más su evaluación.
+El criterio alternativo (b) exige dictamen explícito; no se declarará superado
+automáticamente con cualquier resultado. Replantear si sólo existen intervalos
+amplios pero decisiones invariantes. Abandonar como artículo si únicamente se
+reproduce que F1 no es una pérdida aditiva o si la conclusión ya está en TDC.
+
+Si se continúa: conservar piloto separado, confirmar 28 celdas restantes;
+analizar cuántas etiquetas adicionales de acuerdos resuelven el signo con un
+control uniforme y uno estratificado sencillo. No proclamar un algoritmo nuevo
+si basta ordenar contribuciones lineales o muestrear estratos convencionales.
+Las pruebas esenciales y la comparación con TDC deben caber en seis páginas.
+
+Candidatas alternativas acotadas, todavía sin ejecutar:
+B: compresión aproximada de referencias que conserve certificados durante
+cualquier auditoría. Rechazar si todo se reduce a deduplicación/cobertura Hamming.
+C: consistencia de predicciones al partir lotes con reparaciones PSD. Rechazar
+si sólo reproduce inductivo/transductivo o Nyström ya estudiado en TDC.
+
+No se hacen afirmaciones nuevas de ventaja cuántica ni de prevalencia poblacional.
+Fin de protocolo v1. Cambios posteriores deben quedar como adendas fechadas.

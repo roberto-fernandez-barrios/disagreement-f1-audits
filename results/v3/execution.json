@@ -1,0 +1,29 @@
+{
+  "started_utc": "2026-10-25T13:08:37.970385+00:00",
+  "design": "retrospective, after review; no new prospective holdout",
+  "code": {
+    "revision_v3.py": "255ae6a22f252bbab1f5f241142329a0c71fc59941a08ed6c9698fe7dab921d9",
+    "tolerance.py": "fbac658b112fb99d1a83fbcaf1882ea7d112f2391be28f78674b47d2fafb83ac",
+    "test_tolerance.py": "9890f178e30d41e5dddebbcb0792b9191ef53b974ccc8c0c6557608f701ff1f9",
+    "pilot.py": "8e571c671b6e56a29560e8633388b91ab92375f25bede72691c5b92b76b4a234",
+    "audit.py": "00602d8a720dbc773f762c250690b522bc4e1ed16a5aa7ef9e26aab7f6825391",
+    "decision.py": "142135946d3268c1e5bd193c84c019aee0a8dc817eee5d2741a6d86fd9f6a7ff"
+  },
+  "protocol_sha256": "6221e7a64675959b87d4d3711bc6ac26d3155e9a5ef6044b98cece9a4164e6e7",
+  "validation_input_sha256": "3adf124729c8965a7964183062eb40b498d293605191d56f4db50ce2683e5cfb",
+  "old_stops_sha256": "378e5f4497bb012461c7ab57f0e0cc1ea30a36fb4de5b1a39948c2650c0e9690",
+  "tests": {
+    "exact_rational_hulls": 7506,
+    "sequential_prefix_and_future_label_checks": 2100,
+    "status": "passed"
+  },
+  "completed_utc": "2026-10-25T13:10:07.266172+00:00",
+  "outputs": {
+    "intervals.csv": "b15efb09ef5b1a30c5b97e5c506d9dccc09a86cf88a266830e2bc598c4e28433",
+    "costs.csv": "fdf78ca6ce9cd1ed0e07ec2f3e05265a4dd3088ceb26bebf2613a10e496c1cb7",
+    "pairs.csv": "ea14851b6ace7d59d34b1c32f486966f73c41d10b85f0dbbce1f17bf3c7ffa0d",
+    "stops.npz": "756b2a1d3d6f779b85328780958cf59230195078f049e12ab5afa9bb8a74f546",
+    "summary.json": "32a0f89089bc454de37068a527cafd43770c151383ba63c2fede72cd371a4241",
+    "validation_ties.json": "2862ae8fabcea845148461c5a0cc7f8ce9f354c9ec5cbd6cf48a64d7a8ce4105"
+  }
+}

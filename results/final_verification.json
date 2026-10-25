@@ -1,0 +1,78 @@
+{
+  "v3": {
+    "tests": {
+      "exact_rational_hulls": 7506,
+      "sequential_prefix_and_future_label_checks": 2100,
+      "status": "passed"
+    },
+    "old_paired_intervals_preserved": 12800,
+    "boundary_equalities": 0,
+    "old_query_stops_preserved": 307200,
+    "validation_choices_recomputed": 36,
+    "pdf_ink_margins": [
+      {
+        "left_mm": 43.99985555555554,
+        "right_mm": 43.99818689549991,
+        "top_mm": 53.27648687666663,
+        "bottom_mm": 57.0125068366668
+      },
+      {
+        "left_mm": 43.99985555555551,
+        "right_mm": 43.99853835388884,
+        "top_mm": 53.681892607777755,
+        "bottom_mm": 52.31809294777776
+      },
+      {
+        "left_mm": 43.99985555555555,
+        "right_mm": 43.9981868954999,
+        "top_mm": 53.681892607777755,
+        "bottom_mm": 54.386429058888886
+      },
+      {
+        "left_mm": 43.999855555555555,
+        "right_mm": 43.998538353888776,
+        "top_mm": 53.681892607777755,
+        "bottom_mm": 58.45007628111102
+      },
+      {
+        "left_mm": 43.999855555555555,
+        "right_mm": 43.99818689549996,
+        "top_mm": 54.383920385555534,
+        "bottom_mm": 54.95545961444442
+      },
+      {
+        "left_mm": 43.999855555555555,
+        "right_mm": 43.99853835388884,
+        "top_mm": 53.681892607777755,
+        "bottom_mm": 54.10475187833325
+      }
+    ],
+    "pdf_sha256": "c642454b7670c7eedadf86e741e98c595d5835900938d43ee3c668d4d3debe93"
+  },
+  "data_files_verified": 90,
+  "protocol_sha256": "f688e84d0aeec928fdd458f41e4fa1eb014c653881ac20e676a4e1147fb02cb3",
+  "enumeration": {
+    "individual_enumeration_problems": 1200,
+    "review_driven_checks": {
+      "extreme_prevalence_cases": 168,
+      "fixed_prevalence_partial_audit_intervals": 460,
+      "equal_prediction_count_completions": 210,
+      "mixed_ba_domain_and_empty_set_checks": "passed",
+      "status": "passed"
+    },
+    "status": "passed"
+  },
+  "partial_audits": {
+    "random_partial_paths": 200,
+    "status": "passed"
+  },
+  "pdf_pages": 6,
+  "pdf_sha256": "c642454b7670c7eedadf86e741e98c595d5835900938d43ee3c668d4d3debe93",
+  "a4": true,
+  "overfull_boxes": 0,
+  "undefined_references": false,
+  "original_projects_required": false,
+  "stage_code_hashes_verified": 10,
+  "reproduction_manifest_verified": true,
+  "pdf_sources_verified": true
+}

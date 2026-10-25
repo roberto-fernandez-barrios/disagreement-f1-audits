@@ -1,0 +1,786 @@
+[
+  {
+    "cell": "brfss_diabetes/123/svc",
+    "unique_pairs": 109,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.6056631305053757,
+      "strict_reversal": 0.926605504587156,
+      "material_reversal": 0.926605504587156,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.0740219250821923,
+      "strict_reversal": 0.8165137614678899,
+      "material_reversal": 0.5321100917431193,
+      "oracle_width": 0.03467871381465625,
+      "oracle_strict_reversal": 0.5596330275229358,
+      "oracle_material_reversal": 0.1834862385321101
+    }
+  },
+  {
+    "cell": "brfss_diabetes/123/gpc",
+    "unique_pairs": 34,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.7358154916998195,
+      "strict_reversal": 0.7352941176470589,
+      "material_reversal": 0.7352941176470589,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.5992636711688293,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0006876197290551231,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    }
+  },
+  {
+    "cell": "brfss_diabetes/999/svc",
+    "unique_pairs": 110,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.5043533895796081,
+      "strict_reversal": 0.6272727272727273,
+      "material_reversal": 0.6272727272727273,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.07783680101573322,
+      "strict_reversal": 0.44545454545454544,
+      "material_reversal": 0.23636363636363636,
+      "oracle_width": 0.0420894098672754,
+      "oracle_strict_reversal": 0.2727272727272727,
+      "oracle_material_reversal": 0.16363636363636364
+    }
+  },
+  {
+    "cell": "brfss_diabetes/999/gpc",
+    "unique_pairs": 48,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.6689147652861692,
+      "strict_reversal": 0.6875,
+      "material_reversal": 0.6875,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.33772362380507204,
+      "strict_reversal": 0.3125,
+      "material_reversal": 0.3125,
+      "oracle_width": 0.004860588088049573,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    }
+  },
+  {
+    "cell": "brfss_diabetes/7/svc",
+    "unique_pairs": 105,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.2945610349695586,
+      "strict_reversal": 0.7238095238095238,
+      "material_reversal": 0.7047619047619048,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.05707787197120056,
+      "strict_reversal": 0.5523809523809524,
+      "material_reversal": 0.3047619047619048,
+      "oracle_width": 0.026537725778734197,
+      "oracle_strict_reversal": 0.41904761904761906,
+      "oracle_material_reversal": 0.11428571428571428
+    }
+  },
+  {
+    "cell": "brfss_diabetes/7/gpc",
+    "unique_pairs": 34,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.6384302584968727,
+      "strict_reversal": 0.6176470588235294,
+      "material_reversal": 0.6176470588235294,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.35844130930929125,
+      "strict_reversal": 0.029411764705882353,
+      "material_reversal": 0.029411764705882353,
+      "oracle_width": 0.0038596172259324443,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    }
+  },
+  {
+    "cell": "brfss_diabetes/2024/svc",
+    "unique_pairs": 112,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.3944588743714788,
+      "strict_reversal": 0.7142857142857143,
+      "material_reversal": 0.7142857142857143,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.06462235691013178,
+      "strict_reversal": 0.5,
+      "material_reversal": 0.30357142857142855,
+      "oracle_width": 0.02957987948728451,
+      "oracle_strict_reversal": 0.4107142857142857,
+      "oracle_material_reversal": 0.21428571428571427
+    }
+  },
+  {
+    "cell": "brfss_diabetes/2024/gpc",
+    "unique_pairs": 36,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.5304630193403205,
+      "strict_reversal": 0.3611111111111111,
+      "material_reversal": 0.3611111111111111,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.4634431095342965,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.006435910517228337,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    }
+  },
+  {
+    "cell": "acsfoodstamps/123/svc",
+    "unique_pairs": 101,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.49667281035272787,
+      "strict_reversal": 0.9108910891089109,
+      "material_reversal": 0.900990099009901,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.100666615178703,
+      "strict_reversal": 0.7128712871287128,
+      "material_reversal": 0.5544554455445545,
+      "oracle_width": 0.05325108527611665,
+      "oracle_strict_reversal": 0.693069306930693,
+      "oracle_material_reversal": 0.44554455445544555
+    }
+  },
+  {
+    "cell": "acsfoodstamps/123/gpc",
+    "unique_pairs": 84,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.6754159033734282,
+      "strict_reversal": 0.9404761904761905,
+      "material_reversal": 0.9166666666666666,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.33282611216351243,
+      "strict_reversal": 0.19047619047619047,
+      "material_reversal": 0.15476190476190477,
+      "oracle_width": 0.0206922283048692,
+      "oracle_strict_reversal": 0.023809523809523808,
+      "oracle_material_reversal": 0.0
+    }
+  },
+  {
+    "cell": "acsfoodstamps/999/svc",
+    "unique_pairs": 100,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.27576613623602597,
+      "strict_reversal": 0.36,
+      "material_reversal": 0.35,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.11371540164205282,
+      "strict_reversal": 0.17,
+      "material_reversal": 0.07,
+      "oracle_width": 0.07078742233972588,
+      "oracle_strict_reversal": 0.05,
+      "oracle_material_reversal": 0.03
+    }
+  },
+  {
+    "cell": "acsfoodstamps/999/gpc",
+    "unique_pairs": 96,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.5757374474816945,
+      "strict_reversal": 0.8854166666666666,
+      "material_reversal": 0.875,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.26451482394287557,
+      "strict_reversal": 0.13541666666666666,
+      "material_reversal": 0.11458333333333333,
+      "oracle_width": 0.03402709172222535,
+      "oracle_strict_reversal": 0.10416666666666667,
+      "oracle_material_reversal": 0.052083333333333336
+    }
+  },
+  {
+    "cell": "acsfoodstamps/7/svc",
+    "unique_pairs": 106,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.4461692574762754,
+      "strict_reversal": 0.7075471698113207,
+      "material_reversal": 0.7075471698113207,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.10105702261648644,
+      "strict_reversal": 0.5,
+      "material_reversal": 0.37735849056603776,
+      "oracle_width": 0.06301088470078879,
+      "oracle_strict_reversal": 0.42452830188679247,
+      "oracle_material_reversal": 0.33962264150943394
+    }
+  },
+  {
+    "cell": "acsfoodstamps/7/gpc",
+    "unique_pairs": 103,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.41952516136241713,
+      "strict_reversal": 0.7184466019417476,
+      "material_reversal": 0.7184466019417476,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.22145006708627424,
+      "strict_reversal": 0.04854368932038835,
+      "material_reversal": 0.009708737864077669,
+      "oracle_width": 0.040209009978190664,
+      "oracle_strict_reversal": 0.038834951456310676,
+      "oracle_material_reversal": 0.009708737864077669
+    }
+  },
+  {
+    "cell": "acsfoodstamps/2024/svc",
+    "unique_pairs": 101,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.5987335025287025,
+      "strict_reversal": 0.8811881188118812,
+      "material_reversal": 0.8712871287128713,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.1301278900984263,
+      "strict_reversal": 0.6732673267326733,
+      "material_reversal": 0.594059405940594,
+      "oracle_width": 0.07886035599244273,
+      "oracle_strict_reversal": 0.6237623762376238,
+      "oracle_material_reversal": 0.5148514851485149
+    }
+  },
+  {
+    "cell": "acsfoodstamps/2024/gpc",
+    "unique_pairs": 87,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.6102195606536016,
+      "strict_reversal": 0.9425287356321839,
+      "material_reversal": 0.9310344827586207,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.35818556867068224,
+      "strict_reversal": 0.12643678160919541,
+      "material_reversal": 0.11494252873563218,
+      "oracle_width": 0.023152880973297908,
+      "oracle_strict_reversal": 0.04597701149425287,
+      "oracle_material_reversal": 0.011494252873563218
+    }
+  },
+  {
+    "cell": "02_toniot_scanning_m2_centroid/42/svc",
+    "unique_pairs": 53,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.6442989303466109,
+      "strict_reversal": 0.41509433962264153,
+      "material_reversal": 0.41509433962264153,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.06550418412161713,
+      "strict_reversal": 0.18867924528301888,
+      "material_reversal": 0.05660377358490566,
+      "oracle_width": 0.02143323802907349,
+      "oracle_strict_reversal": 0.1509433962264151,
+      "oracle_material_reversal": 0.0
+    }
+  },
+  {
+    "cell": "02_toniot_scanning_m2_centroid/42/gpc",
+    "unique_pairs": 59,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.39293426412983734,
+      "strict_reversal": 0.0847457627118644,
+      "material_reversal": 0.0847457627118644,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.16871476562761967,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.04850349122857575,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    }
+  },
+  {
+    "cell": "03_toniot_scanning_natural_cur/42/svc",
+    "unique_pairs": 52,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.6519098950479549,
+      "strict_reversal": 0.5384615384615384,
+      "material_reversal": 0.5384615384615384,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.08841321657675819,
+      "strict_reversal": 0.25,
+      "material_reversal": 0.25,
+      "oracle_width": 0.035584269604714176,
+      "oracle_strict_reversal": 0.25,
+      "oracle_material_reversal": 0.19230769230769232
+    }
+  },
+  {
+    "cell": "03_toniot_scanning_natural_cur/42/gpc",
+    "unique_pairs": 83,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.47035983745777643,
+      "strict_reversal": 0.20481927710843373,
+      "material_reversal": 0.20481927710843373,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.22129480285952235,
+      "strict_reversal": 0.012048192771084338,
+      "material_reversal": 0.012048192771084338,
+      "oracle_width": 0.06689010035718632,
+      "oracle_strict_reversal": 0.012048192771084338,
+      "oracle_material_reversal": 0.0
+    }
+  },
+  {
+    "cell": "04_unsw_dos_m2_centroid/42/svc",
+    "unique_pairs": 95,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.4901812605366737,
+      "strict_reversal": 0.7263157894736842,
+      "material_reversal": 0.7263157894736842,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.055432260692734735,
+      "strict_reversal": 0.5157894736842106,
+      "material_reversal": 0.1368421052631579,
+      "oracle_width": 0.022067354744040618,
+      "oracle_strict_reversal": 0.4631578947368421,
+      "oracle_material_reversal": 0.06315789473684211
+    }
+  },
+  {
+    "cell": "04_unsw_dos_m2_centroid/42/gpc",
+    "unique_pairs": 100,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.5857166550098282,
+      "strict_reversal": 0.5,
+      "material_reversal": 0.49,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.11039230483817203,
+      "strict_reversal": 0.17,
+      "material_reversal": 0.13,
+      "oracle_width": 0.039053801021053845,
+      "oracle_strict_reversal": 0.13,
+      "oracle_material_reversal": 0.11
+    }
+  },
+  {
+    "cell": "05_unsw_dos_natural_cur/42/svc",
+    "unique_pairs": 84,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.452023991239963,
+      "strict_reversal": 0.7023809523809523,
+      "material_reversal": 0.6904761904761905,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.055831572308603056,
+      "strict_reversal": 0.44047619047619047,
+      "material_reversal": 0.25,
+      "oracle_width": 0.020289272439286504,
+      "oracle_strict_reversal": 0.35714285714285715,
+      "oracle_material_reversal": 0.011904761904761904
+    }
+  },
+  {
+    "cell": "05_unsw_dos_natural_cur/42/gpc",
+    "unique_pairs": 111,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.4402979566812258,
+      "strict_reversal": 0.3783783783783784,
+      "material_reversal": 0.3783783783783784,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.035627794613440296,
+      "strict_reversal": 0.34234234234234234,
+      "material_reversal": 0.1891891891891892,
+      "oracle_width": 0.011413316190077915,
+      "oracle_strict_reversal": 0.12612612612612611,
+      "oracle_material_reversal": 0.0
+    }
+  },
+  {
+    "cell": "06_unsw_recon_m2_centroid/42/svc",
+    "unique_pairs": 110,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.5395527773709156,
+      "strict_reversal": 0.7636363636363637,
+      "material_reversal": 0.7545454545454545,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.08542225339195675,
+      "strict_reversal": 0.08181818181818182,
+      "material_reversal": 0.02727272727272727,
+      "oracle_width": 0.03527756877329974,
+      "oracle_strict_reversal": 0.07272727272727272,
+      "oracle_material_reversal": 0.02727272727272727
+    }
+  },
+  {
+    "cell": "06_unsw_recon_m2_centroid/42/gpc",
+    "unique_pairs": 102,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.6746145747124276,
+      "strict_reversal": 0.6274509803921569,
+      "material_reversal": 0.6176470588235294,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.16276133466417272,
+      "strict_reversal": 0.17647058823529413,
+      "material_reversal": 0.12745098039215685,
+      "oracle_width": 0.06778617804249024,
+      "oracle_strict_reversal": 0.16666666666666666,
+      "oracle_material_reversal": 0.10784313725490197
+    }
+  },
+  {
+    "cell": "07_unsw_recon_natural_cur/42/svc",
+    "unique_pairs": 99,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.5581260908426917,
+      "strict_reversal": 0.7777777777777778,
+      "material_reversal": 0.7676767676767676,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.07325504318928178,
+      "strict_reversal": 0.5252525252525253,
+      "material_reversal": 0.40404040404040403,
+      "oracle_width": 0.029344886600795202,
+      "oracle_strict_reversal": 0.47474747474747475,
+      "oracle_material_reversal": 0.2727272727272727
+    }
+  },
+  {
+    "cell": "07_unsw_recon_natural_cur/42/gpc",
+    "unique_pairs": 85,
+    "accuracy": {
+      "width": 0.0,
+      "strict_reversal": 0.0,
+      "material_reversal": 0.0,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "ba": {
+      "width": 0.589025933319278,
+      "strict_reversal": 0.7294117647058823,
+      "material_reversal": 0.7294117647058823,
+      "oracle_width": 0.0,
+      "oracle_strict_reversal": 0.0,
+      "oracle_material_reversal": 0.0
+    },
+    "f1": {
+      "width": 0.058639099359875886,
+      "strict_reversal": 0.6235294117647059,
+      "material_reversal": 0.4588235294117647,
+      "oracle_width": 0.020838999308012262,
+      "oracle_strict_reversal": 0.5647058823529412,
+      "oracle_material_reversal": 0.08235294117647059
+    }
+  }
+]

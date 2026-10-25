@@ -1,0 +1,18 @@
+{
+  "checked_utc": "2026-10-25T12:28:21.228126+00:00",
+  "ji2021": {
+    "url": "https://arxiv.org/pdf/2002.06532v2",
+    "sha256": "79ced41debc2aacbe4a52682cba4bd34bd637e919f658dbf9d91b8334f512835",
+    "pages": 24
+  },
+  "esann": "https://www.esann.org/author_guidelines",
+  "model": "claude-fable-5-1",
+  "effort": "xhigh",
+  "official_checks": {
+    "author_guidelines": "https://www.esann.org/author_guidelines",
+    "dates": "https://www.esann.org/",
+    "sessions": "https://www.esann.org/special-sessions",
+    "ethics": "https://www.esann.org/ethics",
+    "checked_date": "2026-10-25"
+  }
+}

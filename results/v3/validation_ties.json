@@ -1,0 +1,1453 @@
+{
+  "summary": {
+    "cells_with_ties": 10,
+    "material_count_range": [
+      6,
+      6
+    ],
+    "cost_ranges": {
+      "uniform/exact/extra": [
+        89.06944444444444,
+        89.06944444444444
+      ],
+      "uniform/exact/total": [
+        119.125,
+        120.79166666666667
+      ],
+      "uniform/epsilon/extra": [
+        25.56076388888889,
+        25.56076388888889
+      ],
+      "uniform/epsilon/total": [
+        55.61631944444444,
+        57.282986111111114
+      ],
+      "alternating/exact/extra": [
+        77.57899305555556,
+        77.57899305555556
+      ],
+      "alternating/exact/total": [
+        107.63454861111111,
+        109.30121527777777
+      ],
+      "alternating/epsilon/extra": [
+        16.34375,
+        16.34375
+      ],
+      "alternating/epsilon/total": [
+        46.39930555555556,
+        48.06597222222222
+      ],
+      "magnitude/exact/extra": [
+        61.84461805555556,
+        61.84461805555556
+      ],
+      "magnitude/exact/total": [
+        91.90017361111111,
+        93.56684027777777
+      ],
+      "magnitude/epsilon/extra": [
+        9.571180555555555,
+        9.571180555555555
+      ],
+      "magnitude/epsilon/total": [
+        39.626736111111114,
+        41.29340277777778
+      ]
+    }
+  },
+  "cells": [
+    {
+      "cell": "brfss_diabetes/42/svc",
+      "candidates": [
+        {
+          "j": 104,
+          "cfg": "rbf_gscale_x0.3__svc__d8",
+          "canonical_j": 104
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 104,
+          "D": 47,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "brfss_diabetes/42/gpc",
+      "candidates": [
+        {
+          "j": 108,
+          "cfg": "rbf_gscale_x10__gpc__d6",
+          "canonical_j": 108
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 108,
+          "D": 21,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "brfss_diabetes/123/svc",
+      "candidates": [
+        {
+          "j": 70,
+          "cfg": "matern25_med_x10__svc__d10",
+          "canonical_j": 70
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 70,
+          "D": 30,
+          "material": 1,
+          "exact_extra": [
+            303.53125,
+            268.46875,
+            198.84375
+          ],
+          "epsilon_extra": [
+            117.78125,
+            87.875,
+            44.1875
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "brfss_diabetes/123/gpc",
+      "candidates": [
+        {
+          "j": 63,
+          "cfg": "matern25_med_x0.1__gpc__d6",
+          "canonical_j": 63
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 63,
+          "D": 25,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "brfss_diabetes/999/svc",
+      "candidates": [
+        {
+          "j": 85,
+          "cfg": "poly3__svc__d10",
+          "canonical_j": 85
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 85,
+          "D": 28,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "brfss_diabetes/999/gpc",
+      "candidates": [
+        {
+          "j": 7,
+          "cfg": "laplacian_med_x0.1__gpc__d4",
+          "canonical_j": 7
+        },
+        {
+          "j": 37,
+          "cfg": "matern15_med_x0.1__gpc__d4",
+          "canonical_j": 37
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 7,
+          "D": 13,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "canonical_j": 37,
+          "D": 24,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "brfss_diabetes/7/svc",
+      "candidates": [
+        {
+          "j": 24,
+          "cfg": "laplacian_med_x3__svc__d8",
+          "canonical_j": 24
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 24,
+          "D": 39,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "brfss_diabetes/7/gpc",
+      "candidates": [
+        {
+          "j": 36,
+          "cfg": "matern15_med_x0.1__gpc__d12",
+          "canonical_j": 36
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 36,
+          "D": 30,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "brfss_diabetes/2024/svc",
+      "candidates": [
+        {
+          "j": 10,
+          "cfg": "laplacian_med_x0.3__svc__d10",
+          "canonical_j": 10
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 10,
+          "D": 24,
+          "material": 0,
+          "exact_extra": [
+            331.09375,
+            265.3125,
+            139.28125
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "brfss_diabetes/2024/gpc",
+      "candidates": [
+        {
+          "j": 63,
+          "cfg": "matern25_med_x0.1__gpc__d6",
+          "canonical_j": 63
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 63,
+          "D": 27,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "acsfoodstamps/42/svc",
+      "candidates": [
+        {
+          "j": 84,
+          "cfg": "poly2__svc__d8",
+          "canonical_j": 84
+        },
+        {
+          "j": 89,
+          "cfg": "poly3__svc__d8",
+          "canonical_j": 89
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 84,
+          "D": 20,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "canonical_j": 89,
+          "D": 25,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "acsfoodstamps/42/gpc",
+      "candidates": [
+        {
+          "j": 91,
+          "cfg": "rbf_gscale__gpc__d12",
+          "canonical_j": 91
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 91,
+          "D": 5,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "acsfoodstamps/123/svc",
+      "candidates": [
+        {
+          "j": 16,
+          "cfg": "laplacian_med_x10__svc__d12",
+          "canonical_j": 16
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 16,
+          "D": 20,
+          "material": 1,
+          "exact_extra": [
+            399.0625,
+            283.96875,
+            185.78125
+          ],
+          "epsilon_extra": [
+            190.09375,
+            150.875,
+            94.71875
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "acsfoodstamps/123/gpc",
+      "candidates": [
+        {
+          "j": 60,
+          "cfg": "matern25_med_x0.1__gpc__d10",
+          "canonical_j": 60
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 60,
+          "D": 52,
+          "material": 0,
+          "exact_extra": [
+            291.65625,
+            248.03125,
+            248.03125
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "acsfoodstamps/999/svc",
+      "candidates": [
+        {
+          "j": 11,
+          "cfg": "laplacian_med_x0.3__svc__d12",
+          "canonical_j": 11
+        },
+        {
+          "j": 26,
+          "cfg": "linear__svc__d12",
+          "canonical_j": 26
+        },
+        {
+          "j": 45,
+          "cfg": "matern15_med_x10__svc__d10",
+          "canonical_j": 45
+        },
+        {
+          "j": 46,
+          "cfg": "matern15_med_x10__svc__d12",
+          "canonical_j": 45
+        },
+        {
+          "j": 50,
+          "cfg": "matern15_med_x3__svc__d10",
+          "canonical_j": 45
+        },
+        {
+          "j": 51,
+          "cfg": "matern15_med_x3__svc__d12",
+          "canonical_j": 45
+        },
+        {
+          "j": 70,
+          "cfg": "matern25_med_x10__svc__d10",
+          "canonical_j": 45
+        },
+        {
+          "j": 71,
+          "cfg": "matern25_med_x10__svc__d12",
+          "canonical_j": 45
+        },
+        {
+          "j": 75,
+          "cfg": "matern25_med_x3__svc__d10",
+          "canonical_j": 45
+        },
+        {
+          "j": 76,
+          "cfg": "matern25_med_x3__svc__d12",
+          "canonical_j": 45
+        },
+        {
+          "j": 81,
+          "cfg": "poly2__svc__d12",
+          "canonical_j": 45
+        },
+        {
+          "j": 86,
+          "cfg": "poly3__svc__d12",
+          "canonical_j": 45
+        },
+        {
+          "j": 95,
+          "cfg": "rbf_gscale_x0.1__svc__d10",
+          "canonical_j": 45
+        },
+        {
+          "j": 96,
+          "cfg": "rbf_gscale_x0.1__svc__d12",
+          "canonical_j": 45
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 11,
+          "D": 108,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "canonical_j": 26,
+          "D": 123,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "canonical_j": 45,
+          "D": 123,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "acsfoodstamps/999/gpc",
+      "candidates": [
+        {
+          "j": 60,
+          "cfg": "matern25_med_x0.1__gpc__d10",
+          "canonical_j": 60
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 60,
+          "D": 47,
+          "material": 1,
+          "exact_extra": [
+            408.03125,
+            396.125,
+            396.125
+          ],
+          "epsilon_extra": [
+            105.21875,
+            18.25,
+            9.375
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "acsfoodstamps/7/svc",
+      "candidates": [
+        {
+          "j": 58,
+          "cfg": "matern25_med__svc__d6",
+          "canonical_j": 58
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 58,
+          "D": 21,
+          "material": 1,
+          "exact_extra": [
+            468.5,
+            466.625,
+            466.625
+          ],
+          "epsilon_extra": [
+            248.0625,
+            171.625,
+            86.0625
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "acsfoodstamps/7/gpc",
+      "candidates": [
+        {
+          "j": 113,
+          "cfg": "rbf_gscale_x3__gpc__d6",
+          "canonical_j": 113
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 113,
+          "D": 17,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "acsfoodstamps/2024/svc",
+      "candidates": [
+        {
+          "j": 1,
+          "cfg": "laplacian_med__svc__d12",
+          "canonical_j": 1
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 1,
+          "D": 13,
+          "material": 0,
+          "exact_extra": [
+            127.59375,
+            90.34375,
+            52.96875
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "acsfoodstamps/2024/gpc",
+      "candidates": [
+        {
+          "j": 105,
+          "cfg": "rbf_gscale_x10__gpc__d10",
+          "canonical_j": 105
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 105,
+          "D": 23,
+          "material": 1,
+          "exact_extra": [
+            236.1875,
+            112.59375,
+            112.59375
+          ],
+          "epsilon_extra": [
+            175.9375,
+            71.875,
+            66.03125
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "00_ember_m1/42/svc",
+      "candidates": [
+        {
+          "j": 3,
+          "cfg": "laplacian_med__svc__d6",
+          "canonical_j": 3
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 3,
+          "D": 59,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "00_ember_m1/42/gpc",
+      "candidates": [
+        {
+          "j": 11,
+          "cfg": "laplacian_med_x0.3__gpc__d12",
+          "canonical_j": 11
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 11,
+          "D": 40,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "01_ember_m2/42/svc",
+      "candidates": [
+        {
+          "j": 40,
+          "cfg": "matern15_med_x0.3__svc__d10",
+          "canonical_j": 40
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 40,
+          "D": 40,
+          "material": 0,
+          "exact_extra": [
+            144.75,
+            142.5625,
+            81.84375
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "01_ember_m2/42/gpc",
+      "candidates": [
+        {
+          "j": 7,
+          "cfg": "laplacian_med_x0.1__gpc__d4",
+          "canonical_j": 7
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 7,
+          "D": 49,
+          "material": 1,
+          "exact_extra": [
+            243.5,
+            251.03125,
+            160.84375
+          ],
+          "epsilon_extra": [
+            83.09375,
+            87.875,
+            44.1875
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "02_toniot_scanning_m2_centroid/42/svc",
+      "candidates": [
+        {
+          "j": 7,
+          "cfg": "laplacian_med_x0.1__svc__d4",
+          "canonical_j": 5
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 5,
+          "D": 4,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "02_toniot_scanning_m2_centroid/42/gpc",
+      "candidates": [
+        {
+          "j": 3,
+          "cfg": "laplacian_med__gpc__d6",
+          "canonical_j": 3
+        },
+        {
+          "j": 12,
+          "cfg": "laplacian_med_x0.3__gpc__d4",
+          "canonical_j": 12
+        },
+        {
+          "j": 37,
+          "cfg": "matern15_med_x0.1__gpc__d4",
+          "canonical_j": 12
+        },
+        {
+          "j": 38,
+          "cfg": "matern15_med_x0.1__gpc__d6",
+          "canonical_j": 8
+        },
+        {
+          "j": 63,
+          "cfg": "matern25_med_x0.1__gpc__d6",
+          "canonical_j": 8
+        },
+        {
+          "j": 108,
+          "cfg": "rbf_gscale_x10__gpc__d6",
+          "canonical_j": 12
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 3,
+          "D": 28,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "canonical_j": 8,
+          "D": 17,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "canonical_j": 12,
+          "D": 27,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "03_toniot_scanning_natural_cur/42/svc",
+      "candidates": [
+        {
+          "j": 6,
+          "cfg": "laplacian_med_x0.1__svc__d12",
+          "canonical_j": 2
+        },
+        {
+          "j": 35,
+          "cfg": "matern15_med_x0.1__svc__d10",
+          "canonical_j": 0
+        },
+        {
+          "j": 36,
+          "cfg": "matern15_med_x0.1__svc__d12",
+          "canonical_j": 2
+        },
+        {
+          "j": 60,
+          "cfg": "matern25_med_x0.1__svc__d10",
+          "canonical_j": 1
+        },
+        {
+          "j": 61,
+          "cfg": "matern25_med_x0.1__svc__d12",
+          "canonical_j": 61
+        },
+        {
+          "j": 66,
+          "cfg": "matern25_med_x0.3__svc__d12",
+          "canonical_j": 40
+        },
+        {
+          "j": 106,
+          "cfg": "rbf_gscale_x10__svc__d12",
+          "canonical_j": 106
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 0,
+          "D": 7,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "canonical_j": 1,
+          "D": 5,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "canonical_j": 2,
+          "D": 9,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "canonical_j": 40,
+          "D": 6,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "canonical_j": 61,
+          "D": 6,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "canonical_j": 106,
+          "D": 7,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "03_toniot_scanning_natural_cur/42/gpc",
+      "candidates": [
+        {
+          "j": 5,
+          "cfg": "laplacian_med_x0.1__gpc__d10",
+          "canonical_j": 5
+        },
+        {
+          "j": 6,
+          "cfg": "laplacian_med_x0.1__gpc__d12",
+          "canonical_j": 5
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 5,
+          "D": 4,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "04_unsw_dos_m2_centroid/42/svc",
+      "candidates": [
+        {
+          "j": 42,
+          "cfg": "matern15_med_x0.3__svc__d4",
+          "canonical_j": 42
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 42,
+          "D": 24,
+          "material": 0,
+          "exact_extra": [
+            252.59375,
+            267.78125,
+            183.46875
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "04_unsw_dos_m2_centroid/42/gpc",
+      "candidates": [
+        {
+          "j": 5,
+          "cfg": "laplacian_med_x0.1__gpc__d10",
+          "canonical_j": 5
+        },
+        {
+          "j": 6,
+          "cfg": "laplacian_med_x0.1__gpc__d12",
+          "canonical_j": 6
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 5,
+          "D": 35,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "canonical_j": 6,
+          "D": 34,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "05_unsw_dos_natural_cur/42/svc",
+      "candidates": [
+        {
+          "j": 107,
+          "cfg": "rbf_gscale_x10__svc__d4",
+          "canonical_j": 107
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 107,
+          "D": 22,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "05_unsw_dos_natural_cur/42/gpc",
+      "candidates": [
+        {
+          "j": 38,
+          "cfg": "matern15_med_x0.1__gpc__d6",
+          "canonical_j": 38
+        },
+        {
+          "j": 63,
+          "cfg": "matern25_med_x0.1__gpc__d6",
+          "canonical_j": 63
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 38,
+          "D": 27,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "canonical_j": 63,
+          "D": 28,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "06_unsw_recon_m2_centroid/42/svc",
+      "candidates": [
+        {
+          "j": 67,
+          "cfg": "matern25_med_x0.3__svc__d4",
+          "canonical_j": 67
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 67,
+          "D": 23,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "06_unsw_recon_m2_centroid/42/gpc",
+      "candidates": [
+        {
+          "j": 40,
+          "cfg": "matern15_med_x0.3__gpc__d10",
+          "canonical_j": 40
+        },
+        {
+          "j": 41,
+          "cfg": "matern15_med_x0.3__gpc__d12",
+          "canonical_j": 41
+        },
+        {
+          "j": 65,
+          "cfg": "matern25_med_x0.3__gpc__d10",
+          "canonical_j": 65
+        },
+        {
+          "j": 66,
+          "cfg": "matern25_med_x0.3__gpc__d12",
+          "canonical_j": 66
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 40,
+          "D": 54,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "canonical_j": 41,
+          "D": 58,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "canonical_j": 65,
+          "D": 54,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "canonical_j": 66,
+          "D": 56,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "07_unsw_recon_natural_cur/42/svc",
+      "candidates": [
+        {
+          "j": 23,
+          "cfg": "laplacian_med_x3__svc__d6",
+          "canonical_j": 23
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 23,
+          "D": 46,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "cell": "07_unsw_recon_natural_cur/42/gpc",
+      "candidates": [
+        {
+          "j": 9,
+          "cfg": "laplacian_med_x0.1__gpc__d8",
+          "canonical_j": 9
+        },
+        {
+          "j": 38,
+          "cfg": "matern15_med_x0.1__gpc__d6",
+          "canonical_j": 38
+        }
+      ],
+      "outcomes": [
+        {
+          "canonical_j": 9,
+          "D": 32,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "canonical_j": 38,
+          "D": 24,
+          "material": 0,
+          "exact_extra": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "epsilon_extra": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    }
+  ]
+}

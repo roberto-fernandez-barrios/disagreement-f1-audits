@@ -1,0 +1,24 @@
+LICENSE AND DATA PROVENANCE
+
+Original analysis software and derived result tables: BSD-3-Clause (LICENSE).
+Frozen TDC predictions, labels, source exporters and derived validation metrics
+originate from Sharp Target-Domain Certificates for Quantum-Kernel Advantage
+under Distribution Shift, artifact 1.1.6, https://doi.org/10.5281/zenodo.21776862,
+released under BSD-3-Clause. Its copyright and license are retained in LICENSE.
+The cited theoretical manuscript is separately arXiv:2610.00080v1.
+
+Only frozen predictions, binary target labels, numeric indices, configurations
+and validation summaries are included; original feature tables are not included.
+DATA_MANIFEST.json and inputs/validation_v3/manifest.json identify the exact
+derived inputs. These files do not convey rights over the original datasets.
+See the source artifact for underlying dataset attribution and acquisition.
+
+The ESANN template in manuscript/esannV2.cls and references/template retains
+its original LaTeX Project Public License and author notices; see file headers.
+It is not relicensed under BSD-3-Clause.
+
+The article text (manuscript/paper.tex and output/pdf/paper.pdf) is made available
+by its authors under Creative Commons Attribution 4.0 International:
+https://creativecommons.org/licenses/by/4.0/
+This is an author manuscript prepared for ESANN, not an accepted proceedings
+paper. All third-party source documents remain at their cited public URLs.

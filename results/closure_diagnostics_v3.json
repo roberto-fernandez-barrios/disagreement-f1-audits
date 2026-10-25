@@ -1,0 +1,71 @@
+{
+  "round1_core_csvs_identical": true,
+  "round1_exact_and_epsilon_stops_identical": true,
+  "choice_counts_independently_checked_from_saved_arrays": true,
+  "realized_choices": {
+    "worse_trajectories": 15466,
+    "total_trajectories": 307200,
+    "pairs_with_worse_choice": 219,
+    "initial_worse_pairs": 95,
+    "initial_epsilon_decided_pairs": 2464,
+    "interpretation": "dependent retrospective choices; worse by at most epsilon, not a certification violation"
+  },
+  "max_regret": 0.009273293465979552,
+  "validation_ties": {
+    "cells_with_ties": 10,
+    "material_count_range": [
+      6,
+      6
+    ],
+    "cost_ranges": {
+      "uniform/exact/extra": [
+        89.06944444444444,
+        89.06944444444444
+      ],
+      "uniform/exact/total": [
+        119.125,
+        120.79166666666667
+      ],
+      "uniform/epsilon/extra": [
+        25.56076388888889,
+        25.56076388888889
+      ],
+      "uniform/epsilon/total": [
+        55.61631944444444,
+        57.282986111111114
+      ],
+      "alternating/exact/extra": [
+        77.57899305555556,
+        77.57899305555556
+      ],
+      "alternating/exact/total": [
+        107.63454861111111,
+        109.30121527777777
+      ],
+      "alternating/epsilon/extra": [
+        16.34375,
+        16.34375
+      ],
+      "alternating/epsilon/total": [
+        46.39930555555556,
+        48.06597222222222
+      ],
+      "magnitude/exact/extra": [
+        61.84461805555556,
+        61.84461805555556
+      ],
+      "magnitude/exact/total": [
+        91.90017361111111,
+        93.56684027777777
+      ],
+      "magnitude/epsilon/extra": [
+        9.571180555555555,
+        9.571180555555555
+      ],
+      "magnitude/epsilon/total": [
+        39.626736111111114,
+        41.29340277777778
+      ]
+    }
+  }
+}

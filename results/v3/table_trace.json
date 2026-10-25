@@ -1,0 +1,8 @@
+{
+  "source_sha256": "32a0f89089bc454de37068a527cafd43770c151383ba63c2fede72cd371a4241",
+  "script_sha256": "2705661019755d836929e69658156c0159c984b3d380ab2648f133f6d13c2ed3",
+  "outputs": {
+    "interval_rows.tex": "dfb0e6e5346f302194a8c0ed763710d18ddadde8ac1d99b8f0136fc807ecb4ca",
+    "cost_rows.tex": "477391c7b8dbbb42c61765c3597d5506d5e0d6a85335d87e5e7c79ec3ecadcdd"
+  }
+}

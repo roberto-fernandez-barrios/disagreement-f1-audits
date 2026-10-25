@@ -1,0 +1,118 @@
+ANTECEDENTES Y TRAZABILIDAD — V2; CIERRE BIBLIOGRÁFICO 25/10/2026
+
+Esta revisión corrige la delimitación inicial frente a Polo, TDC y Dervovic.
+Véase ../NOVEDAD_TDC_Y_ANTECEDENTES.txt para las reducciones verificables.
+La ficha original permanece en el archivo histórico V1.
+
+Estas fichas documentan las fuentes del manuscrito (su numeración interna puede
+diferir de la bibliografía). No se inventan DOI ni estados
+de publicación; la ficha sexta es un manuscrito propio en revisión, no un artículo
+aceptado. Ya es accesible como preprint arXiv:2610.00080v1. Los PDF públicos y sus extracciones están archivados en esta carpeta,
+con URL/hash en manifest.json y extra_manifest.json.
+
+1. Sawade, Landwehr, Scheffer (2012), Active Comparison of Prediction Models.
+NeurIPS25. https://papers.nips.cc/paper/4495-active-comparison-of-prediction-models.pdf
+Leído: §§1–3, definición de riesgos y distribución para potencia del contraste.
+Coincidencia: comparar modelos con pocas etiquetas. Distinción: pérdida aditiva,
+muestreo y contraste asintótico; no criterio exacto F1 post-desacuerdo.
+
+2. Sawade, Landwehr, Scheffer (2010), Active Estimation of F-Measures. NeurIPS23.
+https://papers.neurips.cc/paper_files/paper/2010/file/d7a728a67d909e714c0774e22cb806f2-Paper.pdf
+Leído: §§1–2, riesgos generalizados y varianza asintótica óptima.
+La no-aditividad y evaluación activa de F1 YA EXISTEN. No son nuestra novedad.
+
+3. Musgrove, Radtke, Haddad (2023), Discordant pair analysis for sample
+efficient model evaluation. Scientific Reports13:20987.
+https://doi.org/10.1038/s41598-023-48017-4
+PDF https://www.nature.com/articles/s41598-023-48017-4.pdf
+Leído: Methods y Confidence intervals pp2–3 y ejemplo p4. Supone prevalencia y
+rendimiento de un baseline que se transfiere a validación. No se debe describir
+como método que promete inferir toda métrica sólo de desacuerdos sin supuestos.
+
+4. Polo, Maity, Yurochkin, Banerjee, Sun (2024), Weak Supervision Performance
+Evaluation via Partial Identification. NeurIPS37.
+https://arxiv.org/abs/2312.04601
+https://papers.nips.cc/paper/2024/file/f4c6bec746b0aeca8c2cd15096f1ad1f-Paper-Conference.pdf
+Leído: §§1–2 y §3.2. Para F1 fija/estima P(Y=1) mediante información del modelo
+de etiquetas; acota el numerador con marginales. La identificación parcial de
+F1 tampoco es nueva. El objetivo emparejado a P fijo con etiquetas auditadas
+es un caso particular de su Eq.(1.1), mediante marginales que codifican esas
+observaciones. La restricción restante es una suma entera con variables en
+[0,1]: sus vértices son enteros y los extremos coinciden con los deterministas.
+No aplicar aquí sus resultados asintóticos a nuestros datos dependientes.
+
+5. Dervovic, Cashmore (2025), Model Evaluation in the Dark: Robust Classifier
+Metrics with Missing Labels. AISTATS/PMLR258:1909–1917.
+https://proceedings.mlr.press/v258/dervovic25a.html
+https://raw.githubusercontent.com/mlresearch/v258/main/assets/dervovic25a/dervovic25a.pdf
+Leído: §§1–3, definición de probabilidades, marco de imputación y robustez.
+Su §3 YA construye el conjunto de etiquetas compatibles y cotas sobre métricas
+individuales; §4 añade la distribución inducida por imputación. No es nuevo
+enumerar completaciones. Nuestra especialización resuelve la diferencia
+emparejada tras observar todos los desacuerdos, sin probabilidades sobre etiquetas.
+
+6. Fernández-Barrios, Pastor-López, González-Santocildes, García Bringas (2026),
+Sharp Target-Domain Certificates for Quantum-Kernel Advantage under Distribution
+Shift. Manuscrito propio en revisión, estado comunicado por el usuario.
+Referencia pública verificada el 25/10/2026:
+https://arxiv.org/abs/2610.00080v1 ; PDF https://arxiv.org/pdf/2610.00080v1 .
+Se contrastaron Theorem 1 (§2.2, p6), demostración (§4.2) y §4.5 (p25).
+El TeX principal público sólo elimina las opciones referee y lineno respecto
+a la copia local utilizada en V2; ningún contenido científico citado cambia.
+Fuente real: original articulos/principales/target_domain_certificates/
+manuscript/sn-article.tex, leído completo, y suplemento pertinente; iguales a
+las copias de inputs/documents por hash (TDC_COMPARISON_SOURCES.json).
+Theorem 1 contiene el marco aditivo; Methods/BA ya impone cardinalidad y
+enumera prevalencias. Nuestro caso fijo-P es una especialización de ambos,
+no un nuevo teorema de certificados. La demostración del PDF es autocontenida.
+Predicciones: artefacto v1.1.6 según documentación y hashes locales; su versión
+es independiente de la del preprint v1. El DOI de datos declarado allí es
+https://doi.org/10.5281/zenodo.21776862 ; no se presenta como enlace verificado
+en este cierre ni como referencia bibliográfica del manuscrito. El artículo
+cita el preprint público y nombra separadamente el artefacto reutilizado.
+
+7. Liang, Zhang, Ma (2020), Active Model Selection for Positive Unlabeled Time
+Series Classification. IEEE ICDE,361–372. doi:10.1109/ICDE48307.2020.00038.
+https://doi.org/10.1109/ICDE48307.2020.00038
+https://github.com/sliang11/Active-Model-Selection-for-PUTSC
+Texto primario completo disponible localmente en la exploración de multiplicidad;
+releídos §IV.A, algoritmo2 y calibración/propagación de pseudoetiquetas, pp363–365.
+Se añade al contraste final y al manuscrito: la SELECCIÓN activa por F1, además
+de su estimación, ya existe. Usa supuestos inductivos del ST-1NN y pseudoetiquetas,
+no un conjunto exacto de completaciones post-desacuerdo sin esos supuestos.
+La distinción acotada sigue siendo válida; no se declara una primera evaluación
+ni selección activa basada en F1. DOI/metadata contrastados con IEEE.
+
+8. Lipton, Elkan, Narayanaswamy (2014), Thresholding Classifiers to Maximize
+F1 Score. https://arxiv.org/abs/1402.1892 ; leído PDF v2, §§4–4.1, Theorem 1,
+Corollary 1, prueba y discusión de batch dependence. Ya caracteriza umbrales
+óptimos de F1 y dependencia respecto al lote. Aquí predicciones y umbrales son
+fijos; se identifica el orden sobre etiquetas compatibles. Nada de esa
+no-aditividad o dependencia se reclama como nuevo. revision_sources.json
+registra URL de descarga, versión, páginas, fecha y SHA-256 del PDF.
+
+OTROS ANTECEDENTES PARA DESCARTAR B/C
+Gonzalez (1985), Clustering to minimize the maximum intercluster distance.
+Theoretical Computer Science38:293–306. doi:10.1016/0304-3975(85)90224-5.
+PDF primario archivado desde copia universitaria; página inicial y definición
+de cobertura/clustering revisadas. No se atribuye al artículo nuestra reducción
+específica a certificados: esa reducción se argumenta en MAPA_Y_CANDIDATAS.txt.
+https://www.cs.columbia.edu/~verma/classes/uml/ref/clustering_minimize_intercluster_distance_gonzalez.pdf
+
+Oglic y Gärtner (2018), Learning in Reproducing Kernel Krein Spaces, ICML/PMLR80.
+https://proceedings.mlr.press/v80/oglic18a/oglic18a.pdf
+https://proceedings.mlr.press/v80/oglic18a/oglic18a-supp.pdf
+Leído en detalle el pasaje §4 del suplemento sobre extensiones train/test de
+clip/flip/shift/square. Explicita el problema inductivo frente al transductivo.
+No se usa sólo el resumen para descartar la candidata C.
+
+BUSQUEDA DE NOVEDAD: NO ES UNA REVISIÓN SISTEMÁTICA
+Consultas incluyeron: Discordant Pair Analysis full text; classifier comparison
+disagreement labels F1 balanced accuracy active evaluation agreement; F1
+disagreement model comparison labels; F1 concordant classifiers comparison;
+active model comparison F-measure; F1 partial identification comparison
+classifiers; model evaluation agreement missing labels F1; non-decomposable
+active evaluation F1. Se contrastaron los textos anteriores con TDC y los NO_GO.
+La búsqueda no localizó la misma caracterización y evaluación. No demuestra
+que no haya otro antecedente. Ante un resultado posterior equivalente deberá
+revisarse la prioridad y centrar la contribución en la caracterización empírica.

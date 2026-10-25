@@ -1,0 +1,50 @@
+{
+  "tests": {
+    "exact_rational_hulls": 7506,
+    "sequential_prefix_and_future_label_checks": 2100,
+    "status": "passed"
+  },
+  "old_paired_intervals_preserved": 12800,
+  "boundary_equalities": 0,
+  "old_query_stops_preserved": 307200,
+  "validation_choices_recomputed": 36,
+  "pdf_ink_margins": [
+    {
+      "left_mm": 43.99985555555554,
+      "right_mm": 43.99818689549991,
+      "top_mm": 53.27648687666663,
+      "bottom_mm": 57.0125068366668
+    },
+    {
+      "left_mm": 43.99985555555551,
+      "right_mm": 43.99853835388884,
+      "top_mm": 53.681892607777755,
+      "bottom_mm": 52.31809294777776
+    },
+    {
+      "left_mm": 43.99985555555555,
+      "right_mm": 43.9981868954999,
+      "top_mm": 53.681892607777755,
+      "bottom_mm": 54.386429058888886
+    },
+    {
+      "left_mm": 43.999855555555555,
+      "right_mm": 43.998538353888776,
+      "top_mm": 53.681892607777755,
+      "bottom_mm": 58.45007628111102
+    },
+    {
+      "left_mm": 43.999855555555555,
+      "right_mm": 43.99818689549996,
+      "top_mm": 54.383920385555534,
+      "bottom_mm": 54.95545961444442
+    },
+    {
+      "left_mm": 43.999855555555555,
+      "right_mm": 43.99853835388884,
+      "top_mm": 53.681892607777755,
+      "bottom_mm": 54.10475187833325
+    }
+  ],
+  "pdf_sha256": "c642454b7670c7eedadf86e741e98c595d5835900938d43ee3c668d4d3debe93"
+}

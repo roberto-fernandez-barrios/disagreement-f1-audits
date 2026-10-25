@@ -1,0 +1,223 @@
+{
+  "created_utc": "2026-10-25T12:27:05.757725+00:00",
+  "rule": "maximum source/ID-validation BAcc; lexicographic cfg tie; newly applied retrospective P1-style comparator selection",
+  "labels_read": false,
+  "cells": [
+    {
+      "cell": "brfss_diabetes/42/svc",
+      "selected_j": 104,
+      "cfg": "rbf_gscale_x0.3__svc__d8",
+      "validation_balanced_accuracy": 0.7358731316077287
+    },
+    {
+      "cell": "brfss_diabetes/42/gpc",
+      "selected_j": 108,
+      "cfg": "rbf_gscale_x10__gpc__d6",
+      "validation_balanced_accuracy": 0.5731559120184713
+    },
+    {
+      "cell": "brfss_diabetes/123/svc",
+      "selected_j": 70,
+      "cfg": "matern25_med_x10__svc__d10",
+      "validation_balanced_accuracy": 0.7462357217030114
+    },
+    {
+      "cell": "brfss_diabetes/123/gpc",
+      "selected_j": 63,
+      "cfg": "matern25_med_x0.1__gpc__d6",
+      "validation_balanced_accuracy": 0.5460799584631361
+    },
+    {
+      "cell": "brfss_diabetes/999/svc",
+      "selected_j": 85,
+      "cfg": "poly3__svc__d10",
+      "validation_balanced_accuracy": 0.7842603211009174
+    },
+    {
+      "cell": "brfss_diabetes/999/gpc",
+      "selected_j": 7,
+      "cfg": "laplacian_med_x0.1__gpc__d4",
+      "validation_balanced_accuracy": 0.5556192660550459
+    },
+    {
+      "cell": "brfss_diabetes/7/svc",
+      "selected_j": 24,
+      "cfg": "laplacian_med_x3__svc__d8",
+      "validation_balanced_accuracy": 0.7488828202581926
+    },
+    {
+      "cell": "brfss_diabetes/7/gpc",
+      "selected_j": 36,
+      "cfg": "matern15_med_x0.1__gpc__d12",
+      "validation_balanced_accuracy": 0.5459285004965243
+    },
+    {
+      "cell": "brfss_diabetes/2024/svc",
+      "selected_j": 10,
+      "cfg": "laplacian_med_x0.3__svc__d10",
+      "validation_balanced_accuracy": 0.7695428303947573
+    },
+    {
+      "cell": "brfss_diabetes/2024/gpc",
+      "selected_j": 63,
+      "cfg": "matern25_med_x0.1__gpc__d6",
+      "validation_balanced_accuracy": 0.6025901076611015
+    },
+    {
+      "cell": "acsfoodstamps/42/svc",
+      "selected_j": 84,
+      "cfg": "poly2__svc__d8",
+      "validation_balanced_accuracy": 0.795
+    },
+    {
+      "cell": "acsfoodstamps/42/gpc",
+      "selected_j": 91,
+      "cfg": "rbf_gscale__gpc__d12",
+      "validation_balanced_accuracy": 0.65
+    },
+    {
+      "cell": "acsfoodstamps/123/svc",
+      "selected_j": 16,
+      "cfg": "laplacian_med_x10__svc__d12",
+      "validation_balanced_accuracy": 0.7682214347284744
+    },
+    {
+      "cell": "acsfoodstamps/123/gpc",
+      "selected_j": 60,
+      "cfg": "matern25_med_x0.1__gpc__d10",
+      "validation_balanced_accuracy": 0.5914663346422756
+    },
+    {
+      "cell": "acsfoodstamps/999/svc",
+      "selected_j": 11,
+      "cfg": "laplacian_med_x0.3__svc__d12",
+      "validation_balanced_accuracy": 0.7288572607260726
+    },
+    {
+      "cell": "acsfoodstamps/999/gpc",
+      "selected_j": 60,
+      "cfg": "matern25_med_x0.1__gpc__d10",
+      "validation_balanced_accuracy": 0.6176773927392739
+    },
+    {
+      "cell": "acsfoodstamps/7/svc",
+      "selected_j": 58,
+      "cfg": "matern25_med__svc__d6",
+      "validation_balanced_accuracy": 0.8117633329443342
+    },
+    {
+      "cell": "acsfoodstamps/7/gpc",
+      "selected_j": 113,
+      "cfg": "rbf_gscale_x3__gpc__d6",
+      "validation_balanced_accuracy": 0.7006068386042712
+    },
+    {
+      "cell": "acsfoodstamps/2024/svc",
+      "selected_j": 1,
+      "cfg": "laplacian_med__svc__d12",
+      "validation_balanced_accuracy": 0.7728937728937729
+    },
+    {
+      "cell": "acsfoodstamps/2024/gpc",
+      "selected_j": 105,
+      "cfg": "rbf_gscale_x10__gpc__d10",
+      "validation_balanced_accuracy": 0.6330128205128205
+    },
+    {
+      "cell": "00_ember_m1/42/svc",
+      "selected_j": 3,
+      "cfg": "laplacian_med__svc__d6",
+      "validation_balanced_accuracy": 0.8320840540713691
+    },
+    {
+      "cell": "00_ember_m1/42/gpc",
+      "selected_j": 11,
+      "cfg": "laplacian_med_x0.3__gpc__d12",
+      "validation_balanced_accuracy": 0.8393234672304439
+    },
+    {
+      "cell": "01_ember_m2/42/svc",
+      "selected_j": 40,
+      "cfg": "matern15_med_x0.3__svc__d10",
+      "validation_balanced_accuracy": 0.8295526750540094
+    },
+    {
+      "cell": "01_ember_m2/42/gpc",
+      "selected_j": 7,
+      "cfg": "laplacian_med_x0.1__gpc__d4",
+      "validation_balanced_accuracy": 0.8174799847502859
+    },
+    {
+      "cell": "02_toniot_scanning_m2_centroid/42/svc",
+      "selected_j": 7,
+      "cfg": "laplacian_med_x0.1__svc__d4",
+      "validation_balanced_accuracy": 0.9915966386554622
+    },
+    {
+      "cell": "02_toniot_scanning_m2_centroid/42/gpc",
+      "selected_j": 3,
+      "cfg": "laplacian_med__gpc__d6",
+      "validation_balanced_accuracy": 0.9839630508692025
+    },
+    {
+      "cell": "03_toniot_scanning_natural_cur/42/svc",
+      "selected_j": 6,
+      "cfg": "laplacian_med_x0.1__svc__d12",
+      "validation_balanced_accuracy": 0.9800292100584201
+    },
+    {
+      "cell": "03_toniot_scanning_natural_cur/42/gpc",
+      "selected_j": 5,
+      "cfg": "laplacian_med_x0.1__gpc__d10",
+      "validation_balanced_accuracy": 0.975996951993904
+    },
+    {
+      "cell": "04_unsw_dos_m2_centroid/42/svc",
+      "selected_j": 42,
+      "cfg": "matern15_med_x0.3__svc__d4",
+      "validation_balanced_accuracy": 0.9122137404580153
+    },
+    {
+      "cell": "04_unsw_dos_m2_centroid/42/gpc",
+      "selected_j": 5,
+      "cfg": "laplacian_med_x0.1__gpc__d10",
+      "validation_balanced_accuracy": 0.8889280903200976
+    },
+    {
+      "cell": "05_unsw_dos_natural_cur/42/svc",
+      "selected_j": 107,
+      "cfg": "rbf_gscale_x10__svc__d4",
+      "validation_balanced_accuracy": 0.8941157760814249
+    },
+    {
+      "cell": "05_unsw_dos_natural_cur/42/gpc",
+      "selected_j": 38,
+      "cfg": "matern15_med_x0.1__gpc__d6",
+      "validation_balanced_accuracy": 0.8767493638676844
+    },
+    {
+      "cell": "06_unsw_recon_m2_centroid/42/svc",
+      "selected_j": 67,
+      "cfg": "matern25_med_x0.3__svc__d4",
+      "validation_balanced_accuracy": 0.9062977099236641
+    },
+    {
+      "cell": "06_unsw_recon_m2_centroid/42/gpc",
+      "selected_j": 40,
+      "cfg": "matern15_med_x0.3__gpc__d10",
+      "validation_balanced_accuracy": 0.884796437659033
+    },
+    {
+      "cell": "07_unsw_recon_natural_cur/42/svc",
+      "selected_j": 23,
+      "cfg": "laplacian_med_x3__svc__d6",
+      "validation_balanced_accuracy": 0.9361323155216286
+    },
+    {
+      "cell": "07_unsw_recon_natural_cur/42/gpc",
+      "selected_j": 9,
+      "cfg": "laplacian_med_x0.1__gpc__d8",
+      "validation_balanced_accuracy": 0.9031488549618321
+    }
+  ]
+}

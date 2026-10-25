@@ -1,0 +1,56 @@
+{
+  "checked_utc": "2026-10-24T10:51:49.128779+00:00",
+  "scope": "Complete main manuscript; relevant theoretical and prevalence-conditional supplementary passages. Read-only original sources.",
+  "sources": [
+    {
+      "original": "articulos/principales/target_domain_certificates/manuscript/sn-article.tex",
+      "sha256": "07003b9a0d4a25d462f618ad40167db3cd8d0492221f37168ae1717f0fbe6c76",
+      "snapshot": "inputs/documents/articulos/principales/target_domain_certificates/manuscript/sn-article.tex",
+      "snapshot_sha256": "07003b9a0d4a25d462f618ad40167db3cd8d0492221f37168ae1717f0fbe6c76",
+      "identical": true
+    },
+    {
+      "original": "articulos/principales/target_domain_certificates/manuscript/supplementary.tex",
+      "sha256": "58a57ae0523280b011cb0a0b9bcad34a3211b47e7825beca42fd7e0a0b589868",
+      "snapshot": "inputs/documents/articulos/principales/target_domain_certificates/manuscript/supplementary.tex",
+      "snapshot_sha256": "58a57ae0523280b011cb0a0b9bcad34a3211b47e7825beca42fd7e0a0b589868",
+      "identical": true
+    }
+  ],
+  "anchors": {
+    "sn-article.tex": [
+      "Theorem 1 (thm:bounded_loss), lines 210-233",
+      "Methods: Sharp finite-target identification, lines 533-577",
+      "Methods: Balanced-accuracy identification, lines 610-631"
+    ],
+    "supplementary.tex": [
+      "Supplementary Results: Prevalence-conditional balanced accuracy, lines 180-197"
+    ]
+  },
+  "public_preprint_comparison": {
+    "verified_utc": "2026-10-25T10:40:46.362659+00:00",
+    "id": "arXiv:2610.00080v1",
+    "version": "v1",
+    "url": "https://arxiv.org/abs/2610.00080v1",
+    "pdf_url": "https://arxiv.org/pdf/2610.00080v1",
+    "source_url": "https://arxiv.org/src/2610.00080v1",
+    "public_pdf_sha256": "cd25c9ca264949c6a64fbb9d499a4d856b1f0a1acf0c1910381dcb25023268f4",
+    "public_source_archive_sha256": "84736bbf00071359894693bd02b1a1462690675d5852f6c52889fee3c921da8c",
+    "public_main_tex_sha256": "a81b9c31b47370c863266f8c678db0c4e0bbee274790345752903fefe3635d5a",
+    "local_main_tex_sha256": "07003b9a0d4a25d462f618ad40167db3cd8d0492221f37168ae1717f0fbe6c76",
+    "local_main_tex": "inputs/documents/articulos/principales/target_domain_certificates/manuscript/sn-article.tex",
+    "read_passages": [
+      "Theorem 1, section 2.2, PDF p6",
+      "Theorem 1 proof, section 4.2",
+      "Balanced-accuracy identification, section 4.5, PDF p25"
+    ],
+    "normalized_main_tex_equal_after_only_documentclass_change": true,
+    "only_difference": {
+      "local": "\\documentclass[referee,lineno,pdflatex,sn-vancouver-num]{sn-jnl}",
+      "public": "\\documentclass[pdflatex,sn-vancouver-num]{sn-jnl}"
+    },
+    "scientific_difference_in_cited_passages": false,
+    "prediction_artifact_version": "1.1.6",
+    "note": "Preprint version v1 and prediction artifact version 1.1.6 are distinct. No new publication or scientific execution."
+  }
+}

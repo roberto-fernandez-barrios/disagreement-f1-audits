@@ -1,0 +1,52 @@
+[
+  {
+    "id": "musgrove2023",
+    "url": "https://www.nature.com/articles/s41598-023-48017-4.pdf",
+    "sha256": "6d817e5240cc2ace49cb68f3ad60ef55c32899cfd65111f345b9985d49d0879f",
+    "path": "references\\musgrove2023.pdf",
+    "checked_utc": "2026-10-24T10:07:41.748201+00:00"
+  },
+  {
+    "id": "gonzalez1985",
+    "url": "https://www.cs.columbia.edu/~verma/classes/uml/ref/clustering_minimize_intercluster_distance_gonzalez.pdf",
+    "sha256": "76595e2bba5ecdde004a7171a9f2bc9d780eb557dda647e0b747fca1ef4085a9",
+    "path": "references\\gonzalez1985.pdf",
+    "checked_utc": "2026-10-24T10:07:43.094393+00:00"
+  },
+  {
+    "id": "oglic2018",
+    "url": "https://proceedings.mlr.press/v80/oglic18a/oglic18a.pdf",
+    "sha256": "99ed7cbf8cb18b1534e2379934947d8f44854321a9a03dc18417645495ac99c5",
+    "path": "references\\oglic2018.pdf",
+    "checked_utc": "2026-10-24T10:07:42.018727+00:00"
+  },
+  {
+    "id": "oglic2018supp",
+    "url": "https://proceedings.mlr.press/v80/oglic18a/oglic18a-supp.pdf",
+    "sha256": "1d99a39bf5863dec37e00b0ecd913bddcd40c3482d425e2a403b5d9f59ecbdc4",
+    "path": "references\\oglic2018supp.pdf",
+    "checked_utc": "2026-10-24T10:07:42.432967+00:00"
+  },
+  {
+    "id": "template/esannV2.tex",
+    "url": "https://www.esann.org/system/files/downloads/esannV2.tex",
+    "sha256": "2ee9ee3f42da88fce7a7b35705dee14467c025053424dfcae63ee7dedb51ff79",
+    "path": "references\\template\\esannV2.tex",
+    "checked_utc": "2026-10-24T10:07:42.019006+00:00"
+  },
+  {
+    "id": "template/esannV2.cls",
+    "url": "https://www.esann.org/system/files/downloads/esannV2.cls",
+    "sha256": "36097ad5826ffbebfeea23f1675e63500e941fd273ef8fae765e8fca51639048",
+    "path": "references\\template\\esannV2.cls",
+    "checked_utc": "2026-10-24T10:07:42.019215+00:00"
+  },
+  {
+    "id": "liang2020",
+    "original": "exploraciones\\multiplicidad_candidatos_2026-10-23\\referencias\\liang_2020.pdf",
+    "url": "https://doi.org/10.1109/ICDE48307.2020.00038",
+    "sha256": "12722b04aa991ac228e2eda2506eb10850e27d331674acb2cece17f0d79a2826",
+    "path": "references/liang2020.pdf",
+    "read": "Section IV.A and Algorithm 2, pages 363-365"
+  }
+]

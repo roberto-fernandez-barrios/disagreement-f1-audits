@@ -1,0 +1,132 @@
+[
+  {
+    "id": "sawade2010",
+    "url": "https://papers.neurips.cc/paper_files/paper/2010/file/d7a728a67d909e714c0774e22cb806f2-Paper.pdf",
+    "utc": "2026-10-24T09:45:34.564518+00:00",
+    "pages": 9,
+    "status": "downloaded",
+    "sha256": "0522b40bdcbe6d1044993ec5da6ef68c89523329943feb84e4b3e7e95c993a5b",
+    "bytes": 289180,
+    "path": "references\\sawade2010.pdf"
+  },
+  {
+    "id": "sawade2012",
+    "url": "https://papers.nips.cc/paper/4495-active-comparison-of-prediction-models.pdf",
+    "utc": "2026-10-24T09:45:34.564882+00:00",
+    "pages": 9,
+    "status": "downloaded",
+    "sha256": "a25fafa621ed47bec5b241672eb461b03cbe669261d4c75d7f2148e7bede3b0e",
+    "bytes": 798638,
+    "path": "references\\sawade2012.pdf"
+  },
+  {
+    "id": "polo2024",
+    "url": "https://papers.nips.cc/paper/2024/file/f4c6bec746b0aeca8c2cd15096f1ad1f-Paper-Conference.pdf",
+    "utc": "2026-10-24T09:45:34.565418+00:00",
+    "pages": 37,
+    "status": "downloaded",
+    "sha256": "5812210a239a0ea3ba36aae47a2d944cf9737940ff978b16c9d7abab282bdbc9",
+    "bytes": 2554735,
+    "path": "references\\polo2024.pdf"
+  },
+  {
+    "id": "dervovic2025",
+    "url": "https://raw.githubusercontent.com/mlresearch/v258/main/assets/dervovic25a/dervovic25a.pdf",
+    "utc": "2026-10-24T09:45:34.565573+00:00",
+    "pages": 31,
+    "status": "downloaded",
+    "sha256": "9262aaad15d34598a313f8fff081158c4895463d57f9c9814e54ac20d8b71ee3",
+    "bytes": 1064636,
+    "path": "references\\dervovic2025.pdf"
+  },
+  {
+    "id": "kossen2021",
+    "url": "https://proceedings.mlr.press/v139/kossen21a/kossen21a.pdf",
+    "utc": "2026-10-24T09:45:35.974955+00:00",
+    "pages": 11,
+    "status": "downloaded",
+    "sha256": "394e91c5295d02a414ba368f603db2c75f4cbfb5a8cff03ad946d2f661b06c82",
+    "bytes": 700417,
+    "path": "references\\kossen2021.pdf"
+  },
+  {
+    "id": "coda2025",
+    "url": "https://openaccess.thecvf.com/content/ICCV2025/papers/Kay_Consensus-Driven_Active_Model_Selection_ICCV_2025_paper.pdf",
+    "utc": "2026-10-24T09:45:36.141232+00:00",
+    "pages": 11,
+    "status": "downloaded",
+    "sha256": "68b106a920363838a93e7bc42ea704d8d9ddafc89e1187a41548628e63978448",
+    "bytes": 3127190,
+    "path": "references\\coda2025.pdf"
+  },
+  {
+    "id": "esann_guidelines",
+    "url": "https://www.esann.org/author_guidelines",
+    "utc": "2026-10-24T09:45:36.877061+00:00",
+    "status": "downloaded",
+    "sha256": "67753495037074a4d05e95c7676120a8c7d6dd5cd31af20fc5106567ec455cb2",
+    "bytes": 30238,
+    "path": "references\\esann_guidelines.html"
+  },
+  {
+    "id": "esann_dates",
+    "url": "https://www.esann.org/",
+    "utc": "2026-10-24T09:45:37.546129+00:00",
+    "status": "downloaded",
+    "sha256": "4e7cb626decb4006926f36f458c9d7b267c9ece70b8f2c5929456783df453421",
+    "bytes": 32003,
+    "path": "references\\esann_dates.html"
+  },
+  {
+    "id": "esann_scope",
+    "url": "https://www.esann.org/node/3",
+    "utc": "2026-10-24T09:45:37.957925+00:00",
+    "status": "downloaded",
+    "sha256": "af8d450b286a5666c78209582f95b77bed18e5a2d11fd6ec9b58ee24a109e1f2",
+    "bytes": 30056,
+    "path": "references\\esann_scope.html"
+  },
+  {
+    "id": "esann_sessions",
+    "url": "https://www.esann.org/special-sessions",
+    "utc": "2026-10-24T09:45:38.132526+00:00",
+    "status": "downloaded",
+    "sha256": "63e0f44e58a2047a1fe271a8ad199bd51036f7937f363caceb29c04b3f2de986",
+    "bytes": 42009,
+    "path": "references\\esann_sessions.html"
+  },
+  {
+    "id": "esann_exclusivity",
+    "url": "https://www.esann.org/node/6",
+    "utc": "2026-10-24T09:45:38.162395+00:00",
+    "status": "downloaded",
+    "sha256": "8520a59596ac5ba09810eaeac401bd7d732b95f151575847d3c79816f39c9b21",
+    "bytes": 26743,
+    "path": "references\\esann_exclusivity.html"
+  },
+  {
+    "id": "ijcnn",
+    "url": "https://ijcnn.org/2027/authors/call-for-papers",
+    "utc": "2026-10-24T09:45:38.379941+00:00",
+    "status": "downloaded",
+    "sha256": "8517bb9f47071a51329276265dfcce96a8f6608ac6c3b7731da72c44a2a37aaf",
+    "bytes": 234783,
+    "path": "references\\ijcnn.html"
+  },
+  {
+    "id": "ifipsec",
+    "url": "https://ifipsec.org/cfp.html",
+    "utc": "2026-10-24T09:45:38.626668+00:00",
+    "status": "downloaded",
+    "sha256": "b664f78ba12da7de1702d459450a213d90b4d42952812b600f6f53c6330e6f31",
+    "bytes": 23965,
+    "path": "references\\ifipsec.html"
+  },
+  {
+    "id": "deusto",
+    "url": "https://www.deusto.es/document/es/dirs-guia-de-programa-ingenieria-en.pdf",
+    "utc": "2026-10-24T09:45:38.702695+00:00",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden"
+  }
+]

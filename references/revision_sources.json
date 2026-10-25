@@ -1,0 +1,18 @@
+[
+  {
+    "id": "lipton2014v2",
+    "url": "https://arxiv.org/pdf/1402.1892v2",
+    "sha256": "b2d051c0a063dccd953bd71d345cb0b64e7f93b587736fcc732e6cac0ed778fc",
+    "utc": "2026-10-24T10:40:20.917938+00:00",
+    "pages": 16
+  },
+  {
+    "id": "tdc_arxiv2610.00080v1",
+    "url": "https://arxiv.org/pdf/2610.00080v1",
+    "sha256": "cd25c9ca264949c6a64fbb9d499a4d856b1f0a1acf0c1910381dcb25023268f4",
+    "utc": "2026-10-25T10:40:46.362659+00:00",
+    "pages": 42,
+    "source_url": "https://arxiv.org/src/2610.00080v1",
+    "source_sha256": "84736bbf00071359894693bd02b1a1462690675d5852f6c52889fee3c921da8c"
+  }
+]

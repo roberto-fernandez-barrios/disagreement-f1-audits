@@ -1,0 +1,17 @@
+{
+  "started_utc": "2026-10-25T13:07:59.388666+00:00",
+  "stage": "confirmation",
+  "execution_kind": "post-review reproduction; original state preserved in history/v1_before_critical_review_20261024T103944Z",
+  "protocol": {
+    "utc": "2026-10-24T09:51:36.175133+00:00",
+    "sha256": "f688e84d0aeec928fdd458f41e4fa1eb014c653881ac20e676a4e1147fb02cb3"
+  },
+  "code": {
+    "pilot.py": "8e571c671b6e56a29560e8633388b91ab92375f25bede72691c5b92b76b4a234",
+    "decision.py": "142135946d3268c1e5bd193c84c019aee0a8dc817eee5d2741a6d86fd9f6a7ff",
+    "test_decision.py": "81ca51a7b6422b39d9e8e78ed01cedb43ce82eb63c663da3ea1a4706a6438baf"
+  },
+  "python": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:05:56) [MSC v.1942 64 bit (AMD64)]",
+  "numpy": "2.3.5",
+  "platform": "Windows-11-10.0.26200-SP0"
+}

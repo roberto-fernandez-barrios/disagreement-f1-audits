@@ -1,0 +1,176 @@
+COMPARACIÓN CRÍTICA — V2; CIERRE BIBLIOGRÁFICO V2.1, 25/10/2026
+
+REFERENCIA PÚBLICA RESUELTA
+TDC es accesible en https://arxiv.org/abs/2610.00080v1 (versión exacta v1).
+Se contrastaron el PDF público y su fuente TeX con la copia utilizada en V2.
+Theorem 1 (§2.2, p6), su demostración (§4.2) y §4.5 (p25) mantienen el mismo
+contenido. El diff completo del TeX principal contiene un único cambio:
+  local:  \documentclass[referee,lineno,pdflatex,sn-vancouver-num]{sn-jnl}
+  arXiv:  \documentclass[pdflatex,sn-vancouver-num]{sn-jnl}
+Sólo cambia la presentación; no cambia ninguna hipótesis, fórmula o conclusión
+citada. references/TDC_COMPARISON_SOURCES.json registra URL, hashes y contraste;
+references/tdc_public_v1/ conserva la descarga y el diff en el workspace.
+La versión v1 del PREPRINT es distinta de la versión 1.1.6 del ARTEFACTO de
+predicciones reutilizado, identificado por DATA_MANIFEST.json y los registros
+de procedencia. La referencia pública del manuscrito no sustituye esos hashes.
+
+Conclusión: el certificado F1 con prevalencia fija NO constituye un nuevo
+teorema general. Es una especialización de TDC con restricción de cardinalidad
+y del problema de Fréchet de Polo. La contribución separable es una
+caracterización explícita y operativa de la auditoría post-desacuerdo, junto
+con su evaluación retrospectiva. Su novedad es incremental; no se afirma que
+la búsqueda bibliográfica pruebe prioridad universal.
+
+1. TDC: qué estaba demostrado y qué hay que añadir
+Se leyó el manuscrito principal completo original, no sólo su resumen, y los
+pasajes pertinentes del suplemento. Original y copia congelada coinciden por
+SHA-256; references/TDC_COMPARISON_SOURCES.json contiene rutas, hashes y anclas.
+Fuente: articulos/principales/target_domain_certificates/manuscript/sn-article.tex.
+Theorem 1, etiqueta thm:bounded_loss; Methods «Sharp finite-target identification»
+y «Balanced-accuracy identification». El suplemento de BA explicita que su
+prevalencia es retrospectiva y suministrada al problema.
+
+TDC ya prueba extremos alcanzables y minimalidad para contrastes de pérdidas
+aditivas fijas, con cualquier subconjunto de etiquetas reveladas, frente a una
+familia finita. Permite tablas de pérdidas dependientes del modelo y del ítem.
+Para una sola referencia, con P fijo, poner
+  a_i(y)=n*y*[2*q_i/(P+Q)-2*c_i/(P+C)]
+da exactamente Delta_F=(1/n)*sum_i a_i(y_i). Son coeficientes acotados y fijos.
+Para representarlos con pérdidas no negativas basta elegir un desplazamiento
+común suficientemente grande: lQ=H-2n*y*q/(P+Q), lC=H-2n*y*c/(P+C).
+P=0 se trata aparte con la convención F1(0/0)=0.
+
+Matiz esencial: el enunciado literal de Theorem 1 admite TODAS las etiquetas
+restantes independientemente. Su mínimo separable no impone sum y=P. Aplicarlo
+sin esa restricción puede ser conservador para F1 en la sección de prevalencia
+fija y no demuestra sus extremos exactos. Hay que añadir sum y=P al problema
+finito. TDC YA hace esto con conteos enteros por firma de predicción para BA,
+y también enumera prevalencias cuando ésta no se conoce exactamente.
+Por tanto, no hay aquí un nuevo principio de certificado ni de enumeración.
+
+Pasos específicos después de revelar todos los desacuerdos: los únicos grados
+de libertad son s=positivos00 y t=positivos11; todas sus asignaciones enteras
+compatibles son realizables. Para P fijo, s=P-u-v-t y Delta_F=f_P(t) es afín.
+El intervalo exacto sale de sus dos extremos factibles, también con acuerdos
+parcialmente revelados. Son una especialización algebraica, no un nuevo teorema.
+Con P desconocido, el signo se reduce directamente a K+d*s+e*t. Esa forma
+cerrada evita optimizar sobre cada prevalencia para decidir el signo; no se
+extiende el argumento de vértices a la magnitud de Delta_F.
+
+2. Polo: inclusión explícita, no una distinción artificial
+Polo et al., NeurIPS 2024, Eq.(1.1), Theorem 2.1 y §3.2:
+https://arxiv.org/abs/2312.04601
+https://papers.nips.cc/paper/2024/file/f4c6bec746b0aeca8c2cd15096f1ad1f-Paper-Conference.pdf
+El problema admite cualquier objetivo acotado g(X,Y,Z) y fija las marginales
+(X,Z) y (Y,Z). Su §3.2 aplica el marco a F1 fijando los denominadores mediante
+las marginales. No es correcto distinguirnos diciendo sólo que usamos etiquetas
+observadas en lugar de marginales: las primeras pueden expresarse como marginales.
+
+Nuestra reducción (derivada aquí): X es un índice uniforme de la muestra;
+Z distingue cada índice auditado y agrupa todos los no auditados. La marginal
+(X,Z) es conocida. La de (Y,Z) fija cada etiqueta observada y, en el grupo
+restante, exactamente P menos los positivos observados. Elegir g=n veces el
+sumando de Delta_F produce nuestro objetivo emparejado. Las probabilidades
+restantes z_i satisfacen 0<=z_i<=1 y sum z_i=P-sum_observados y_i. Todo vértice
+es entero: dos entradas fraccionarias permiten una perturbación en sentidos
+opuestos, y una sola es incompatible con una suma entera. Los extremos lineales
+coinciden así con completaciones deterministas. Se aplica el problema primal,
+no los supuestos iid, suavizado, estimación de marginales o normalidad asintótica.
+Restar por separado dos intervalos marginales de F1 puede perder la dependencia;
+aplicar el objetivo emparejado general de Polo la conserva. El valor añadido
+es resolver explícitamente esta auditoría y explicar qué información necesita.
+
+3. Otros antecedentes próximos y límites de la diferencia
+Lipton, Elkan y Narayanaswamy, arXiv:1402.1892v2, §§4–4.1, Theorem 1,
+Corollary 1 y discusión de dependencia del lote:
+https://arxiv.org/abs/1402.1892
+Caracterizan umbrales que maximizan F1 y su dependencia del resto de ejemplos.
+Aquí los predictores y umbrales están fijos; se varían sólo las etiquetas
+compatibles con una auditoría. No se reclama novedad por no-aditividad o por
+dependencia del lote. PDF, extracción y hash añadidos a references/.
+
+Sawade et al. (2010), §2, Eqs.(2)–(4): estimación activa de F-measures mediante
+cocientes ponderados e importancia de muestreo. Sawade et al. (2012), §§2–3:
+comparación de riesgos aditivos, muestreo para potencia estadística. Liang et al.
+(2020), §IV.A y algoritmo 2: selección F1 con pseudoetiquetas calibradas para
+series positivas/no etiquetadas. Estos antecedentes ya cubren evaluación,
+comparación y selección activa; no se presenta aquí un algoritmo competidor.
+Sus objetivos estadísticos/inductivos difieren de decidir exactamente sobre
+todas las completaciones de un lote. Las citas y enlaces están en
+references/BIBLIOGRAFIA_VERIFICADA.txt y en el artículo.
+
+Musgrove et al. (2023), Methods pp2–3, usa prevalencia y rendimiento transferible
+del baseline para reconstruir sensibilidad/especificidad; no promete resolver
+nuestra pregunta sin esos supuestos. https://doi.org/10.1038/s41598-023-48017-4
+Dervovic y Cashmore (2025), §3, S y bounds, YA considera todas las completaciones
+compatibles y cotas optimistas/pesimistas de métricas individuales; §4 añade
+imputación probabilística. No se le debe reducir a imputación ni reclamar como
+nuevo enumerar completaciones. La diferencia específica es la solución conjunta
+de la ordenación post-desacuerdo. https://proceedings.mlr.press/v258/dervovic25a.html
+
+4. Contenido adicional, reutilización y juicio de independencia
+Contenido específico desarrollado para este artículo: reducción cerrada del
+signo; criterio exacto de suficiencia y corolario Q=C incluso sin conocer P;
+ejemplo de diez observaciones a P fijo; caracterización empírica de ambigüedad
+y costes de consulta exacta en estas predicciones. Las fórmulas son elementales
+y derivadas de principios previos; el manuscrito las llama especialización,
+no nuevo teorema general. La ordenación por magnitud tampoco es nuevo algoritmo.
+
+Reutilizado de TDC: 90 archivos derivados congelados (predicciones, etiquetas,
+metadatos), selección previa de modelos, casos/semillas y su infraestructura
+conceptual de certificados. DATA_MANIFEST.json y results/*/sources.json dan
+trazabilidad. No hay datos ni modelos nuevos, ni nuevas ejecuciones cuánticas.
+La partición analítica piloto/reserva, intervalos F1, sensibilidades y costes
+de consultas son análisis de esta contribución. Su reconstrucción V2 no los
+convierte en comprobaciones prospectivas nuevas. No se reutilizan resultados
+del trabajo paralelo de revista; no se ha accedido a su conversación.
+
+Dictamen: defendible como caracterización metodológica y empírica corta, con
+riesgo editorial real por cercanía a una consecuencia inmediata de TDC/Polo.
+No es defendible venderlo como una teoría general nueva de certificados F1.
+El cambio mínimo necesario era reencuadrar la afirmación de novedad y reconocer
+las dos inclusiones; ya está ejecutado. El usuario ha dado por cerrada esta
+ronda de revisión y mantiene ESANN como destino de la contribución incremental.
+No falta ningún archivo ni acceso público a TDC para sostener la comparación.
+Actualización V2.2: Roberto ha confirmado autoría, afiliación y conformidad de
+todos el 25/10/2026. Este cierre no reabre la investigación ya revisada.
+
+
+ACTUALIZACIÓN V3 — 25/10/2026
+El arrepentimiento minimax no se reivindica como teoría nueva. La condición
+L>=-epsilon o U<=epsilon es la interpretación decisional de la desaparición
+de inversiones que excedan epsilon; la definición material anterior incluye
+igualdades, mientras que la indecisión con tolerancia las excluye. Epsilon=0
+admite ganador débil, distinto del objetivo original signo estricto/empate.
+
+Evidencia adicional: comparación de intervalos conjuntos y marginales sobre
+idénticas completaciones; costes con tolerancia sobre las mismas 307200
+trayectorias; selección clásica por validación disponible en las 36 celdas.
+La comparación marginal no supera TDC/Polo correctamente aplicados conjuntamente.
+
+Fuentes primarias nuevas o releídas:
+Kossen et al., ICML 2021, §§2.1–2.2, Eqs.(1)–(4), §3:
+https://proceedings.mlr.press/v139/kossen21a.html
+Estima riesgo aditivo mediante importancia, corrige sesgo de adquisición y
+reduce varianza. No exige que la selección sea correcta para toda completación.
+
+Ji, Logan IV, Smyth y Steyvers, AAAI 2021, sección Active Bayesian Assessment,
+subsección Comparison; Tabla 7. DOI 10.1609/aaai.v35i9.16968.
+https://ojs.aaai.org/index.php/AAAI/article/view/16968
+Texto primario leído: https://arxiv.org/html/2002.06532v2
+Usa regiones de equivalencia práctica [-epsilon,epsilon] para diferencias
+entre grupos, con probabilidades posteriores y selección activa. Por tanto,
+la tolerancia práctica no es nueva. Nuestra elección epsilon-best no requiere
+identificar equivalencia ni asigna probabilidades a las completaciones.
+
+Kay et al., ICCV 2025, §§3–4, Eqs.(1)–(4), Fig.2:
+https://openaccess.thecvf.com/content/ICCV2025/papers/Kay_Consensus-Driven_Active_Model_Selection_ICCV_2025_paper.pdf
+CODA ya compara modelos de un pool y evalúa arrepentimiento; usa priors de
+consenso, un modelo bayesiano y ganancia de información. Su §3 centra los
+experimentos en accuracy. No atribuir novedad a usar acuerdos, pool o regret.
+Aquí la métrica es F1 y la garantía determinista es sobre cada completación
+compatible, posterior a revelar desacuerdos. No se realiza una competición de
+costes con estimadores cuyas garantías son diferentes.
+
+Los trabajos de Liang y Musgrove siguen contrastados arriba y en el registro
+bibliográfico; no son esenciales en la selección condensada de citas del PDF.

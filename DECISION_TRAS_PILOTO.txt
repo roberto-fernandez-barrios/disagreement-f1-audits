@@ -1,0 +1,55 @@
+24/10/2026. Candidata A: CONTINUAR a comprobación, todavía no decisión editorial.
+
+Se cumple el criterio principal sin recurrir al criterio alternativo: la media
+por celda de inversiones F1 materiales es 15.42% BRFSS, 28.13% ACS y 22.08%
+EMBER. Son diferencias compatibles >=+0.01 y <=-0.01 para LA MISMA métrica,
+manteniendo todas las etiquetas de desacuerdos observadas. No son tasas de error
+ni frecuencias poblacionales. El oráculo de prevalencia no elimina toda la
+ambigüedad F1. Accuracy y BA con prevalencia dan controles exactos puntuales.
+1200 comparaciones pequeñas de enumeración individual validan los extremos.
+Una errata sintáctica inicial se corrigió antes de leer cualquier dato; no hubo
+ajustes de criterios ni de selección a resultados. Log efectivo en results/pilot.
+
+Distinción científica que justifica continuar: caracterización exacta del
+valor decisorio de etiquetas de ACUERDOS para F1 positivo, incluso con P conocido,
+y su magnitud en predicciones reales. No se reclama haber descubierto la no
+aditividad de F1, identificación parcial, ni certificados BA (ya en TDC).
+Antecedentes leídos: Sawade2010 y2012, Musgrove2023 métodos pp2-3,
+Polo2024 §§1-3 y Dervovic2025 §§1-3. Abordan estimación/contraste asintótico,
+prevalencia y rendimiento base supuestos, o distribuciones imputadas. No se
+localizó la misma auditoría finita post-desacuerdo, pero eso no prueba ausencia.
+
+La pregunta es metodológica de evaluación de aprendizaje, no una nueva prueba
+de ventaja cuántica. ESANN general es el encaje inicial más limpio; las sesiones
+de anotaciones escasas y cambio necesitan evaluar su contenido, no sólo títulos.
+
+Continuar exactamente con las 28 celdas reservadas, sin cambiar sus métricas,
+selección de parejas, deduplicación, ni umbral material. No se describirán como
+replicación prospectiva: es comprobación analítica en datos previamente existentes.
+
+Evaluación adicional prespecificada ahora, antes de ejecutar el nuevo análisis:
+tras observar D, el numerador de la diferencia F1 tiene forma K+d*s+e*t,
+d=u-v, e=d+b-a, K=d*(u+v+n11)+u*b-v*a. Los conteos s,t son los
+positivos comunes00/11. Cada etiqueta adicional elimina exactamente |d| o |e|
+de ancho del numerador. Ordenar magnitudes es un control elemental, no se
+presentará como un nuevo método de aprendizaje ni óptimo para coste de parada.
+
+Comparar tres órdenes en acuerdos: uniforme; alternancia00/11 (estratificado
+simple); magnitud descendente |d|/|e| con empate uniforme. 32 semillas fijas
+0..31, permutación común por pareja y repetición. Se consultan sólo etiquetas
+ya adquiridas para calcular los límites, sin acceso a y para seleccionar.
+Medir etiquetas adicionales hasta certificar signo estricto o empate exacto,
+proporción certificada con 10%,25%,50% de acuerdos y coste total D+adicionales.
+Separar parejas ya decididas de inicialmente indeterminadas; medias por pareja
+y celda, variabilidad de orden dentro de celda sin pseudo IC de población.
+Usar todas las completaciones F1, incluyendo extremos de prevalencia, para
+una garantía sin información lateral; denominador0: F1=0. Si sólo el numerador
+es cero en un extremo degenerado, el empate de F1 sigue siendo correcto.
+No competir con estimadores probabilísticos con garantías/objetivos distintos;
+no proclamar que consultar todos los desacuerdos primero sea globalmente óptimo.
+
+Comprobaciones: fórmula affine vs extremos por conteos y etiquetados individuales,
+intervalos que contienen la verdad en cada paso, nunca parada con signo erróneo;
+la revelación total debe dar igualdad exacta. Presentar resultados negativos de
+órdenes simples si aparecen. El objetivo central es suficiencia informativa,
+no ganar una competición de adquisición.

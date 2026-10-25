@@ -1,0 +1,10 @@
+{
+  "utc": "2026-10-25T13:01:49.389880+00:00",
+  "source_files_rehashed": 1158,
+  "classical_cached_prediction_columns_matched": 2300,
+  "cached_validation_metrics_matched": 2300,
+  "security_csv_binding": "prepare_validation_v3.py checked each source summary SHA256 against frozen prediction metadata before extracting id_val BAcc",
+  "target_labels_read": false,
+  "source_manifest_sha256": "3adf124729c8965a7964183062eb40b498d293605191d56f4db50ce2683e5cfb",
+  "status": "passed"
+}
