@@ -1,0 +1,172 @@
+{
+  "trajectories_verified": 307200,
+  "costs": [
+    {
+      "cohort": "all",
+      "policy": "uniform",
+      "strict": 142.70336294882676,
+      "weak_zero": 141.15959344187056,
+      "epsilon": 90.07376060845685
+    },
+    {
+      "cohort": "all",
+      "policy": "alternating",
+      "strict": 135.13278369426476,
+      "weak_zero": 134.90766958016445,
+      "epsilon": 85.7835172292908
+    },
+    {
+      "cohort": "all",
+      "policy": "magnitude",
+      "strict": 121.15999080929492,
+      "weak_zero": 120.92027105597764,
+      "epsilon": 74.59361699821036
+    },
+    {
+      "cohort": "validation",
+      "policy": "uniform",
+      "strict": 119.79166666666667,
+      "weak_zero": 119.55815972222223,
+      "epsilon": 56.282986111111114
+    },
+    {
+      "cohort": "validation",
+      "policy": "alternating",
+      "strict": 108.30121527777777,
+      "weak_zero": 108.09375,
+      "epsilon": 47.06597222222222
+    },
+    {
+      "cohort": "validation",
+      "policy": "magnitude",
+      "strict": 92.56684027777777,
+      "weak_zero": 92.25173611111111,
+      "epsilon": 40.29340277777778
+    },
+    {
+      "cohort": "nearest",
+      "policy": "uniform",
+      "strict": 128.1796875,
+      "weak_zero": 117.51649305555556,
+      "epsilon": 15.975694444444445
+    },
+    {
+      "cohort": "nearest",
+      "policy": "alternating",
+      "strict": 110.41059027777777,
+      "weak_zero": 109.61024305555556,
+      "epsilon": 15.86111111111111
+    },
+    {
+      "cohort": "nearest",
+      "policy": "magnitude",
+      "strict": 94.44878472222223,
+      "weak_zero": 93.52083333333333,
+      "epsilon": 15.18142361111111
+    }
+  ],
+  "strict_to_weak_affected_trajectories": 30267,
+  "validation_material_by_task": [
+    {
+      "task": "00_ember_m1",
+      "cells": 2,
+      "ambiguous": 0
+    },
+    {
+      "task": "01_ember_m2",
+      "cells": 2,
+      "ambiguous": 1
+    },
+    {
+      "task": "02_toniot_scanning_m2_centroid",
+      "cells": 2,
+      "ambiguous": 0
+    },
+    {
+      "task": "03_toniot_scanning_natural_cur",
+      "cells": 2,
+      "ambiguous": 0
+    },
+    {
+      "task": "04_unsw_dos_m2_centroid",
+      "cells": 2,
+      "ambiguous": 0
+    },
+    {
+      "task": "05_unsw_dos_natural_cur",
+      "cells": 2,
+      "ambiguous": 0
+    },
+    {
+      "task": "06_unsw_recon_m2_centroid",
+      "cells": 2,
+      "ambiguous": 0
+    },
+    {
+      "task": "07_unsw_recon_natural_cur",
+      "cells": 2,
+      "ambiguous": 0
+    },
+    {
+      "task": "acsfoodstamps",
+      "cells": 10,
+      "ambiguous": 4
+    },
+    {
+      "task": "brfss_diabetes",
+      "cells": 10,
+      "ambiguous": 1
+    }
+  ],
+  "initial_tolerance_sensitivity": [
+    {
+      "epsilon": 0,
+      "equal_cell_all": 0.688687148299429,
+      "validation": 0.6944444444444444
+    },
+    {
+      "epsilon": 0.001,
+      "equal_cell_all": 0.6937400980148769,
+      "validation": 0.6944444444444444
+    },
+    {
+      "epsilon": 0.005,
+      "equal_cell_all": 0.7347664592406722,
+      "validation": 0.75
+    },
+    {
+      "epsilon": 0.01,
+      "equal_cell_all": 0.7915224492842321,
+      "validation": 0.8333333333333334
+    },
+    {
+      "epsilon": 0.02,
+      "equal_cell_all": 0.8602642788484623,
+      "validation": 0.9166666666666666
+    },
+    {
+      "epsilon": 0.05,
+      "equal_cell_all": 0.9605744669274051,
+      "validation": 0.9722222222222222
+    }
+  ],
+  "independent_sign_enumeration": {
+    "n_max": 9,
+    "count_states": 5004,
+    "completions": 24309,
+    "passed": true
+  },
+  "artifact_test_run": {
+    "rational_hulls": 7506,
+    "sequential_future_label_cases": 2100,
+    "passed": true
+  },
+  "scope": "Reviewer diagnostic only. Costs use unknown prevalence, all 36 cells, 32 orders, cell weighting. No retraining.",
+  "sources_sha256": {
+    "output/pdf/paper.pdf": "c642454b7670c7eedadf86e741e98c595d5835900938d43ee3c668d4d3debe93",
+    "results/v3/intervals.csv": "b15efb09ef5b1a30c5b97e5c506d9dccc09a86cf88a266830e2bc598c4e28433",
+    "results/v3/costs.csv": "fdf78ca6ce9cd1ed0e07ec2f3e05265a4dd3088ceb26bebf2613a10e496c1cb7",
+    "results/v3/pairs.csv": "ea14851b6ace7d59d34b1c32f486966f73c41d10b85f0dbbce1f17bf3c7ffa0d",
+    "results/v3/stops.npz": "756b2a1d3d6f779b85328780958cf59230195078f049e12ab5afa9bb8a74f546"
+  }
+}

@@ -1,11 +1,11 @@
 {
   "title": "When Disagreement Labels Do Not Identify F1 Rankings: reproducibility artifact",
   "upload_type": "software",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publication_date": "2026-10-25",
   "access_right": "open",
   "license": "bsd-3-clause",
-  "description": "<p>Code, frozen derived inputs, results and the six-page author manuscript for When Disagreement Labels Do Not Identify F1 Rankings, prepared for ESANN 2027 (not a proceedings publication or an acceptance claim).</p><p>The artifact implements exact finite-batch F1 intervals after disagreement labeling, epsilon-best minimax decisions with absolute tolerance 0.01, and a paired-versus-marginal interval comparison. It includes 36 dependent benchmark cells, 3,200 pairs, three query policies and 32 orders, validation-only comparator selection, mathematical checks, provenance manifests and table-generation scripts. The extensions are retrospective. Fixed-prevalence results specialize TDC and partial-identification frameworks.</p><p>Artifact 1.0.0 corresponds to manuscript V3.1. The update from independently AI-reviewed V3 changes only the availability sentence and release documentation; all scientific code, frozen inputs and results are unchanged. No original feature tables or other manuscripts are included. Software: BSD-3-Clause. Article text: CC BY 4.0. The ESANN template retains its original license. See README.rst and THIRD_PARTY_NOTICES.txt.</p>",
+  "description": "Code, frozen derived inputs, results and six-page author manuscript V4, prepared for the general track of ESANN 2027. Adds the verified zero-loss control, an initial-certification-versus-tolerance figure and clearer autonomous exposition. Original benchmark and positive-tolerance trajectories are preserved. All extensions are retrospective. See README.rst for reproduction, interpretation and licenses. No acceptance claim.",
   "creators": [
     {
       "name": "Fernández-Barrios, Roberto",

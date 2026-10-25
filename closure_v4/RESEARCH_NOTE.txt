@@ -1,0 +1,62 @@
+V4: cierre solicitado el 25/10/2026, enteramente retrospectivo.
+
+Se reutiliza el diagnostico previo weak_zero_diagnostic.json y weak_zero_stops.npz,
+localizados en tmp/pdfs/review_esann_current. Sus hashes de fuentes coinciden con
+V3.1. No se localizo un script guardado que generase ese diagnostico. analyze.py
+reconstruye las mismas primeras paradas mediante el numerador afin y verifica
+las 307200 contra el array previo, ademas de preservar las paradas exactas.
+No se reejecutan entrenamiento, piloto, auditoria exacta ni campaña epsilon=.01.
+Las paradas epsilon=.01 se reutilizan de results/v3/stops.npz.
+
+El control epsilon=0 se detiene si el numerador inferior es no negativo o el
+superior es no positivo. Esto equivale a poder elegir un ganador debil. Las
+etiquetas completas solo permiten el replay/verificacion; el orden usa las
+predicciones y los desacuerdos ya revelados. La condicion usa el prefijo actual.
+
+La curva inicial usa extremos racionales, las mismas 3200 parejas, informacion
+tras todos los desacuerdos y prevalencia desconocida restringida a 0<P<n como
+el analisis inicial publicado. Se comprueba contra las pistas anteriores.
+Los costes incluyen P=0,n. Medias por celda; dispersion min/mediana/max entre
+36 medias de celda, no intervalos de confianza ni tareas independientes.
+
+Detalles trasladados del texto al paquete: conteos exhaustivos de tests,
+cohortes condicionadas (results/v3/summary.json), sensibilidad a constantes y
+prevalencias extremas, empates de validacion (validation_ties.json). Los datos
+originales no cambian. Hamming 3/36 y validacion 6/36 permanecen en el articulo.
+
+Fuente primaria nueva: Dietterich, Approximate Statistical Tests for Comparing
+Supervised Classification Learning Algorithms, Neural Computation 10(7),
+1895-1923 (1998), DOI 10.1162/089976698300017197. Copia del autor:
+https://web.engr.oregonstate.edu/~tgd/publications/dietterich-approximate-statistical-tests-nc1998.pdf
+Leidos pp. 3 (pregunta 3) y 7-8, seccion 3.1: tabla de errores emparejados,
+estadistico de McNemar basado en n01,n10, hipotesis sobre tasas de error y
+limitaciones sobre variacion del entrenamiento. Se cita la tradicion de casos
+discordantes; no se incorpora ese contraste como metodo ni garantia de F1.
+La fuente es un preprint del autor fechado diciembre 1997 del articulo 1998.
+
+ESANN: fuentes oficiales comprobadas el 25/10/2026:
+https://www.esann.org/author_guidelines
+https://www.esann.org/node/6
+Seis paginas, A4, margenes minimos 44/44/52/52 mm, fuentes incrustadas,
+single blind, sin suplemento esencial. Convocatoria general. Cierre 18/11/2026.
+El acto de envio conlleva compromiso de registro/pago antes de 12/02/2027 si
+aceptado, asistencia y presentacion, exclusividad hasta decision y derechos de
+distribucion no exclusivos. No se han asumido nuevos pagos en esta sesion.
+El portal requiere iniciar sesion en https://www.esann.org/user.
+Zenodo dispone de sesion Chrome valida; DOI nuevo reservado 10.5281/zenodo.23647323,
+version 1.1.0. No se ha reutilizado el token expuesto en la conversacion.
+
+Comprobacion independiente V4: Claude Fable 5.1, esfuerzo xhigh, reconstruyo
+sin importar nuestros modulos todas las 307200 paradas de los tres objetivos,
+las cotas, la seleccion por validacion y las ponderaciones, sin discrepancias.
+La igualdad numerica del diagnostico previo queda verificada por dos codigos;
+no se afirma haber recuperado su generador historico. Informe y respuesta:
+review_claude/reports_v4/. La revision detecto y se corrigio un recorte del
+rotulo vertical de la figura. No cambian sus datos. La correccion del hash
+de table_trace habia ocurrido despues de crear su primera copia aislada.
+
+Bibliografia: la pagina primaria AAAI de Ji confirma 7935-7944:
+https://ojs.aaai.org/index.php/AAAI/article/view/16968
+La primera y ultima pagina del PDF primario CVF de Kay confirman 4594-4604;
+references/coda2025.pdf, 11 paginas. El endpoint HTML devolvio 403; no se
+eludio ninguna restriccion, se utilizo el PDF primario ya disponible.

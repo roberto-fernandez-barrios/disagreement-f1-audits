@@ -1,83 +1,64 @@
 {
-  "version": "V3.1 availability-only release",
-  "pdf_sha256": "c642454b7670c7eedadf86e741e98c595d5835900938d43ee3c668d4d3debe93",
+  "version": "V4",
+  "pdf_sha256": "515eddd63862fbdd1240308baba22067b50d9e009d692c61b41cc3cd5cc672ce",
   "nominal_text_area_mm": [
     122,
-    191
+    190
   ],
   "nominal_margins_mm": [
     44,
     44,
-    53,
-    53
+    53.5,
+    53.5
   ],
   "ink_margins": [
     {
       "left_mm": 43.99985555555554,
       "right_mm": 43.99818689549991,
-      "top_mm": 53.27648687666663,
-      "bottom_mm": 57.0125068366668
+      "top_mm": 53.77637298777776,
+      "bottom_mm": 65.58677072555571
     },
     {
       "left_mm": 43.99985555555551,
       "right_mm": 43.99853835388884,
-      "top_mm": 53.681892607777755,
-      "bottom_mm": 52.31809294777776
+      "top_mm": 53.615205048888896,
+      "bottom_mm": 52.495479210000006
     },
     {
       "left_mm": 43.99985555555555,
       "right_mm": 43.9981868954999,
-      "top_mm": 53.681892607777755,
-      "bottom_mm": 54.386429058888886
+      "top_mm": 54.18177871888887,
+      "bottom_mm": 52.83209016999998
+    },
+    {
+      "left_mm": 43.99985555555553,
+      "right_mm": 43.99853835388879,
+      "top_mm": 54.18177871888887,
+      "bottom_mm": 59.00464294777766
+    },
+    {
+      "left_mm": 43.999855555555555,
+      "right_mm": 43.99924127066659,
+      "top_mm": 54.18177871888887,
+      "bottom_mm": 54.68311517
     },
     {
       "left_mm": 43.999855555555555,
       "right_mm": 43.998538353888776,
-      "top_mm": 53.681892607777755,
-      "bottom_mm": 58.45007628111102
-    },
-    {
-      "left_mm": 43.999855555555555,
-      "right_mm": 43.99818689549996,
-      "top_mm": 54.383920385555534,
-      "bottom_mm": 54.95545961444442
-    },
-    {
-      "left_mm": 43.999855555555555,
-      "right_mm": 43.99853835388884,
-      "top_mm": 53.681892607777755,
-      "bottom_mm": 54.10475187833325
+      "top_mm": 54.18177871888887,
+      "bottom_mm": 54.82471389055545
     }
   ],
-  "all_six_pages_visually_reviewed": true,
-  "fonts_embedded": true,
-  "type3_fonts": false,
-  "official_class_unchanged": true,
-  "horizontal_rounding_tolerance_mm": 0.005,
-  "rendered_pages": {
-    "page-1.png": "362649f3d30d6ce8333050dc1d77db0ad1ec2ecca1f5e68a87170fd9680f62bd",
-    "page-2.png": "0f03235b2ada54b16f83d8929fd30644369fadf8290eb8572d2f46a3dadcdd06",
-    "page-3.png": "19eb576ac3c2ea21a2529f4ccf0e3d2f7f431fe5f5bb10b77f1a60250b1b2433",
-    "page-4.png": "28ddb97c791747359a86462245ab60402c04d36f0ae1691572f510f807efc76f",
-    "page-5.png": "a29bc2f508539f2c85141b744f2b558f4a848b82eb0bdf82e22f5f53df9dc3cc",
-    "page-6.png": "b0b9c2f2b17713f36da3de20384afc801608867e2957d05fea258bf579358f66"
-  },
+  "horizontal_numerical_tolerance_mm": 0.005,
+  "vertical_tolerance_mm": 0,
   "visual_pages_checked": 6,
-  "previous_V3_render_sha256": {
-    "1": "d4d795adbca1592de971e89972764d299bc13b1911e741c9ae270753c447619c",
-    "2": "d03512a81e5e9c4e7f8f00816b07552d73067519e685b277ee1aca784e73d0cf",
-    "3": "887e65d2cd3b233bafeb86b4f2bd1300ccd42721ba304f1f66cfaa0e2879703c",
-    "4": "32beb250bc6d3fc1f9ec72f3e09c7299c99990b195f640ddebc245a0138896bb",
-    "5": "c480f3829ff213ea7db73c0fd1bf4703894d837a0fb0da8d75729ada08aaf6e2",
-    "6": "d88eb7cc905845f611a547e2b81055798d9f3ce1a43c24b44b3108c896bba106"
-  },
+  "render_long_side_pixels": 1800,
   "render_sha256": {
-    "1": "362649f3d30d6ce8333050dc1d77db0ad1ec2ecca1f5e68a87170fd9680f62bd",
-    "2": "0f03235b2ada54b16f83d8929fd30644369fadf8290eb8572d2f46a3dadcdd06",
-    "3": "19eb576ac3c2ea21a2529f4ccf0e3d2f7f431fe5f5bb10b77f1a60250b1b2433",
-    "4": "28ddb97c791747359a86462245ab60402c04d36f0ae1691572f510f807efc76f",
-    "5": "a29bc2f508539f2c85141b744f2b558f4a848b82eb0bdf82e22f5f53df9dc3cc",
-    "6": "b0b9c2f2b17713f36da3de20384afc801608867e2957d05fea258bf579358f66"
-  },
-  "render_dpi": 120
+    "1": "7871887f1cecda9252e3e0ec46dd5bf0093217d10d91c25e24aac83bcf5a1a31",
+    "2": "1d20f5415ce9df956daafd64751421e79d45a12f6f5970eb668fe765f847dce1",
+    "3": "e6d1a9b23d582deec68ae4f250b96a6ccab2a0216f2a2c239508a60eec3ef92c",
+    "4": "414548174b52de6503c8c66edee3f0d36bfcad51391e247245dc5e149cdca92b",
+    "5": "e522033b3d340e032be9e415aa24e79c4f141538bbdac7db81cedf024168adce",
+    "6": "25f553d299ee4c7911482e56048dec3e6da8d820ba92eead0436019f9818d3a3"
+  }
 }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.7.5)  25 OCT 2026 14:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.7.5)  25 OCT 2026 19:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -285,42 +285,42 @@ opdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
-3.
+4.
 
 (C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
-3.
+4.
 (C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-43.
+44.
 
 (C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-43.
+44.
 
 (C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 43.
+(Font)              <10> on input line 44.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 43.
+(Font)              <7> on input line 44.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 43.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 43.
+(Font)              <5> on input line 44.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 44.
 
 
 (C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa
 .fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 43.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 44.
 
 
 (C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb
@@ -332,20 +332,26 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.en
 c}{C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm
 -rm.enc}{C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/enc/dvips
-/lm/lm-mathit.enc}{C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts
-/enc/dvips/lm/lm-mathsy.enc}] [2] [3{C:/Users/masteria.DOMINE/AppData/Local/Pro
-grams/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] (interval_rows.tex)
-[4] (cost_rows.tex) [5]
+/lm/lm-mathit.enc}] [2{C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/f
+onts/enc/dvips/lm/lm-mathsy.enc}] [3{C:/Users/masteria.DOMINE/AppData/Local/Pro
+grams/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [4]
+<tolerance_sensitivity.pdf, id=28, 332.44202pt x 112.0185pt>
+File: tolerance_sensitivity.pdf Graphic file (type pdf)
+<use tolerance_sensitivity.pdf>
+Package pdftex.def Info: tolerance_sensitivity.pdf  used on input line 235.
+(pdftex.def)             Requested size: 318.67085pt x 107.37926pt.
+ (cost_rows_v4.tex)
+[5 <./tolerance_sensitivity.pdf>]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-95.
+87.
 
 (C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 323.
+(Font)              <8> on input line 317.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 323.
+(Font)              <6> on input line 317.
 [6]
 (C:\Users\masteria.DOMINE\RF\Tesis\exploraciones\congreso_esann_2026-10-24\outp
 ut\pdf\paper.aux)
@@ -355,13 +361,13 @@ L3 programming layer <2026-06-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3278 strings out of 467510
- 49936 string characters out of 5403935
- 457923 words of memory out of 5000000
- 32448 multiletter control sequences out of 15000+600000
+ 3283 strings out of 467510
+ 50078 string characters out of 5403935
+ 457932 words of memory out of 5000000
+ 32456 multiletter control sequences out of 15000+600000
  690862 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,8n,65p,356b,396s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,8n,65p,404b,397s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
 /lmbx10.pfb><C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/type1
 /public/lm/lmbx12.pfb><C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/f
@@ -383,9 +389,9 @@ a.DOMINE/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/User
 s/masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/sym
 bols/msam10.pfb>
 Output written on C:\Users\masteria.DOMINE\RF\Tesis\exploraciones\congreso_esan
-n_2026-10-24\output\pdf\paper.pdf (6 pages, 360177 bytes).
+n_2026-10-24\output\pdf\paper.pdf (6 pages, 422025 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
+ 139 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

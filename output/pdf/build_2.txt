@@ -79,10 +79,10 @@ opdf-sys.cfg))
 ap}{C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/l
 m-ec.enc}{C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/enc/dvip
 s/lm/lm-rm.enc}{C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/en
-c/dvips/lm/lm-mathit.enc}{C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTe
-X/fonts/enc/dvips/lm/lm-mathsy.enc}] [2] [3{C:/Users/masteria.DOMINE/AppData/Lo
-cal/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] (interval_rows.tex)
-[4] (cost_rows.tex) [5]
+c/dvips/lm/lm-mathit.enc}] [2{C:/Users/masteria.DOMINE/AppData/Local/Programs/M
+iKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}] [3{C:/Users/masteria.DOMINE/AppData/Lo
+cal/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [4] (cost_rows_v4.tex)
+[5 <./tolerance_sensitivity.pdf>]
 (C:\Users\masteria.DOMINE\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd)
 [6]
 (C:\Users\masteria.DOMINE\RF\Tesis\exploraciones\congreso_esann_2026-10-24\outp
@@ -107,7 +107,7 @@ masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
 mtt8.pfb><C:/Users/masteria.DOMINE/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/symbols/msam10.pfb>
 Output written on C:\Users\masteria.DOMINE\RF\Tesis\exploraciones\congreso_esan
-n_2026-10-24\output\pdf\paper.pdf (6 pages, 360177 bytes).
+n_2026-10-24\output\pdf\paper.pdf (6 pages, 422025 bytes).
 Transcript written on C:\Users\masteria.DOMINE\RF\Tesis\exploraciones\congreso_
 esann_2026-10-24\output\pdf\paper.log.
 

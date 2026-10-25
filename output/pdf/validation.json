@@ -1,9 +1,9 @@
 {
   "pages": 6,
-  "sha256": "c642454b7670c7eedadf86e741e98c595d5835900938d43ee3c668d4d3debe93",
+  "sha256": "515eddd63862fbdd1240308baba22067b50d9e009d692c61b41cc3cd5cc672ce",
   "sources": {
     "build.py": "9df3329df642e224070fdbd39c6134ef447a63e15f6f93c1b1faf7dfd181db94",
-    "manuscript/paper.tex": "6adf655071964ec1b24f19ffc9faca4253a833bac5dff8a0dfd1d41f0c7a2d9e",
+    "manuscript/paper.tex": "1272e67478eac83c6fde66c9f3d186b612c072ac3a90b777d8a4599aeca70950",
     "manuscript/esannV2.cls": "36097ad5826ffbebfeea23f1675e63500e941fd273ef8fae765e8fca51639048",
     "manuscript/interval_rows.tex": "dfb0e6e5346f302194a8c0ed763710d18ddadde8ac1d99b8f0136fc807ecb4ca",
     "manuscript/cost_rows.tex": "477391c7b8dbbb42c61765c3597d5506d5e0d6a85335d87e5e7c79ec3ecadcdd"

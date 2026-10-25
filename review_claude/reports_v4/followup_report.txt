@@ -1,0 +1,21 @@
+Nothing further is needed. Here is the focused closure report.
+
+**Outcome.** All four concrete fixes are verified and none introduces a regression in the manuscript. No material manuscript repair remains. One packaging item affects the artifact gate, not the paper: this isolated copy lacks two protocol text files that the verifier chain hashes, so the targeted verifier cannot pass on this snapshot as supplied.
+
+**1. Figure and layout.** The y-label in the figure PDF is now "Certified (%)". Its rotated characters span 14.5 to 71.4 points inside a 111.6-point box, and no character lies outside the page box. Page 5 renders the full label. Geometry is unchanged: page size, all 11 curve objects, 18 lines and 9 rectangles are identical to the round-1 figure, marker positions relative to the axes are identical, and the tick and legend text is identical. The table now uses 4.5 pt column padding, and the rendered columns are separated. The PDF has six A4 pages, measured ink margins including drawings of at least 44.00 mm horizontally and 52.50 mm vertically, 21 fonts all embedded with no Type 3, a clean log with no overfull boxes, and the unmodified official class file.
+
+**2. Text changes.** A line diff of the LaTeX source against round 1 shows exactly four hunks: the abstract phrase "zero-loss (weak-winner) control", the sentence juxtaposing 79.15% over 36 cells with 79.46% in 28 reserved cells, the padding length, and the new Section 4 sentence on computing the interval, choosing by Equation 5 or querying and updating bounds. No equation or mathematical statement changed. A text diff of the two PDFs shows only those edits plus table spacing. The V3 and V4 result files, the weak-zero array and diagnostic, and the table rows are byte-identical to the round-1 snapshot that my 307,200-stop reconstruction matched. The final summary agrees with my reconstruction to a maximum difference of 0.0. The reserved DOI string appears once and the old DOI does not appear.
+
+**3. Provenance chain.** The analysis script now hashes an explicit allowlist of its four own outputs, and the execution record contains exactly those four. I replicated every assertion of the V4 verifier read-only in my scratch directory: script, diagnostic, nine sources, four outputs, figure, table trace, summary cohort sizes, verification-record sources and PDF hash all pass. I also replicated the older chain: the 90 data-manifest hashes, pilot, confirmation, audit and V3 code hashes, V3 outputs, validation inputs, the V3 table trace and the reproduction manifest all pass for every file present. The authors' pure test functions pass when run without writing files:
+
+```
+test_decision: 1200 enumeration problems, review checks passed
+audit.validate: 200 random partial paths passed
+test_tolerance: 7506 rational hulls, 2100 sequential/future-label checks passed
+```
+
+I did not execute the verifier script itself, because it writes three result files into the supplied tree and would abort here: `DECISION_TRAS_PILOTO.txt` and `REVISION_V3_PROTOCOL.txt` are absent from this copy, and the reproduction manifest and V3 execution record hash them. Both files exist in the round-1 snapshot with the expected hashes. The deposited 1.1.0 artifact must include them, or the verifier will fail for any third party.
+
+**4. DOI gate.** Treated as the stated external gate. No network request was made in this round, and no publication is claimed.
+
+**Material repair required:** none to the manuscript. Include the two protocol files in the final package before the artifact comparison.

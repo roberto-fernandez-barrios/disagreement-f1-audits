@@ -1,0 +1,20 @@
+{
+  "checked_utc": "2026-10-25T18:07:50.809550+00:00",
+  "sources": [
+    {
+      "title": "Approximate Statistical Tests for Comparing Supervised Classification Learning Algorithms",
+      "author": "Thomas G. Dietterich",
+      "publication": "Neural Computation 10(7):1895-1923 (1998)",
+      "doi": "10.1162/089976698300017197",
+      "primary_author_copy": "https://web.engr.oregonstate.edu/~tgd/publications/dietterich-approximate-statistical-tests-nc1998.pdf",
+      "local_sha256": "6f062d25dc6057224c685a6ca8c56c8ea60f72e07b11f514b6abec92b51557a2",
+      "read": "Question 3; Section 3.1, pages 7-8 of author preprint dated 1997. McNemar uses discordant errors to test equality of error rates; different from finite-batch F1 identification."
+    },
+    {
+      "title": "TDC prediction artifact",
+      "version": "1.1.6",
+      "doi": "10.5281/zenodo.21776862",
+      "distinct_theory_preprint": "https://arxiv.org/abs/2610.00080v1"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "utc": "2026-10-25T18:21:12.356764+00:00",
+  "script_sha256": "2a0201f7601a4520b7a2c6348ba41b786fd2b79ad094d9b59f13f1175cbfc23a",
+  "baseline_diagnostic_sha256": "ed2dc62df514adbd362db36f4b5dc4751ac8f4b1eece2b0e4f919ca76c9486b8",
+  "sources": {
+    "results/v3/pairs.csv": "ea14851b6ace7d59d34b1c32f486966f73c41d10b85f0dbbce1f17bf3c7ffa0d",
+    "results/v3/intervals.csv": "b15efb09ef5b1a30c5b97e5c506d9dccc09a86cf88a266830e2bc598c4e28433",
+    "results/v3/stops.npz": "756b2a1d3d6f779b85328780958cf59230195078f049e12ab5afa9bb8a74f546",
+    "audit.py": "00602d8a720dbc773f762c250690b522bc4e1ed16a5aa7ef9e26aab7f6825391",
+    "tolerance.py": "fbac658b112fb99d1a83fbcaf1882ea7d112f2391be28f78674b47d2fafb83ac",
+    "revision_v3.py": "255ae6a22f252bbab1f5f241142329a0c71fc59941a08ed6c9698fe7dab921d9",
+    "decision.py": "142135946d3268c1e5bd193c84c019aee0a8dc817eee5d2741a6d86fd9f6a7ff",
+    "pilot.py": "8e571c671b6e56a29560e8633388b91ab92375f25bede72691c5b92b76b4a234",
+    "DATA_MANIFEST.json": "dc3a43d0caccf65cae5d00754c6def897a7162748d08488724ff08446546c443"
+  },
+  "outputs": {
+    "results/v4/costs.csv": "364ae47561b9681099d412e4926a632c6cdd6780e1cbd30b52bd34df6ecd7764",
+    "results/v4/sensitivity.csv": "d0fdd942acf330fd30a57d9aefcb27b80c460ffe50e25130084a34e00b3c3e15",
+    "results/v4/summary.json": "0c3981d567c200dcf0ac3864e8d85db9ef6fecef799ca549a6e24551857d5935",
+    "results/v4/tolerance_sensitivity.png": "564f45d4573b9e6d06b6dfe6c391ff99e664e2daeaa61011fd96b7e6a94dc467"
+  },
+  "figure_sha256": "ffccb471d17bf4d486af33636d315b9d0cc757b499c94cea87b68dbb2e02d4fd",
+  "weak_stops_reproduced_exactly": true
+}

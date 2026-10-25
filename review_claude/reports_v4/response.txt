@@ -1,0 +1,73 @@
+V4 RESPONSE TO THE REAL INDEPENDENT REVIEW — 25 October 2026
+
+Reviewer: Claude Fable 5.1, canonical model claude-fable-5-1, effort xhigh.
+The invocation and actual report are preserved. The reviewer independently
+reconstructed all 307200 stops and the reported numbers without importing our
+modules. This is AI-assisted review, not conference peer review or proof by consensus.
+
+1. Clipped figure label — accepted and corrected.
+The long rotated ylabel exceeded the small figure's box. It is now "Certified
+(%)". Data, size, axes, tolerances and weighting are unchanged. The manuscript
+was rebuilt; the figure and all six pages were inspected again. Table padding
+was increased from 3.5 to 4.5 pt to separate "Alternating" and the initial cost.
+Evidence: closure_v4/analyze.py, manuscript/tolerance_sensitivity.pdf,
+output/pdf/paper.pdf, results/v4_verification.json. No new scientific outcome.
+
+2. Reserved DOI — accepted as a mandatory external gate.
+10.5281/zenodo.23647323 is reserved for artifact 1.1.0 / manuscript V4. It is
+not the old V3.1 release. It will be published, then downloaded anonymously and
+compared byte for byte, before editorial submission. The earlier VERSION.json
+retained V3 review fields during work; final metadata explicitly identifies V4.
+This response does not claim the publication has happened. The effective result
+will be recorded in publication/v1.1.0/public_verification.json.
+
+3. Stale execution-table hash — accepted; already fixed after the first snapshot.
+The first reviewer copy preceded the correction. analyze.py now uses an explicit
+allowlist of its four own output files and separately records the figure. The
+table script has its own source/output/script hashes. verify_v4.py verifies both
+chains, the original V3 records and the final PDF. The targeted reconstruction
+was repeated after this fix and after shortening the label; scientific CSV/JSON
+values are unchanged. No retrospective preregistration is claimed.
+
+4. Missing original weak-zero generator — provenance retained, replication added.
+The original generator was not found. Its diagnostic and array are preserved.
+Our reconstruction and the reviewer's independent implementation reproduce it
+exactly. This closes numerical reproducibility, not the historical provenance
+gap: we do not pretend to have recovered or run the lost script.
+
+5. Cell bases and use guidance — accepted.
+The text now juxtaposes 79.15% over all 36 cells and 79.46% in the 28 reserved
+cells. Section 4 states how to compute the current interval, choose by Eq. (5),
+or query agreements and update the count bounds. The abstract explicitly equates
+the zero-loss control with a weak winner. Historical filenames retain "weak_zero"
+for traceability; they are not a distinct objective.
+
+6. Optional additions — mostly retained in the package, without changing science.
+The two magnitude zero-loss totals remain immediately above Table 1; a third
+column would displace useful material without adding evidence. Validation-tie
+and P=0,n sensitivities remain available in results/v3, and the reviewer confirmed
+them. The paper already states the domain and retrospective design. The user
+requested that secondary details move out of the six-page manuscript.
+Ji pages 7935–7944 verified on the primary AAAI article page:
+https://ojs.aaai.org/index.php/AAAI/article/view/16968
+Kay pages 4594–4604 verified on first/last pages of the primary CVF PDF (11 pages):
+https://openaccess.thecvf.com/content/ICCV2025/papers/Kay_Consensus-Driven_Active_Model_Selection_ICCV_2025_paper.pdf
+The HTML endpoint returned 403; no restriction was bypassed. Local primary PDF
+was already available and its last page is numbered 4604. Neither citation changed.
+
+7. Scope — agreed.
+No new benchmark, population inference or general theorem is added. Incremental
+novelty and retrospective benchmark reuse remain the substantive editorial risks.
+The focused follow-up checks the fixes and regressions, without requesting a more
+favorable recommendation or repeating the exhaustive trajectory campaign.
+
+FOCUSED CLOSURE RECEIVED — 25 October 2026
+Claude verified the final PDF (SHA-256 515eddd63862fbdd1240308baba22067b50d9e009d692c61b41cc3cd5cc672ce),
+all four manuscript/figure corrections, unchanged numeric outputs and no
+material manuscript regression. It identified two files omitted from its
+second isolated copy: DECISION_TRAS_PILOTO.txt and REVISION_V3_PROTOCOL.txt.
+They were present in its first copy with the correct hashes. The final public
+packager explicitly includes both unchanged originals. Actual clean-ZIP
+execution of verify_v4.py is a mandatory publication gate, recorded separately
+in closure_v4/released_zip_check.json. No third general model review is needed
+to resolve this file-inclusion check. No conference submission is implied.

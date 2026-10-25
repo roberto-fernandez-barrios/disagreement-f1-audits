@@ -1,19 +1,21 @@
 {
-  "version": "V3.1",
-  "base_version": "V3",
-  "state": "public artifact release; not submitted to a conference",
-  "updated_utc": "2026-10-25T13:51:50.600691+00:00",
-  "archive": "history/v2_2_before_scientific_upgrade_20261025T122323Z/workspace_snapshot.zip",
-  "completed_utc": "2026-10-25T13:32:54.471230+00:00",
-  "pdf_sha256": "c642454b7670c7eedadf86e741e98c595d5835900938d43ee3c668d4d3debe93",
-  "claude_model": "claude-fable-5-1",
-  "claude_effort": "xhigh",
-  "claude_rounds": 2,
-  "artifact_version": "1.0.0",
-  "artifact_doi": "10.5281/zenodo.23642981",
+  "version": "V4",
+  "base_version": "V3.1",
+  "state": "scientific and editorial closure complete; prepared for ESANN 2027 general track; not yet submitted",
+  "completed_utc": "2026-10-25T18:27:46.176169+00:00",
+  "pdf_sha256": "515eddd63862fbdd1240308baba22067b50d9e009d692c61b41cc3cd5cc672ce",
+  "previous_version_archive": "history/v3_1_before_submission_closure_20261025T174947Z",
+  "artifact_version": "1.1.0",
+  "artifact_doi": "10.5281/zenodo.23647323",
   "repository": "https://github.com/roberto-fernandez-barrios/disagreement-f1-audits",
-  "previous_version_archive": "history/v3_before_public_release_20261025T134355Z",
-  "availability_only_update": true,
-  "claude_reviewed_version": "V3",
-  "claude_reviewed_pdf_sha256": "00ef86ce626678e6c86d5d7d9a49e4b9c3ded0c3d0458f7290973f81e412d891"
+  "claude_model_requested": "claude-fable-5-1",
+  "claude_effort_requested": "xhigh",
+  "claude_models_reported": [
+    "claude-fable-5-1"
+  ],
+  "claude_reviewed_version": "V4",
+  "claude_reviewed_pdf_sha256": "515eddd63862fbdd1240308baba22067b50d9e009d692c61b41cc3cd5cc672ce",
+  "claude_report": "review_claude/reports_v4/report.txt",
+  "claude_response": "review_claude/reports_v4/response.txt",
+  "changes": "Verified weak-zero control; six-point tolerance figure; condensed autonomous exposition; direct TDC artifact and Dietterich attribution; strict six-page layout."
 }

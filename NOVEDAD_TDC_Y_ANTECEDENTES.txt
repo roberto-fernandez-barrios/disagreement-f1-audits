@@ -174,3 +174,13 @@ costes con estimadores cuyas garantías son diferentes.
 
 Los trabajos de Liang y Musgrove siguen contrastados arriba y en el registro
 bibliográfico; no son esenciales en la selección condensada de citas del PDF.
+
+ACTUALIZACIÓN V4 — 25/10/2026
+El control epsilon=0 y la curva de tolerancia son evidencia retrospectiva sobre
+el mismo criterio; no son teoremas generales nuevos. Casi todo el ahorro de
+etiquetado aparece al admitir pérdida positiva pequeña, no sólo empates.
+Dietterich (1998), DOI 10.1162/089976698300017197, sección 3.1 de la copia del
+autor, sitúa la comparación por discordantes/McNemar como contraste poblacional
+de tasas de error, distinto de completaciones exactas y F1 en un lote fijo.
+Fuente y pasajes: references/v4_sources.json. La atribución a TDC/Polo y la
+distinción preprint v1 / artefacto 1.1.6 se mantienen sin cambios científicos.

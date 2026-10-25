@@ -1,0 +1,468 @@
+{
+  "design": "retrospective targeted V4 extension; unknown prevalence; original initial intervals restrict 0<P<n, query paths include P=0,n",
+  "weighting": "equal cells; within cell average pairs and within pair average 32 fixed orders; no independent-observation inference",
+  "weak_trajectories_verified": 307200,
+  "weak_array_sha256": "0230415bd18114f9925e2286e4c7e0561e405cd7a289cd71e008dd09c97c4664",
+  "costs": [
+    {
+      "cohort": "all",
+      "policy": "uniform",
+      "rows": 3200,
+      "cells": 36,
+      "cell_mean": {
+        "D": 54.49210935162226,
+        "strict_extra": 88.21125359720452,
+        "strict_total": 142.70336294882676,
+        "weak_zero_extra": 86.6674840902483,
+        "weak_zero_total": 141.15959344187058,
+        "epsilon_extra": 35.581651256834576,
+        "epsilon_total": 90.07376060845685
+      },
+      "pair_mean": {
+        "D": 59.099375,
+        "strict_extra": 99.6365234375,
+        "strict_total": 158.7358984375,
+        "weak_zero_extra": 98.82046875,
+        "weak_zero_total": 157.91984375,
+        "epsilon_extra": 40.6743359375,
+        "epsilon_total": 99.7737109375
+      }
+    },
+    {
+      "cohort": "all",
+      "policy": "alternating",
+      "rows": 3200,
+      "cells": 36,
+      "cell_mean": {
+        "D": 54.49210935162226,
+        "strict_extra": 80.64067434264248,
+        "strict_total": 135.13278369426473,
+        "weak_zero_extra": 80.41556022854222,
+        "weak_zero_total": 134.90766958016448,
+        "epsilon_extra": 31.291407877668533,
+        "epsilon_total": 85.7835172292908
+      },
+      "pair_mean": {
+        "D": 59.099375,
+        "strict_extra": 91.63748046875,
+        "strict_total": 150.73685546875,
+        "weak_zero_extra": 91.4118359375,
+        "weak_zero_total": 150.5112109375,
+        "epsilon_extra": 35.55634765625,
+        "epsilon_total": 94.65572265625
+      }
+    },
+    {
+      "cohort": "all",
+      "policy": "magnitude",
+      "rows": 3200,
+      "cells": 36,
+      "cell_mean": {
+        "D": 54.49210935162226,
+        "strict_extra": 66.66788145767265,
+        "strict_total": 121.15999080929492,
+        "weak_zero_extra": 66.4281617043554,
+        "weak_zero_total": 120.92027105597764,
+        "epsilon_extra": 20.10150764658808,
+        "epsilon_total": 74.59361699821035
+      },
+      "pair_mean": {
+        "D": 59.099375,
+        "strict_extra": 75.99458984375,
+        "strict_total": 135.09396484375,
+        "weak_zero_extra": 75.74388671875,
+        "weak_zero_total": 134.84326171875,
+        "epsilon_extra": 22.950556640625,
+        "epsilon_total": 82.049931640625
+      }
+    },
+    {
+      "cohort": "validation",
+      "policy": "uniform",
+      "rows": 36,
+      "cells": 36,
+      "cell_mean": {
+        "D": 30.72222222222222,
+        "strict_extra": 89.06944444444444,
+        "strict_total": 119.79166666666667,
+        "weak_zero_extra": 88.8359375,
+        "weak_zero_total": 119.55815972222223,
+        "epsilon_extra": 25.56076388888889,
+        "epsilon_total": 56.282986111111114
+      },
+      "pair_mean": {
+        "D": 30.72222222222222,
+        "strict_extra": 89.06944444444444,
+        "strict_total": 119.79166666666667,
+        "weak_zero_extra": 88.8359375,
+        "weak_zero_total": 119.55815972222223,
+        "epsilon_extra": 25.56076388888889,
+        "epsilon_total": 56.282986111111114
+      }
+    },
+    {
+      "cohort": "validation",
+      "policy": "alternating",
+      "rows": 36,
+      "cells": 36,
+      "cell_mean": {
+        "D": 30.72222222222222,
+        "strict_extra": 77.57899305555556,
+        "strict_total": 108.30121527777777,
+        "weak_zero_extra": 77.37152777777777,
+        "weak_zero_total": 108.09375,
+        "epsilon_extra": 16.34375,
+        "epsilon_total": 47.06597222222222
+      },
+      "pair_mean": {
+        "D": 30.72222222222222,
+        "strict_extra": 77.57899305555556,
+        "strict_total": 108.30121527777777,
+        "weak_zero_extra": 77.37152777777777,
+        "weak_zero_total": 108.09375,
+        "epsilon_extra": 16.34375,
+        "epsilon_total": 47.06597222222222
+      }
+    },
+    {
+      "cohort": "validation",
+      "policy": "magnitude",
+      "rows": 36,
+      "cells": 36,
+      "cell_mean": {
+        "D": 30.72222222222222,
+        "strict_extra": 61.84461805555556,
+        "strict_total": 92.56684027777777,
+        "weak_zero_extra": 61.529513888888886,
+        "weak_zero_total": 92.25173611111111,
+        "epsilon_extra": 9.571180555555555,
+        "epsilon_total": 40.29340277777778
+      },
+      "pair_mean": {
+        "D": 30.72222222222222,
+        "strict_extra": 61.84461805555556,
+        "strict_total": 92.56684027777777,
+        "weak_zero_extra": 61.529513888888886,
+        "weak_zero_total": 92.25173611111111,
+        "epsilon_extra": 9.571180555555555,
+        "epsilon_total": 40.29340277777778
+      }
+    },
+    {
+      "cohort": "nearest",
+      "policy": "uniform",
+      "rows": 36,
+      "cells": 36,
+      "cell_mean": {
+        "D": 14.13888888888889,
+        "strict_extra": 114.04079861111111,
+        "strict_total": 128.1796875,
+        "weak_zero_extra": 103.37760416666667,
+        "weak_zero_total": 117.51649305555556,
+        "epsilon_extra": 1.8368055555555556,
+        "epsilon_total": 15.975694444444445
+      },
+      "pair_mean": {
+        "D": 14.13888888888889,
+        "strict_extra": 114.04079861111111,
+        "strict_total": 128.1796875,
+        "weak_zero_extra": 103.37760416666667,
+        "weak_zero_total": 117.51649305555556,
+        "epsilon_extra": 1.8368055555555556,
+        "epsilon_total": 15.975694444444445
+      }
+    },
+    {
+      "cohort": "nearest",
+      "policy": "alternating",
+      "rows": 36,
+      "cells": 36,
+      "cell_mean": {
+        "D": 14.13888888888889,
+        "strict_extra": 96.27170138888889,
+        "strict_total": 110.41059027777777,
+        "weak_zero_extra": 95.47135416666667,
+        "weak_zero_total": 109.61024305555556,
+        "epsilon_extra": 1.7222222222222223,
+        "epsilon_total": 15.86111111111111
+      },
+      "pair_mean": {
+        "D": 14.13888888888889,
+        "strict_extra": 96.27170138888889,
+        "strict_total": 110.41059027777777,
+        "weak_zero_extra": 95.47135416666667,
+        "weak_zero_total": 109.61024305555556,
+        "epsilon_extra": 1.7222222222222223,
+        "epsilon_total": 15.86111111111111
+      }
+    },
+    {
+      "cohort": "nearest",
+      "policy": "magnitude",
+      "rows": 36,
+      "cells": 36,
+      "cell_mean": {
+        "D": 14.13888888888889,
+        "strict_extra": 80.30989583333333,
+        "strict_total": 94.44878472222223,
+        "weak_zero_extra": 79.38194444444444,
+        "weak_zero_total": 93.52083333333333,
+        "epsilon_extra": 1.0425347222222223,
+        "epsilon_total": 15.18142361111111
+      },
+      "pair_mean": {
+        "D": 14.13888888888889,
+        "strict_extra": 80.30989583333333,
+        "strict_total": 94.44878472222223,
+        "weak_zero_extra": 79.38194444444444,
+        "weak_zero_total": 93.52083333333333,
+        "epsilon_extra": 1.0425347222222223,
+        "epsilon_total": 15.18142361111111
+      }
+    }
+  ],
+  "sensitivity": [
+    {
+      "epsilon": 0.0,
+      "all": {
+        "rows": 3200,
+        "cells": 36,
+        "cell_mean": {
+          "certified": 0.688687148299429
+        },
+        "pair_mean": {
+          "certified": 0.6521875
+        }
+      },
+      "validation": {
+        "rows": 36,
+        "cells": 36,
+        "cell_mean": {
+          "certified": 0.6944444444444444
+        },
+        "pair_mean": {
+          "certified": 0.6944444444444444
+        }
+      },
+      "reserved": {
+        "rows": 2399,
+        "cells": 28,
+        "cell_mean": {
+          "certified": 0.6950114600867624
+        },
+        "pair_mean": {
+          "certified": 0.6581909128803668
+        }
+      }
+    },
+    {
+      "epsilon": 0.001,
+      "all": {
+        "rows": 3200,
+        "cells": 36,
+        "cell_mean": {
+          "certified": 0.6937400980148769
+        },
+        "pair_mean": {
+          "certified": 0.658125
+        }
+      },
+      "validation": {
+        "rows": 36,
+        "cells": 36,
+        "cell_mean": {
+          "certified": 0.6944444444444444
+        },
+        "pair_mean": {
+          "certified": 0.6944444444444444
+        }
+      },
+      "reserved": {
+        "rows": 2399,
+        "cells": 28,
+        "cell_mean": {
+          "certified": 0.699272681321668
+        },
+        "pair_mean": {
+          "certified": 0.6631929970821175
+        }
+      }
+    },
+    {
+      "epsilon": 0.005,
+      "all": {
+        "rows": 3200,
+        "cells": 36,
+        "cell_mean": {
+          "certified": 0.7347664592406722
+        },
+        "pair_mean": {
+          "certified": 0.7040625
+        }
+      },
+      "validation": {
+        "rows": 36,
+        "cells": 36,
+        "cell_mean": {
+          "certified": 0.75
+        },
+        "pair_mean": {
+          "certified": 0.75
+        }
+      },
+      "reserved": {
+        "rows": 2399,
+        "cells": 28,
+        "cell_mean": {
+          "certified": 0.739738314694646
+        },
+        "pair_mean": {
+          "certified": 0.70862859524802
+        }
+      }
+    },
+    {
+      "epsilon": 0.01,
+      "all": {
+        "rows": 3200,
+        "cells": 36,
+        "cell_mean": {
+          "certified": 0.7915224492842321
+        },
+        "pair_mean": {
+          "certified": 0.77
+        }
+      },
+      "validation": {
+        "rows": 36,
+        "cells": 36,
+        "cell_mean": {
+          "certified": 0.8333333333333334
+        },
+        "pair_mean": {
+          "certified": 0.8333333333333334
+        }
+      },
+      "reserved": {
+        "rows": 2399,
+        "cells": 28,
+        "cell_mean": {
+          "certified": 0.7946121580422323
+        },
+        "pair_mean": {
+          "certified": 0.7732388495206336
+        }
+      }
+    },
+    {
+      "epsilon": 0.02,
+      "all": {
+        "rows": 3200,
+        "cells": 36,
+        "cell_mean": {
+          "certified": 0.8602642788484623
+        },
+        "pair_mean": {
+          "certified": 0.84875
+        }
+      },
+      "validation": {
+        "rows": 36,
+        "cells": 36,
+        "cell_mean": {
+          "certified": 0.9166666666666666
+        },
+        "pair_mean": {
+          "certified": 0.9166666666666666
+        }
+      },
+      "reserved": {
+        "rows": 2399,
+        "cells": 28,
+        "cell_mean": {
+          "certified": 0.8597194101916976
+        },
+        "pair_mean": {
+          "certified": 0.8482701125468946
+        }
+      }
+    },
+    {
+      "epsilon": 0.05,
+      "all": {
+        "rows": 3200,
+        "cells": 36,
+        "cell_mean": {
+          "certified": 0.960574466927405
+        },
+        "pair_mean": {
+          "certified": 0.960625
+        }
+      },
+      "validation": {
+        "rows": 36,
+        "cells": 36,
+        "cell_mean": {
+          "certified": 0.9722222222222222
+        },
+        "pair_mean": {
+          "certified": 0.9722222222222222
+        }
+      },
+      "reserved": {
+        "rows": 2399,
+        "cells": 28,
+        "cell_mean": {
+          "certified": 0.9592914896459999
+        },
+        "pair_mean": {
+          "certified": 0.9599833263859942
+        }
+      }
+    }
+  ],
+  "magnitude_epsilon_cell_costs": {
+    "brfss_diabetes/42/svc": 89.15654205607477,
+    "brfss_diabetes/42/gpc": 16.914285714285715,
+    "brfss_diabetes/123/svc": 87.46674311926606,
+    "brfss_diabetes/123/gpc": 14.676470588235293,
+    "brfss_diabetes/999/svc": 69.11505681818181,
+    "brfss_diabetes/999/gpc": 13.989583333333334,
+    "brfss_diabetes/7/svc": 76.52738095238095,
+    "brfss_diabetes/7/gpc": 14.454963235294118,
+    "brfss_diabetes/2024/svc": 75.44280133928571,
+    "brfss_diabetes/2024/gpc": 20.583333333333332,
+    "acsfoodstamps/42/svc": 99.93539663461539,
+    "acsfoodstamps/42/gpc": 34.355992268041234,
+    "acsfoodstamps/123/svc": 119.92202970297029,
+    "acsfoodstamps/123/gpc": 35.72730654761905,
+    "acsfoodstamps/999/svc": 127.8203125,
+    "acsfoodstamps/999/gpc": 48.040364583333336,
+    "acsfoodstamps/7/svc": 96.90094339622641,
+    "acsfoodstamps/7/gpc": 38.46905339805825,
+    "acsfoodstamps/2024/svc": 143.22648514851485,
+    "acsfoodstamps/2024/gpc": 43.733836206896555,
+    "00_ember_m1/42/svc": 117.25760869565218,
+    "00_ember_m1/42/gpc": 188.35087719298247,
+    "01_ember_m2/42/svc": 97.17763157894737,
+    "01_ember_m2/42/gpc": 104.8625,
+    "02_toniot_scanning_m2_centroid/42/svc": 30.35200471698113,
+    "02_toniot_scanning_m2_centroid/42/gpc": 86.1864406779661,
+    "03_toniot_scanning_natural_cur/42/svc": 60.64723557692308,
+    "03_toniot_scanning_natural_cur/42/gpc": 103.65361445783132,
+    "04_unsw_dos_m2_centroid/42/svc": 49.36578947368421,
+    "04_unsw_dos_m2_centroid/42/gpc": 80.7425,
+    "05_unsw_dos_natural_cur/42/svc": 77.4360119047619,
+    "05_unsw_dos_natural_cur/42/gpc": 51.14498873873874,
+    "06_unsw_recon_m2_centroid/42/svc": 48.320170454545455,
+    "06_unsw_recon_m2_centroid/42/gpc": 104.58976715686275,
+    "07_unsw_recon_natural_cur/42/svc": 113.73705808080808,
+    "07_unsw_recon_natural_cur/42/gpc": 105.08713235294118
+  },
+  "descriptive_cell_cost_range": {
+    "minimum": 13.989583333333334,
+    "median": 76.98169642857142,
+    "maximum": 188.35087719298247,
+    "cells": 36
+  }
+}

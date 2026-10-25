@@ -6,8 +6,8 @@
 % Official class retained unchanged. Correct its legacy offsets to current rules.
 \voffset 0cm \hoffset 0cm
 \setlength{\oddsidemargin}{18.6mm}\setlength{\evensidemargin}{18.6mm}
-\setlength{\topmargin}{27.6mm}\setlength{\headheight}{0mm}\setlength{\headsep}{0mm}
-\setlength{\textwidth}{122mm}\setlength{\textheight}{191mm}
+\setlength{\topmargin}{28.1mm}\setlength{\headheight}{0mm}\setlength{\headsep}{0mm}
+\setlength{\textwidth}{122mm}\setlength{\textheight}{190mm}
 \pdfpagewidth=210mm \pdfpageheight=297mm
 \newcommand{\F}{F_1}
 \newcommand{\BA}{\mathrm{BA}}
@@ -28,10 +28,11 @@ identification to an explicit audit: after labeling all disagreements,
 when can one choose a model, and when must agreements be queried?
 The criterion certifies either an exact ranking or a choice within an F1
 tolerance of the better model for every compatible completion. Across 3,200
-frozen pairs, retaining the shared completion tightens bounds and a 0.01 tolerance
-reduces query costs substantially. Validation-selected comparators retain
-material ambiguity in 6 of 36 cells. These are finite-batch guarantees,
-not population error estimates.
+frozen model pairs, retaining the shared completion tightens bounds and a 0.01
+tolerance substantially reduces labeling costs. A zero-loss (weak-winner) control shows that
+this saving comes mainly from tolerating a small positive loss, rather than
+merely permitting ties. The guarantee concerns the evaluated batch; it does not
+estimate performance on future data.
 \end{abstract}
 
 \section{What can disagreement labels decide?}
@@ -43,18 +44,23 @@ ranking. Allocating the three remaining positives to negative agreements gives
 F1 scores $(1/5,0)$; allocating them to positive agreements gives $(4/5,6/7)$.
 The same disagreement labels and prevalence support opposite winners.
 
-We ask when disagreement labels suffice to choose between fixed models.
-Our specialization yields a sharp sign criterion, an operational regret
-certificate, and retrospective evidence on information and labeling costs.
-The key is to compare models under the \emph{same} completion of unknown labels.
+Given two prediction vectors, their disagreement labels and optional prevalence,
+our audit reduces unknown agreement labels to two counts. The resulting exact
+F1 interval either certifies a choice at the requested tolerance or requires
+more agreement labels. This explicit solution makes the stopping rule directly
+computable while preserving a \emph{shared} label completion.
 
-Active F-measure estimation and expected-loss comparison optimize acquisition
-\cite{sawade2010,sawade2012}. Active Testing estimates risk without bias
-\cite{kossen2021}; Bayesian Assessment uses practical-equivalence regions
-\cite{ji2021}; CODA selects models using consensus priors and accuracy regret
-\cite{kay2025}. Our guarantee instead covers every compatible completion.
-F1 batch dependence \cite{lipton2014} and missing-label metric bounds
-\cite{dervovic2025} are established; our specialization builds on TDC and Polo.
+Discordant cases also determine McNemar's paired error-rate statistic
+\cite{dietterich1998}. That is a population hypothesis test; we identify what
+fixed-batch F1 comparisons permit under every compatible labeling.
+
+Active evaluation estimates F-measures \cite{sawade2010}, compares expected
+losses \cite{sawade2012}, estimates risk without bias \cite{kossen2021}, or uses
+Bayesian equivalence and consensus priors \cite{ji2021,kay2025}. Our guarantee
+covers every compatible completion. F1 batch dependence \cite{lipton2014} and
+missing-label bounds \cite{dervovic2025} are established. We specialize the
+target-domain certificate framework (TDC) \cite{tdc} and Polo et al.\
+\cite{polo2024} to an explicit audit.
 
 \section{An explicit audit criterion}
 Fix binary predictions $q,c\in\{0,1\}^n$ and correct unknown labels.
@@ -98,11 +104,11 @@ then both F1 scores and $S$ are zero. Every integer count in the rectangle
 is attainable. An affine function reaches its extrema at its corners,
 proving the sign claims.\hfill$\square$
 
-\noindent\textbf{Equal-count corollary.}
+\smallskip\noindent\textbf{Equal-count corollary.}
 If $Q=C=R>0$, then $\Delta=2d/(P+R)$: disagreement labels identify the sign
 without knowing $P$. If $R=0$, both scores vanish. Magnitude can remain unknown.
 
-\noindent\textbf{Exact magnitude bounds.}
+\smallskip\noindent\textbf{Exact magnitude bounds.}
 For fixed $P>0$, the difference is affine in $t$:
 \begin{equation}\label{eq:fixed}
  f_P(t)=\frac{2u}{P+Q}-\frac{2v}{P+C}
@@ -118,7 +124,7 @@ of these endpoints, yielding the exact interval hull $[L,U]$ in $O(n)$ time.
 This includes $P=n$. The sign proof does not place unknown-$P$
 magnitude extrema at rectangle corners.
 
-\noindent\textbf{A choice with bounded regret.}
+\smallskip\noindent\textbf{A choice with bounded regret.}
 For absolute F1 tolerance $\varepsilon\ge0$, the worst losses from selecting
 $q$ and $c$ are $R_q=\max(0,-L)$ and $R_c=\max(0,U)$.
 Choose the smaller, breaking ties in favor of $q$, and stop iff
@@ -142,31 +148,26 @@ contrasts over unrestricted completions. With $P>0$ fixed,
 \begin{equation}\label{eq:additive}
  \Delta=\sum_i y_i\left[\frac{2q_i}{P+Q}-\frac{2c_i}{P+C}\right].
 \end{equation}
-The cardinality constraint $\sum_i y_i=P$ must also be imposed; TDC's
-balanced-accuracy construction (\S4.5) already does so and enumerates
-prevalence counts. Its unrestricted itemwise lower bound alone need not be
-sharp under this constraint. Equations (\ref{eq:affine})--(\ref{eq:fixed})
-are explicit specializations, not a new general certificate theorem.
+Imposing $\sum_i y_i=P$ is essential for sharpness; TDC's balanced-accuracy
+construction (\S4.5) already imposes such a constraint and enumerates prevalence.
+Equations (\ref{eq:affine})--(\ref{eq:fixed}) are explicit specializations.
 
-Polo et al.\ \cite{polo2024}, Eq.~(1.1) and \S3.2, also cover fixed-$P$
-F1. Set $X$ uniform on batch indices; let $Z$ distinguish audited items and
-group unaudited items. Observations and $P$ fix the $(Y,Z)$ marginal. Use $n$
-times the summand in (\ref{eq:additive}) as the paired objective. Remaining
-fractional labels lie in $[0,1]$ with integer sum. Every vertex is integral:
-two fractional entries admit a fixed-sum perturbation, while one cannot sum
-to an integer. Thus linear extrema equal deterministic-completion extrema.
-We supply the explicit audit solution and its empirical decision consequences.
+Polo et al.\ \cite{polo2024}, Eq.~(1.1) and \S3.2, also cover fixed-$P$ F1:
+use uniform batch indices, distinguish audited items and fix the label marginal.
+For (\ref{eq:additive}), the remaining fractional labels have an integer sum.
+Every vertex is integral: two fractional entries permit a sum-preserving
+perturbation; one cannot sum to an integer. Hence linear extrema equal our
+completion extrema. Our contribution is the explicit audit and its consequences.
 
-The separate interval is
+Separate bounds form
 $[\min\F(q)-\max\F(c),\allowbreak\max\F(q)-\min\F(c)]$. Every extremum uses the
-\emph{same} feasible completions and prevalence constraints; their marginal
-optimizers may nevertheless be incompatible. Fixed-$P$ marginals are affine
-in $t$, so endpoint enumeration is exact. This isolates discarded dependence,
-not superiority to joint TDC or Polo.
+\emph{same} feasible completions and prevalence constraints, but its optimizers
+may be incompatible. Fixed-$P$ marginals are affine in $t$, so the same
+enumeration computes these conservative bounds exactly.
 
 \section{Retrospective evaluation}
-\textbf{Frozen cases and units.} We reuse TDC's prediction artifact, release
-1.1.6 (distinct from preprint v1), without refitting models. Each of 36 cells
+\noindent\textbf{Frozen cases and units.} We reuse TDC's prediction artifact,
+release 1.1.6 \cite{tdcartifact}, without refitting models. Each of 36 cells
 contains 500 targets, a validation-selected quantum-kernel predictor, and
 115 classical configurations. Twenty cells cover BRFSS diabetes and ACS
 FoodStamps (five subsampling seeds, SVC and Gaussian-process classification);
@@ -174,11 +175,10 @@ FoodStamps (five subsampling seeds, SVC and Gaussian-process classification);
 Deduplicating identical classical predictions within cells yields 3,200 pairs.
 The criterion applies to arbitrary fixed binary predictions.
 
-The eight-cell pilot (801 pairs: seed 42, BRFSS, ACS and both EMBER scenarios,
-both classifiers) was fixed before reading labels in this study and met its
-continuation criteria. The 28 reserved cells (2,399 pairs) are an analytical
-holdout of existing evidence. Tolerance, separate-bound and validation-comparator analyses
-are retrospective extensions after review, not prospective confirmation.
+The eight-cell pilot (801 pairs) was fixed before reading labels in this study.
+The 28 reserved cells (2,399 pairs) are an analytical holdout of existing
+evidence. Tolerance, separate-bound and validation-comparator analyses are
+retrospective extensions, not prospective confirmation.
 
 Fractions average equally across cells; costs average orders, pairs within
 cells, then eligible cells. Shared targets and overlapping subsamples preclude
@@ -186,122 +186,116 @@ independent-observation inference; summaries are descriptive. Known $P$ is
 an exact information oracle. Initial intervals retain $0<P<n$, the original
 balanced-accuracy domain; query cohorts and stops allow $P=0,n$.
 
-\textbf{Acquisition and comparators.} We retain three agreement orders:
-uniform without replacement; alternating shuffled agreement strata; and
-decreasing $|d|$ or $|e|$ with shuffled ties. Seeds 0--31 share base permutations
-across policies and both stopping objectives. Orders use predictions and
-revealed disagreement labels only. Queries shrink the count intervals. Magnitude ordering minimizes numerator
-width at each budget, not necessarily stopping cost.
-All 307,200 trajectories are replayed for the original strict-sign/exact-tie
-objective and for $\varepsilon=0.01$. Full labels verify realized regret;
-they do not select pairs, orders or stopping decisions.
+\smallskip\noindent\textbf{Acquisition and comparators.} We retain three agreement orders:
+uniform; alternating shuffled agreement strata; and decreasing $|d|$ or $|e|$
+(magnitude, shuffled ties). Seeds 0--31 share permutations across policies and
+objectives. Orders use predictions and disagreement labels only; queries shrink
+the count intervals. Magnitude minimizes numerator width, not necessarily cost.
+We compare strict-sign/exact-tie identification, a weak winner ($\varepsilon=0$),
+and $\varepsilon=0.01$ on the same trajectories. Full labels verify regret;
+they never select pairs, queries or stopping decisions.
 
 We also compare one classical predictor per cell: the closest in Hamming
 distance (original-order tie break), and the maximum validation
 balanced-accuracy candidate (lexicographic configuration tie break).
-Recovered validation scores cover all 115 candidates per cell; choices were
-fixed before the new target analysis. This retrospective rule follows TDC's
-objective, not validation F1. Ten cells have validation ties: alternative
-tie choices preserve 6/36 and all extra costs, shifting mean totals by at most
-one label. Hamming proximity is not a deployment rule.
+Validation scores cover all 115 candidates; choices preceded the new target
+analysis. This retrospective rule follows TDC's
+objective, not validation F1. Hamming proximity is a sensitivity analysis,
+not a deployment rule.
 
-\textbf{Mechanism.} At known $P>0$, interval width is exactly
+\smallskip\noindent\textbf{Mechanism.} At known $P>0$, interval width is exactly
 $2|C-Q|(h_P-\ell_P)/[(P+Q)(P+C)]$: predicted-count imbalance and freedom to
 allocate positives between agreement groups jointly drive ambiguity.
-Without $P$, numerator width is $|d|n_{00}+|e|n_{11}$ initially.
-All 58 equal-count pairs in 25 cells identify the sign, as predicted,
-although their cell-mean gap width remains 0.094. Disagreement count alone
-therefore does not describe decision-relevant uncertainty.
+Without $P$, initial numerator width is $|d|n_{00}+|e|n_{11}$. All 58 equal-count
+pairs identify the sign, although their mean magnitude interval remains nonzero.
+Disagreement count alone therefore does not describe this uncertainty.
 
-\textbf{Information after disagreements.} The original mean material-reversal
-fractions are 21.93\% in the pilot and 20.54\% in the reserved cells; with
-exact $P$ they are 15.22\% and 10.52\%. These count pairs admitting opposite
-compatible winners with margins at least 0.01, not observed mistakes or a
-universal frequency. Table~\ref{tab:intervals} translates ambiguity into decisions. Tolerance
-percentages complement material reversals here: no pair lies on the relevant
-0.01 boundaries. Separate bounds certify far fewer choices.
+\smallskip\noindent\textbf{Initial decisions.} In the 28 reserved
+cells, the mean material-reversal fraction is 20.54\% without $P$, and 10.52\%
+with exact $P$. These count pairs admitting compatible winners in both
+directions with margins at least 0.01, not observed mistakes or a universal
+frequency. No pair lies on the relevant 0.01 boundaries, so the complements
+are certifiable choices at that tolerance.
 
-\begin{table}[!ht]
-\centering
-\begin{tabular}{llrrr}
-\toprule
-$P$ & Interval & Width & Exact (\%) & $\varepsilon$ (\%)\\
-\midrule
-\input{interval_rows.tex}\\
-\bottomrule
-\end{tabular}
-\caption{Initial bounds in the 28 reserved cells. Equal-cell means of interval
-width and certified decisions. Exact means strict winner or exact tie;
-$\varepsilon=0.01$ means bounded regret. ``Exact'' $P$ is oracle information.}
-\label{tab:intervals}
-\end{table}
+Keeping dependence matters: in the reserved cells, paired bounds
+certify 79.46\% of choices at $\varepsilon=0.01$, versus 6.57\% for separate
+bounds; with exact $P$, 89.48\% versus 18.80\%. Mean widths are respectively
+0.173 versus 1.585, and 0.034 versus 1.005. This is an information ablation
+on identical feasible sets, not a comparison with jointly applied TDC or Polo.
 
-Allowing $P=0,n$ changes twelve paired gap intervals but no material-reversal
-classification. Excluding the 14 constant classical predictors changes the
-all-cell material mean only from 20.85\% to 20.87\%. Selecting the nearest
-comparator leaves material ambiguity in \textbf{3/36} cells; validation selection leaves
+Figure~\ref{fig:tolerance} shows the tolerance dependence: at 0.01, certification
+is 79.15\% over all 36 cells, versus 79.46\% in the 28 reserved cells.
+Hamming selection leaves material
+ambiguity in \textbf{3/36} cells; validation selection leaves
 \textbf{6/36} (both have 11/36 strict reversals). These one-pair-per-cell
 designs answer a different question from the all-configuration pool.
 
-\textbf{Label costs.} Table~\ref{tab:costs} uses common cohorts for both goals,
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=112mm]{tolerance_sensitivity.pdf}
+\caption{Certification after disagreement labeling, unknown prevalence
+($0<P<n$). Equal-cell means over all 36 cells: 3,200 pairs, or one
+validation-selected pair per cell. Points are evaluated tolerances; lines guide
+the eye. Descriptive fractions, not confidence estimates.}
+\label{fig:tolerance}
+\end{figure}
+
+\smallskip\noindent\textbf{Label costs.} Table~\ref{tab:costs} uses common cohorts for both goals,
 including pairs already decided. Under magnitude ordering, replacing the exact goal by tolerance reduces total
 cost from 121.16 to 74.59 labels across all pairs and from 92.57 to 40.29
-under validation selection, versus 500 for full labeling. Nearest-comparator
-costs do not describe the entire pool.
+under validation selection, versus 500 for full labeling. The magnitude zero-loss control gives
+120.92 (all pairs) and 92.25 (validation), close to strict/exact costs. Almost
+all the saving at 0.01 comes from permitting positive loss, rather than ties.
 
 \begin{table}[!ht]
 \centering
-\setlength{\tabcolsep}{3.5pt}
+\setlength{\tabcolsep}{4.5pt}
 \begin{tabular}{llrrrrr}
 \toprule
  & & Initial & \multicolumn{2}{c}{Additional} & \multicolumn{2}{c}{Total}\\
 Cohort & Policy & $D$ & Exact & $\varepsilon$ & Exact & $\varepsilon$\\
 \midrule
-\input{cost_rows.tex}\\
+\input{cost_rows_v4.tex}\\
 \bottomrule
 \end{tabular}
 \caption{Mean labels on common cohorts, 36 cells, 32 orders per policy.
-All pairs: 3,200 comparisons; validation and nearest: one per cell.
-Additional labels query agreements. Every batch contains 500 items.}
+All pairs: 3,200 comparisons; validation: one per cell.
+Additional labels query agreements; $\varepsilon=0.01$. Each batch has 500
+items. Totals are calculated before rounding.}
 \label{tab:costs}
 \end{table}
 
-Conditioning instead on initial \emph{exact} indecision gives 1,132 pairs in
-34 cells, with mean initial cost 48.61. Extra exact/tolerance costs are
-249.71/92.22 (uniform), 221.26/81.21 (alternating), and 185.27/53.50 (magnitude).
-The 736 initially \emph{tolerance}-undecided pairs occupy 32 cells; their
-initial cost is 57.39 and tolerance extras are 152.00, 134.30 and 87.37.
-These conditional denominators must not be interchanged. For example, the
-all-pair magnitude tolerance total is 82.05 under equal \emph{pair} weights,
-versus the reported 74.59 under equal \emph{cell} weights.
-
-Checks cover 7,506 rational hulls and 2,100 sequential/future-label cases;
-original exact stops are unchanged. In 15,466 of 307,200 replays, the certified choice is the realized-worse model;
-maximum regret is 0.00927, within tolerance. These are dependent replay counts.
-The all-completion guarantee follows from (\ref{eq:stop}).
+Costs vary across cells: under magnitude ordering and $\varepsilon=0.01$,
+the all-pair cell means have minimum/median/maximum 14.0/77.0/188.4 labels.
+This is descriptive dispersion, not an uncertainty interval. The overall mean
+is 74.59 with equal cell weights, versus 82.05 with equal pair weights.
+In 15,466 of 307,200 dependent replays, the certified choice is the realized-worse
+model; maximum regret is 0.00927, within tolerance. The guarantee follows
+from (\ref{eq:stop}), rather than from these retrospective checks.
 
 \section{Use and limitations}
-The criterion tells an auditor whether to choose now or query agreements.
-Retaining shared completions and matching the stopping goal to the decision
-tolerance substantially reduce labeling in these cases.
+Given a tolerance, an auditor computes $[L,U]$ from the current count bounds,
+then chooses by (\ref{eq:stop}) or queries agreements and updates those bounds.
 
-This incremental specialization assumes fixed predictions and correct labels;
-it gives no population, noisy-label, macro-F1, multiclass or family-wise guarantee.
+This specialization assumes fixed predictions and correct labels; its guarantee
+does not extend to populations, noisy labels, macro-F1, multiclass or families.
 Compatible extremes need not be probable; benchmark reuse limits breadth.
-Observed costs are not optimal-acquisition lower bounds. Disagreement-first
-labeling is imposed; separate pairwise costs cannot be summed across the family.
-Statistical methods can trade assumptions or error probability for fewer labels.
-Code, frozen derived inputs and results are archived at
-\url{https://doi.org/10.5281/zenodo.23642981}.
+Disagreement-first labeling is imposed. Costs are neither optimal-acquisition
+lower bounds nor additive across pairs. Statistical alternatives can trade
+assumptions or error probability for fewer labels.
+\par\smallskip\noindent\textbf{Availability.} Code, inputs and results (version 1.1.0):\\
+\url{https://doi.org/10.5281/zenodo.23647323}.
 
-\noindent\textbf{Declarations.}
-R.F.-B. performed the research and writing; I.P.-L., A.G.-S. and P.G.B.
-provided scientific guidance. No specific funding was received. OpenAI Codex
-assisted with literature, design, mathematical checks, code, analysis and
-writing; Claude assisted with independent review. All authors approved the
-content and accept responsibility.
+\smallskip\noindent\textbf{Declarations.}
+R.F.-B. conducted the research and writing; coauthors provided scientific
+guidance. No specific funding. OpenAI Codex assisted literature, design,
+mathematical checks, code, analysis and writing; Claude assisted independent
+review. All authors approved the content and accept responsibility.
 \begin{footnotesize}
-\begin{thebibliography}{9}
+\begin{thebibliography}{11}
+\bibitem{dietterich1998} T. G. Dietterich.
+Approximate Statistical Tests for Comparing Supervised Classification Learning
+Algorithms. \emph{Neural Computation}, 10(7):1895--1923, 1998.
 \bibitem{sawade2010} C. Sawade, N. Landwehr, and T. Scheffer.
 Active Estimation of F-Measures. \emph{NeurIPS}, 23, 2010.
 \bibitem{sawade2012} C. Sawade, N. Landwehr, and T. Scheffer.
@@ -320,9 +314,13 @@ Model Evaluation in the Dark: Robust Classifier Metrics with Missing Labels.
 \bibitem{tdc} R. Fern\'andez-Barrios, I. Pastor-L\'opez, A. Gonz\'alez-Santocildes,
 and P. Garc\'ia Bringas. Sharp Target-Domain Certificates for Quantum-Kernel
 Advantage under Distribution Shift. \emph{arXiv:2610.00080v1}, 2026.
-\url{https://arxiv.org/abs/2610.00080v1}.\bibitem{polo2024} F. M. Polo, S. Maity, M. Yurochkin, M. Banerjee, and Y. Sun.
+\url{https://arxiv.org/abs/2610.00080v1}.
+\bibitem{polo2024} F. M. Polo, S. Maity, M. Yurochkin, M. Banerjee, and Y. Sun.
 Weak Supervision Performance Evaluation via Partial Identification.
 \emph{NeurIPS}, 37, 2024. arXiv:2312.04601.
+\bibitem{tdcartifact} R. Fern\'andez-Barrios et al.
+TDC prediction artifact, v1.1.6. Zenodo, 2026.
+\url{https://doi.org/10.5281/zenodo.21776862}.
 \end{thebibliography}
 \end{footnotesize}
 \end{document}

@@ -1,0 +1,6 @@
+{
+  "script_sha256": "9a17ae4486660b37210b52ea37e7532297c0cd4ba99b528c7ef225b224b41a88",
+  "source_sha256": "477391c7b8dbbb42c61765c3597d5506d5e0d6a85335d87e5e7c79ec3ecadcdd",
+  "output_sha256": "b5d31d32a4b4bf8c6814d3c83aae2924668b87c3e2d3e9d494153fa145e09683",
+  "selection": "first six rows (all pairs and validation); no recalculation/rounding change"
+}

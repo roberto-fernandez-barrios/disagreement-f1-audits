@@ -1,0 +1,15 @@
+{
+  "v4_provenance_verified": true,
+  "figure_and_table_verified": true,
+  "paper_numbers_present": true,
+  "scientific_v3_unchanged": true,
+  "pdf_sha256": "515eddd63862fbdd1240308baba22067b50d9e009d692c61b41cc3cd5cc672ce",
+  "sources": {
+    "manuscript/paper.tex": "1272e67478eac83c6fde66c9f3d186b612c072ac3a90b777d8a4599aeca70950",
+    "manuscript/tolerance_sensitivity.pdf": "ffccb471d17bf4d486af33636d315b9d0cc757b499c94cea87b68dbb2e02d4fd",
+    "manuscript/cost_rows_v4.tex": "b5d31d32a4b4bf8c6814d3c83aae2924668b87c3e2d3e9d494153fa145e09683",
+    "closure_v4/analyze.py": "2a0201f7601a4520b7a2c6348ba41b786fd2b79ad094d9b59f13f1175cbfc23a",
+    "closure_v4/render_table.py": "9a17ae4486660b37210b52ea37e7532297c0cd4ba99b528c7ef225b224b41a88",
+    "closure_v4/verify_v4.py": "0c1c6ec8699ce73d08afb5b6736fca718f1e37f23cc9072ab258df3a1f23d7d3"
+  }
+}
