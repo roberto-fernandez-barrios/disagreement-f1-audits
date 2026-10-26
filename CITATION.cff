@@ -2,12 +2,11 @@ cff-version: 1.2.0
 message: "Please cite this reproducibility artifact and the associated author manuscript."
 title: "When Disagreement Labels Do Not Identify F1 Rankings: reproducibility artifact"
 type: software
-version: "1.1.0"
-date-released: 2026-10-25
+version: "1.2.0"
+date-released: 2026-10-26
 license: "BSD-3-Clause"
-doi: 10.5281/zenodo.23647323
 repository-code: "https://github.com/roberto-fernandez-barrios/disagreement-f1-audits"
-url: "https://doi.org/10.5281/zenodo.23647323"
+url: "https://github.com/roberto-fernandez-barrios/disagreement-f1-audits/releases/tag/v1.2.0"
 authors:
   - family-names: "Fernández-Barrios"
     given-names: "Roberto"

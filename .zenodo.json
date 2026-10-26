@@ -1,11 +1,11 @@
 {
   "title": "When Disagreement Labels Do Not Identify F1 Rankings: reproducibility artifact",
   "upload_type": "software",
-  "version": "1.1.0",
-  "publication_date": "2026-10-25",
+  "version": "1.2.0",
+  "publication_date": "2026-10-26",
   "access_right": "open",
   "license": "bsd-3-clause",
-  "description": "Code, frozen derived inputs, results and six-page author manuscript V4, prepared for the general track of ESANN 2027. Adds the verified zero-loss control, an initial-certification-versus-tolerance figure and clearer autonomous exposition. Original benchmark and positive-tolerance trajectories are preserved. All extensions are retrospective. See README.rst for reproduction, interpretation and licenses. No acceptance claim.",
+  "description": "Reproducibility repository for When Disagreement Labels Do Not Identify F1 Rankings. Release 1.2.0 adds a label-limited audit example, isolated verification/reproduction/build commands, pinned runtime dependencies, traceable documentation and continuous integration. The V4 manuscript, frozen inputs, scientific code and numeric results are unchanged from artifact 1.1.0. Prepared for ESANN 2027 general track; not an acceptance or completed-submission claim. Current public access and citation use the versioned GitHub release; no DOI is assigned to 1.2.0. Software BSD-3-Clause, manuscript CC BY 4.0, original template license retained.",
   "creators": [
     {
       "name": "Fernández-Barrios, Roberto",

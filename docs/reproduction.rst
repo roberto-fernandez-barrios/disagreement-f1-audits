@@ -1,0 +1,117 @@
+Reproduce the artifact
+======================
+
+Start from the versioned release ZIP, or check out its Git tag. Neither Git nor
+the original thesis workspace is required after extracting the ZIP.
+
+Environment
+-----------
+
+Python 3.13 is the supported and tested runtime. ``requirements.txt`` records
+the direct analysis dependencies; ``requirements.lock`` pins all runtime
+dependency versions resolved in a fresh environment. The archival environment
+in ``CONFIG.json`` describes the original scientific runs and is preserved.
+The new environment is checked against those frozen results.
+
+Create an environment with ``python -m venv .venv``. Install the lock using
+``.venv/bin/python -m pip install -r requirements.lock`` on Linux/macOS or
+``.venv/Scripts/python.exe -m pip install -r requirements.lock`` on Windows.
+Use that same interpreter for every command below. Activation is optional;
+no PowerShell execution-policy change is needed.
+
+CI runs the numerical workflow on Ubuntu 24.04 and Windows 2022 with Python
+3.13, and a TeX Live PDF build on Ubuntu. macOS installation syntax is shown
+for convenience; macOS is not included in the tested CI matrix. No global
+packages are installed by the scripts.
+
+Verification
+------------
+
+``python tools/manage.py verify`` checks the full package manifest and the
+195 frozen scientific files inherited from ``v1.1.0``. It then runs the existing
+exact tests, audit checks and provenance chain, the new label-limited interface
+tests, and the delivered PDF's page size, margins and embedded fonts.
+
+The historical verifiers write result reports. The wrapper therefore copies
+the manifest-listed files to a new ``.work/verify-*`` directory before running
+them. Its final check ensures the reference tree was not changed.
+
+Reconstruction scopes
+---------------------
+
+``python tools/manage.py reproduce`` reconstructs the V4 additions: all 307200
+zero-loss stopping points, six tolerance levels, descriptive cell dispersion,
+the figure and shortened cost table. It reuses the frozen V3 positive-tolerance
+trajectories, exactly as the V4 study did. This is the default CI scope.
+
+``python tools/manage.py reproduce --scope all`` also reconstructs the original
+pilot, 28-cell analytical holdout, exact-sign audit, paired/marginal intervals,
+positive-tolerance trajectories, validation selection summaries and V3 tables.
+The older campaign and V4 extension use separate working copies. This preserves
+the historical hash chain instead of silently replacing V4's frozen inputs
+with newly serialized outputs.
+
+Scientific CSV/JSON values are compared to the reference with absolute tolerance
+``1e-12`` and no relative tolerance; integer counts and NPZ arrays must match
+exactly. The only excluded JSON field is
+``results/v3/summary.json: verification.elapsed_seconds``, which measures
+runtime. The V4 analysis itself checks every weak-zero stop against the saved
+array. Timestamps, platform newline encoding, compressed-file metadata and
+font-library serialization are not scientific estimands. Regenerated figures
+may have different bytes across platforms even when all plotted values match.
+The original files remain byte-identical and are separately hash-verified.
+
+Every successful command prints ``"status": "passed"``, elapsed time and the
+path to ``RUN_REPORT.json``. Detailed subprocess logs are in that run's
+``run_logs/`` directories. A failure returns a nonzero exit code and a log path.
+The scripts do not silently accept changed reference values.
+
+PDF compilation
+---------------
+
+``python tools/manage.py build`` uses an existing ``pdflatex`` from either
+MiKTeX or TeX Live. It detects the engine; the MiKTeX-only installer-disabling
+flag is not passed to TeX Live. It performs two passes, checks six A4 pages,
+embedded non-Type-3 fonts, no overfull boxes or undefined references, and
+minimum ink margins of 44/44/52/52 mm (0.005 mm horizontal coordinate tolerance).
+
+Required TeX packages: the included ESANN class, lmodern, graphicx, amsmath,
+amssymb, array, booktabs and url. On a standard Ubuntu TeX Live installation,
+``texlive-latex-recommended`` and ``lmodern`` supply the dependencies. Installing
+TeX is a separate environment step; the command never installs it automatically.
+
+The rebuilt PDF is placed under ``.work/build-*/output/pdf/``. It is checked
+against the current sources and numerical claims. TeX engines and timestamps
+can change PDF bytes; the canonical delivered PDF remains
+``output/pdf/paper.pdf`` with SHA-256
+``515eddd63862fbdd1240308baba22067b50d9e009d692c61b41cc3cd5cc672ce``.
+
+Runtime and resources
+---------------------
+
+No GPU, QPU, provider account, model fitting or original feature-table download
+is involved. After dependencies are installed, the workflows operate offline.
+Runs report their own elapsed time; the release validation record provides
+measured reference timings. The full campaign costs more than the V4-only
+reconstruction. Each command copies approximately the size of the expanded
+artifact into ``.work/``; retain reports you need and remove old working copies
+using your usual file manager. Reference files are outside those directories.
+
+Historical entry points
+-----------------------
+
+The root scripts and ``closure_v4/`` retain their original names and hashes
+because execution records cite them. Use ``tools/manage.py`` as the current
+public entry point. In particular, the old ``package.py`` describes a previous
+local review layout; it is not the release builder. Acquisition scripts contain
+historical workspace paths for provenance and are not used for reproduction.
+
+Versioning and packaging
+------------------------
+
+``python tools/manage.py package`` validates the current manifest and writes a
+ZIP with sorted paths, normalized timestamps and fixed permissions. It checks
+every entry's SHA-256 before reporting the archive hash. Repeating it in the
+same supported environment yields identical ZIP bytes. The tag, release assets
+and manifest identify the exact delivered version. The previous releases remain
+available; new work never silently replaces an old artifact.

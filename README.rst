@@ -1,101 +1,178 @@
 When Disagreement Labels Do Not Identify F1 Rankings
-==================================================
+====================================================
 
-Reproducibility artifact 1.1.0 for the six-page author manuscript V4,
-prepared for the general track of ESANN 2027. See the release/Zenodo record
-for current submission status; this artifact does not imply acceptance.
+**Exact F1 decisions from partially labeled batches.**
 
-Permanent version: https://doi.org/10.5281/zenodo.23647323
+After labeling every item on which two classifiers disagree, can you choose
+the better model? For F1, unknown labels on their agreements can still reverse
+the answer. This repository computes the exact range of possible F1 differences
+and tells you whether to **choose now or query more agreement labels**.
 
-Repository: https://github.com/roberto-fernandez-barrios/disagreement-f1-audits
+.. image:: https://github.com/roberto-fernandez-barrios/disagreement-f1-audits/actions/workflows/reproducibility.yml/badge.svg
+   :target: https://github.com/roberto-fernandez-barrios/disagreement-f1-audits/actions/workflows/reproducibility.yml
+   :alt: Reproducibility checks
+
+`Read the six-page paper <output/pdf/paper.pdf>`_ ·
+`Download release 1.2.0 <https://github.com/roberto-fernandez-barrios/disagreement-f1-audits/releases/tag/v1.2.0>`_ ·
+`Reproduce <docs/reproduction.rst>`_ ·
+`Use your own predictions <docs/audit.rst>`_ ·
+`Cite <CITATION.cff>`_
 
 Roberto Fernández-Barrios, Iker Pastor-López, Asier González-Santocildes,
-and Pablo García Bringas. Faculty of Engineering, University of Deusto.
+and Pablo García Bringas — Faculty of Engineering, University of Deusto.
 
-What the audit does
+What you can decide
 -------------------
 
-Given two fixed binary prediction vectors, labels on all their disagreements,
-and optionally exact prevalence, the audit computes the sharp F1-difference
-interval over compatible completions. It either certifies a choice or requires
-additional agreement labels. It separates strict-winner/exact-tie identification,
-a weak winner with zero loss, and a minimax choice with at most 0.01 absolute F1
-loss. Equal predicted-positive counts identify the sign without prevalence.
-The result specializes TDC/Polo partial-identification frameworks; the explicit
-audit and its decision consequences form an incremental contribution.
+Supply two fixed binary prediction vectors, their observed labels, and
+optionally the **exact number of positives** in the batch. Unknown labels are
+explicitly ``null``. Every disagreement must already be labeled; agreements
+can remain unknown. The audit returns sharp bounds ``[L, U]`` on
+``F1(q) - F1(c)`` and distinguishes:
 
-Version 1.1.0 adds the verified weak-zero control and an initial-certification
-versus tolerance figure, plus clearer exposition and direct source attribution.
-The underlying benchmark, original sign stops and positive-tolerance trajectories
-are unchanged: 36 dependent cells, 3,200 pairs, three query policies and 32 seeds.
-The initial interval analysis retains 0<P<n; query trajectories include P=0,n.
-All additions are retrospective. The original eight-cell pilot and 28-cell
-analytical holdout remain distinguishable; this is not a prospective study.
+* A strict winner or an exact tie.
+* A weak winner with zero loss.
+* A choice guaranteed to lose at most a chosen absolute F1 tolerance.
 
-Reproduce
----------
+The last choice is certified when ``L >= -epsilon`` or ``U <= epsilon``.
+The guarantee holds for **every compatible completion of this batch**, assuming
+correct observed labels. It is not a confidence interval or a population claim.
 
-Requirements: Python, numpy, matplotlib, pypdf and pdfplumber; versions are in
-CONFIG.json and execution records. No network, original feature data, training
-or external provider is needed. Verify the supplied package::
+.. image:: results/v4/tolerance_sensitivity.png
+   :width: 720
+   :alt: Certification rises with F1 tolerance for all pairs and validation-selected pairs.
 
-    python -B closure_v4/verify_v4.py
+Certification immediately after disagreement labeling, with unknown prevalence
+restricted to ``0 < P < n`` as in the original initial-information analysis.
+Equal-cell means over **36 dependent cells**. At tolerance 0.01, 79.15% of all
+pairs are certifiable; the corresponding value in the 28 reserved cells is
+79.46%. Points are evaluated tolerances; connecting lines guide the eye.
 
-Reconstruct only the additions to V3 (including every weak-zero stop and the
-six-point tolerance sensitivity), then render the shortened table::
+Try the paper's counterexample
+------------------------------
 
-    python -B closure_v4/analyze.py
-    python -B closure_v4/render_table.py
+Python **3.13** is the tested runtime. Create an isolated environment::
 
-Compile with an existing MiKTeX installation and verify::
+    git clone https://github.com/roberto-fernandez-barrios/disagreement-f1-audits.git
+    cd disagreement-f1-audits
+    python -m venv .venv
 
-    python -B build.py
-    python -B closure_v4/verify_v4.py
+On Linux or macOS::
 
-For TeX Live, adapt only the MiKTeX-specific --disable-installer option in
-build.py. The official template is included; no automatic installation occurs.
-To reconstruct the older V3 campaign as well, run ``python -B reproduce.py``
-before the V4 commands above. It need not be repeated for editorial changes.
-The legacy package.py builds the earlier review layout; use the published
-versioned ZIP for this complete V4 release.
+    .venv/bin/python -m pip install -r requirements.lock
+    .venv/bin/python tools/manage.py demo
 
-Evidence and interpretation
----------------------------
+On Windows PowerShell::
 
-* output/pdf/paper.pdf and manuscript/: delivered PDF, sources, vector figure.
-* inputs/data/: 90 frozen derived TDC files (DATA_MANIFEST.json).
-* inputs/validation_v3/: 4,140 source/ID-validation scores, rule and source hashes.
-* results/v3/: original paired/marginal bounds, costs, selections and trajectories.
-* results/v4/: zero-loss costs, rational tolerance sensitivity, descriptive cell
-  dispersion, execution record and table trace.
-* closure_v4/weak_zero_*: preserved earlier reviewer diagnostic and stop array,
-  independently checked by analyze.py; not a retrospective preregistration.
-* PROTOCOLO_PILOTO.txt and its lock: unchanged original protocol.
-* REVISION_V3_PROTOCOL.txt and closure_v4/RESEARCH_NOTE.txt: retrospective context.
-* results/reproduction.json: unchanged V3 scientific code/input/output hashes.
-* results/v4_verification.json and results/clean_reproduction_v4.json: checks.
-* PACKAGE_MANIFEST.json: SHA-256 for each distributed file except itself.
+    .venv/Scripts/python.exe -m pip install -r requirements.lock
+    .venv/Scripts/python.exe tools/manage.py demo
 
-Means are averaged over orders, then pairs within cells, then cells; pair-weighted
-alternatives are labeled separately. The cells, pairs and seeds are dependent.
-The figure uses all 36 cells: 79.15% at tolerance 0.01 differs from the 79.46%
-in the 28 reserved cells. Ranges are descriptive, not confidence intervals.
-Full labels verify realized regret but do not select comparators or query orders.
-The closest-Hamming 3/36 and validation-selected 6/36 material ambiguities are
-different designs from the all-configuration pool. Costs are not universal minima.
+The `ten-item example <examples/ten_items.json>`_ reveals just three labels and
+supplies the exact positive count ``P=4``. The expected output includes::
 
-No raw feature tables, other manuscripts, private review prompts or credentials
-are redistributed. Raw validation caches are not bundled; derived metrics and
-locally verified source hashes are supplied. Acquisition scripts are retained
-for provenance and are not needed for autonomous reconstruction.
+    paired_interval: [-2/35, 1/5]
+    minimum_worst_case_regret: 2/35
+    action: query_agreements
+    chosen_model: null
 
-Provenance and licenses
+Thus neither choice is certified at tolerance 0.01. The program does not load
+hidden agreement labels. The `input guide <docs/audit.rst>`_ explains how to
+audit your own pair and update the decision as labels arrive.
+
+Verify, reproduce, build
+------------------------
+
+Below, ``python`` denotes the interpreter in the environment above. Each command
+creates a separate ``.work/`` directory and prints its report location.
+**The reference results and delivered PDF are never overwritten.**
+
+.. list-table:: Public commands
+   :header-rows: 1
+   :widths: 44 56
+
+   * - Command
+     - Purpose
+   * - ``python tools/manage.py verify``
+     - Check integrity, exact mathematical tests, interface tests and PDF format.
+   * - ``python tools/manage.py reproduce``
+     - Reconstruct the V4 zero-loss control, tolerance curve and table.
+   * - ``python tools/manage.py reproduce --scope all``
+     - Also rerun the original pilot, reserved-cell analysis and V3 campaign.
+   * - ``python tools/manage.py build``
+     - Compile a separate six-page PDF with existing MiKTeX or TeX Live.
+   * - ``python tools/manage.py package``
+     - Build a deterministic ZIP and report its SHA-256.
+
+The released inputs are sufficient: **no training, original feature tables,
+GPU, QPU, account or network access is needed after dependency installation**.
+PDF compilation alone requires a separate TeX installation.
+See `reproduction details <docs/reproduction.rst>`_ for scope, outputs, environment,
+runtime measurements, and the distinction between numeric and binary identity.
+
+What the evidence shows
 -----------------------
 
-The theoretical TDC preprint https://arxiv.org/abs/2610.00080v1 is distinct from
-its prediction artifact https://doi.org/10.5281/zenodo.21776862 (version 1.1.6)
-and from this audit's artifact 1.1.0. See CITATION.cff and THIRD_PARTY_NOTICES.txt.
-Software/results: BSD-3-Clause; article: CC BY 4.0; template: original license.
-Codex assisted literature, design, mathematical checks, code, analysis and writing;
-Claude Fable 5.1 with xhigh effort provided independent AI review. This is not
-conference peer review. The authors retain responsibility. No specific funding.
+The benchmark reuses 3,200 frozen pairs across 36 dependent cells, with three
+query policies and 32 orders. Under the magnitude policy, equal-cell mean
+**total labels**, including the initial disagreements, are:
+
+.. list-table:: Common cohorts; 500 items in each batch
+   :header-rows: 1
+   :widths: 34 22 22 22
+
+   * - Comparator design
+     - Strict winner / exact tie
+     - Zero-loss choice
+     - Loss at most 0.01
+   * - All pairs
+     - 121.16
+     - 120.92
+     - 74.59
+   * - Validation-selected pair
+     - 92.57
+     - 92.25
+     - 40.29
+
+Most of the saving comes from allowing a small positive loss. Merely permitting
+ties changes little. These are observed policy costs, not optimal lower bounds.
+The `evidence map <docs/evidence.rst>`_ links the paper's claims, figure and table
+to their exact inputs, outputs and commands.
+
+Scope and provenance
+--------------------
+
+This is an explicit specialization of the TDC and Polo partial-identification
+frameworks. Its contribution is the disagreement-first audit and its decision
+consequences. The work is retrospective; the eight-cell pilot and 28-cell
+analytical holdout do not constitute a new prospective evaluation. Cells, pairs
+and seeds share data. F1 means positive-class binary F1, with ``0/0=0``.
+
+`Provenance and limitations <docs/provenance.rst>`_ distinguishes the
+`TDC theoretical preprint v1 <https://arxiv.org/abs/2610.00080v1>`_, the reused
+`TDC prediction artifact 1.1.6 <https://doi.org/10.5281/zenodo.21776862>`_, and
+this repository. Original protocols, scientific files and historical releases
+remain intact. Code, frozen inputs, results, manuscript sources and the PDF are
+included; raw feature tables and private portal information are not.
+
+Availability, citation and status
+---------------------------------
+
+Repository release **1.2.0** improves the interface, documentation, environment
+and automation around the unchanged **V4** manuscript and scientific snapshot
+``v1.1.0``. Use the versioned GitHub release above for access and ``CITATION.cff``
+for citation. The V4 manuscript's reserved Zenodo identifier
+``10.5281/zenodo.23647323`` is **not yet public**; no DOI is claimed for 1.2.0.
+The earlier published Zenodo version is not a substitute for the V4 package.
+
+The paper is prepared for the **general track of ESANN 2027**; it is not yet
+submitted or accepted. `Release history <CHANGELOG.rst>`_ records the changes.
+
+Software and derived results: `BSD-3-Clause <LICENSE>`_. Manuscript: CC BY 4.0.
+The ESANN template retains its original license; see
+`third-party notices <THIRD_PARTY_NOTICES.txt>`_. Codex assisted the research,
+code, analysis and writing; Claude Fable 5.1, xhigh, provided independent AI
+review of V4. The `review record <review_claude/reports_v4>`_ is not conference
+peer review. The authors retain responsibility. No specific funding.
+
+For a reproducible issue or a proposed improvement, see
+`contribution guidance <CONTRIBUTING.rst>`_.

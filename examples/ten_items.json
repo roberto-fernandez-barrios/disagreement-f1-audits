@@ -1,0 +1,6 @@
+{
+  "q": [1, 1, 1, 1, 1, 1, 0, 0, 0, 0],
+  "c": [0, 0, 0, 1, 1, 1, 0, 0, 0, 0],
+  "labels": [1, 0, 0, null, null, null, null, null, null, null],
+  "prevalence": 4
+}

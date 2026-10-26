@@ -1,0 +1,6 @@
+# Direct dependencies used by the frozen V4 analysis, Python 3.13.
+# requirements.lock pins the complete supported runtime environment.
+numpy==2.3.5
+matplotlib==3.11.0
+pypdf==6.14.2
+pdfplumber==0.11.7
