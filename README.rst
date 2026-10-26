@@ -12,8 +12,8 @@ and tells you whether to **choose now or query more agreement labels**.
    :target: https://github.com/roberto-fernandez-barrios/disagreement-f1-audits/actions/workflows/reproducibility.yml
    :alt: Reproducibility checks
 
-`Read the six-page paper <output/pdf/paper.pdf>`_ ·
-`Download release 1.2.0 <https://github.com/roberto-fernandez-barrios/disagreement-f1-audits/releases/tag/v1.2.0>`_ ·
+`Read the six-page paper <paper/paper.pdf>`_ ·
+`Download release 1.3.0 <https://github.com/roberto-fernandez-barrios/disagreement-f1-audits/releases/tag/v1.3.0>`_ ·
 `Reproduce <docs/reproduction.rst>`_ ·
 `Use your own predictions <docs/audit.rst>`_ ·
 `Cite <CITATION.cff>`_
@@ -38,7 +38,7 @@ The last choice is certified when ``L >= -epsilon`` or ``U <= epsilon``.
 The guarantee holds for **every compatible completion of this batch**, assuming
 correct observed labels. It is not a confidence interval or a population claim.
 
-.. image:: results/v4/tolerance_sensitivity.png
+.. image:: results/tradeoffs/tolerance_sensitivity.png
    :width: 720
    :alt: Certification rises with F1 tolerance for all pairs and validation-selected pairs.
 
@@ -78,6 +78,26 @@ supplies the exact positive count ``P=4``. The expected output includes::
 Thus neither choice is certified at tolerance 0.01. The program does not load
 hidden agreement labels. The `input guide <docs/audit.rst>`_ explains how to
 audit your own pair and update the decision as labels arrive.
+
+Repository layout
+-----------------
+
+The public root contains the standard README, license, citation and environment
+files. Research material is grouped by purpose::
+
+    src/              Exact F1 interval and decision code
+    tools/            Public audit and reproducibility commands
+    examples/         Runnable input example
+    data/             Frozen predictions, validation and control inputs
+    results/          Numerical results and the tolerance figure
+    paper/            Six-page PDF, LaTeX sources and references
+    tests/            Interface and scientific verification tests
+    docs/             User guides, evidence map, provenance and change log
+    reproducibility/  Protocols, analysis scripts, manifests and run records
+
+`How the paths are preserved <reproducibility/README.rst>`_ explains the exact
+mapping to historical execution records. AI-review reports remain available
+in the previous version's archive; they are not part of this release's file tree.
 
 Verify, reproduce, build
 ------------------------
@@ -157,22 +177,22 @@ included; raw feature tables and private portal information are not.
 Availability, citation and status
 ---------------------------------
 
-Repository release **1.2.0** improves the interface, documentation, environment
-and automation around the unchanged **V4** manuscript and scientific snapshot
-``v1.1.0``. Use the versioned GitHub release above for access and ``CITATION.cff``
-for citation. The V4 manuscript's reserved Zenodo identifier
-``10.5281/zenodo.23647323`` is **not yet public**; no DOI is claimed for 1.2.0.
+Repository release **1.3.0** organizes the unchanged **V4** manuscript and
+scientific snapshot ``v1.1.0`` into a reader-facing research layout. Use the
+versioned GitHub release above for access and ``CITATION.cff`` for citation.
+The V4 manuscript's reserved Zenodo identifier
+``10.5281/zenodo.23647323`` is **not yet public**; no DOI is claimed for 1.3.0.
 The earlier published Zenodo version is not a substitute for the V4 package.
 
 The paper is prepared for the **general track of ESANN 2027**; it is not yet
-submitted or accepted. `Release history <CHANGELOG.rst>`_ records the changes.
+submitted or accepted. `Release history <docs/changelog.rst>`_ records the changes.
 
 Software and derived results: `BSD-3-Clause <LICENSE>`_. Manuscript: CC BY 4.0.
 The ESANN template retains its original license; see
-`third-party notices <THIRD_PARTY_NOTICES.txt>`_. Codex assisted the research,
+`license and data notices <docs/licenses.rst>`_. Codex assisted the research,
 code, analysis and writing; Claude Fable 5.1, xhigh, provided independent AI
-review of V4. The `review record <review_claude/reports_v4>`_ is not conference
-peer review. The authors retain responsibility. No specific funding.
+review of V4. This AI review is distinct from conference peer review. The authors
+retain responsibility. No specific funding.
 
 For a reproducible issue or a proposed improvement, see
-`contribution guidance <CONTRIBUTING.rst>`_.
+`contribution guidance <.github/CONTRIBUTING.rst>`_.

@@ -16,7 +16,8 @@ import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-MANIFEST = "PACKAGE_MANIFEST.json"
+MANIFEST = "reproducibility/MANIFEST.json"
+FROZEN = "reproducibility/frozen_files.json"
 
 
 def sha(path):
@@ -44,9 +45,9 @@ def check_manifest(root=ROOT):
         p = safe_file(root, name)
         if sha(p) != rec["sha256"] or p.stat().st_size != rec["bytes"]:
             raise ValueError(f"Artifact integrity mismatch: {name}")
-    frozen = read(root / "provenance/scientific_snapshot.json")
-    for name, digest in frozen["files"].items():
-        if sha(safe_file(root, name)) != digest:
+    frozen = read(root / FROZEN)
+    for name, rec in frozen["files"].items():
+        if sha(safe_file(root, rec["path"])) != rec["sha256"]:
             raise ValueError(f"Frozen scientific file changed: {name}")
     return manifest
 
@@ -61,6 +62,33 @@ def stage(label, manifest):
         dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, dest)
     return target
+
+
+def replay_tree(target):
+    """Restore historical paths in a disposable run directory, preserving bytes.
+
+    Old execution records and scripts refer to those paths. This explicit map
+    lets readers browse a conventional layout without rewriting that evidence.
+    Nothing is downloaded, inferred from labels, or changed in the release tree.
+    """
+    replay = target / "run"
+    replay.mkdir()
+    frozen = read(target / FROZEN)
+    for original, rec in frozen["files"].items():
+        dest = (replay / original).resolve()
+        if not dest.is_relative_to(replay.resolve()):
+            raise ValueError(f"Unsafe historical path: {original}")
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(safe_file(target, rec["path"]), dest)
+    # The portable build records its own exact source in the build report.
+    (replay / "tools").mkdir(exist_ok=True)
+    shutil.copy2(target / "tools/manage.py", replay / "tools/manage.py")
+    return replay
+
+
+def reference(original):
+    rec = read(ROOT / FROZEN)["files"][original]
+    return safe_file(ROOT, rec["path"])
 
 
 def execute(target, args, name):
@@ -102,7 +130,7 @@ def equivalent(a, b, where=""):
 def compare(target, files):
     import numpy as np
     for name in files:
-        left, right = ROOT / name, target / name
+        left, right = reference(name), target / name
         if left.suffix == ".json":
             a, b = read(left), read(right)
             # This single documented field measures runtime, not a result.
@@ -183,13 +211,12 @@ def build(target):
 
 def refresh_manifest():
     """Maintainer-only artifact allowlist; excludes local runs and environments."""
-    original = read(ROOT/"provenance/v1.1.0_manifest.json")
-    top = {n for n in original if "/" not in n}
-    top.update({"requirements.txt", "requirements.lock", "RELEASE.json", "CHANGELOG.rst", "CONTRIBUTING.rst"})
-    files = [ROOT/n for n in top if n != MANIFEST]
-    for folder in ("inputs", "results", "manuscript", "references", "closure_v4", "review_claude", "tools", "tests", "examples", "docs", "provenance", ".github"):
-        files.extend(p for p in (ROOT/folder).rglob("*") if p.is_file() and p.suffix != ".pyc" and "__pycache__" not in p.parts)
-    files.extend(ROOT/"output/pdf"/name for name in ("paper.pdf", "paper.log", "validation.json", "build_1.txt", "build_2.txt"))
+    top = {".gitattributes", ".gitignore", ".zenodo.json", "README.rst", "LICENSE",
+           "CITATION.cff", "requirements.txt", "requirements.lock"}
+    files = [ROOT/n for n in top]
+    for folder in ("data", "results", "paper", "reproducibility", "src", "tools", "tests", "examples", "docs", ".github"):
+        files.extend(p for p in (ROOT/folder).rglob("*") if p.is_file() and p.suffix != ".pyc" and "__pycache__" not in p.parts
+                     and p.relative_to(ROOT).as_posix() != MANIFEST)
     write(ROOT/MANIFEST, {p.relative_to(ROOT).as_posix(): {"sha256": sha(p), "bytes": p.stat().st_size}
                          for p in sorted(set(files))})
     check_manifest()
@@ -216,31 +243,33 @@ def main():
     start = time.perf_counter(); manifest = check_manifest()
     target = stage(args.command, manifest)
     result = {"command": args.command, "reference_files_verified": len(manifest), "workspace": str(target)}
+    replay = replay_tree(target) if args.command != "package" else None
+    if replay is not None: result["scientific_workspace"] = str(replay)
     if args.command == "verify":
-        script(target, "closure_v4/verify_v4.py")
+        script(replay, "closure_v4/verify_v4.py")
         execute(target, [sys.executable, "-B", "-m", "unittest", "discover", "-s", "tests"], "interface-tests")
-        result["pdf"] = pdf_check(target/"output/pdf/paper.pdf")
+        result["pdf"] = pdf_check(target/"paper/paper.pdf")
     elif args.command == "reproduce":
         if args.scope == "all":
             files = [f"results/{s}/{f}" for s in ("pilot", "confirmation") for f in ("pairs.csv", "cell_summary.json")]
             files += ["results/audit/stops.npz", "results/audit/pairs.csv", "results/summary.json"]
             files += ["results/v3/"+f for f in ("intervals.csv", "costs.csv", "pairs.csv", "stops.npz", "summary.json", "validation_ties.json")]
             files += ["manuscript/interval_rows.tex", "manuscript/cost_rows.tex"]
-            for name in files: safe_file(ROOT, name)
-            prior = stage("prior-campaign", manifest)
+            for name in files: reference(name)
+            prior = replay_tree(stage("prior-campaign", manifest))
             script(prior, "reproduce.py")
             result["prior_outputs_compared"] = compare(prior, files)
             result["excluded_performance_metadata"] = ["results/v3/summary.json: verification.elapsed_seconds"]
             result["prior_workspace"] = str(prior)
-        script(target, "closure_v4/analyze.py"); script(target, "closure_v4/render_table.py")
-        result["v4_outputs_compared"] = compare(target, ["results/v4/summary.json", "results/v4/costs.csv", "results/v4/sensitivity.csv", "manuscript/cost_rows_v4.tex"])
-        result["weak_zero_paths_verified"] = read(target/"results/v4/summary.json")["weak_trajectories_verified"]
+        script(replay, "closure_v4/analyze.py"); script(replay, "closure_v4/render_table.py")
+        result["v4_outputs_compared"] = compare(replay, ["results/v4/summary.json", "results/v4/costs.csv", "results/v4/sensitivity.csv", "manuscript/cost_rows_v4.tex"])
+        result["weak_zero_paths_verified"] = read(replay/"results/v4/summary.json")["weak_trajectories_verified"]
         result["float_comparison_absolute_tolerance"] = 1e-12
-        result["figure"] = str(target/"manuscript/tolerance_sensitivity.pdf")
+        result["figure"] = str(replay/"manuscript/tolerance_sensitivity.pdf")
         result["note"] = "Numeric reproduction. Rendering/ZIP metadata may differ by platform; reference files are unchanged."
-    elif args.command == "build": result.update(build(target))
+    elif args.command == "build": result.update(build(replay))
     elif args.command == "package":
-        version = read(ROOT/"RELEASE.json")["version"]
+        version = read(ROOT/"reproducibility/release.json")["version"]
         archive = target/f"disagreement-f1-audits-v{version}.zip"
         with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=7) as z:
             for name in sorted(list(manifest)+[MANIFEST]):

@@ -2,7 +2,7 @@ From claim to evidence
 ======================
 
 All results below come from the frozen V4 scientific snapshot. Repository
-release 1.2.0 adds access and verification tools, not new experiments.
+release 1.3.0 adds access and verification tools, not new experiments.
 
 .. list-table:: Evidence map
    :header-rows: 1
@@ -15,31 +15,31 @@ release 1.2.0 adds access and verification tools, not new experiments.
      - ``examples/ten_items.json``; paper Section 1
      - ``tools/manage.py demo``; ``tests/test_interface.py``
    * - Exact sign and magnitude, Q=C, P=0,n
-     - ``decision.py``, ``tolerance.py``; paper Section 2
-     - ``test_decision.py``, ``test_tolerance.py`` via ``verify``
+     - ``src/decision.py``, ``src/tolerance.py``; paper Section 2
+     - ``tests/scientific/test_decision.py``, ``tests/scientific/test_tolerance.py`` via ``verify``
    * - 20.54% / 10.52% material ambiguity, 28 reserved cells
-     - ``results/confirmation/pairs.csv`` and ``results/v3/summary.json``
+     - ``results/reserved/pairs.csv`` and ``results/tolerance/summary.json``
      - ``reproduce --scope all``
    * - Paired versus separate intervals
-     - ``results/v3/intervals.csv`` and ``results/v3/summary.json``
+     - ``results/tolerance/intervals.csv`` and ``results/tolerance/summary.json``
      - ``reproduce --scope all``; identical feasible sets
    * - Figure 1: six tolerances, 36 cells
-     - ``results/v4/sensitivity.csv``, ``summary.json``; ``manuscript/tolerance_sensitivity.pdf``
+     - ``results/tradeoffs/sensitivity.csv``, ``summary.json``; ``paper/source/tolerance_sensitivity.pdf``
      - ``reproduce``; exact rational decision bounds
    * - Table 1: common-cohort label costs
-     - ``results/v3/costs.csv`` and ``summary.json``; ``manuscript/cost_rows_v4.tex``
-     - ``render_v3.py`` then ``closure_v4/render_table.py`` through the public workflow
+     - ``results/tolerance/costs.csv`` and ``summary.json``; ``paper/source/cost_rows_v4.tex``
+     - ``reproducibility/scripts/render_v3.py`` then ``reproducibility/scripts/render_cost_table.py`` through the public workflow
    * - Zero-loss control and cell dispersion
-     - ``closure_v4/weak_zero_stops.npz``; ``results/v4/costs.csv`` and ``summary.json``
+     - ``data/controls/weak_zero_stops.npz``; ``results/tradeoffs/costs.csv`` and ``summary.json``
      - ``reproduce`` checks all 307200 weak-zero stops
    * - Validation comparator, 6/36 material cases
-     - ``inputs/validation_v3/validation_scores.csv`` and ``selection.json``
+     - ``data/validation/validation_scores.csv`` and ``selection.json``
      - ``verify`` recomputes 36 choices; ``reproduce --scope all`` checks results
    * - Hamming comparator, 3/36 material cases
-     - ``results/v3/pairs.csv`` and ``summary.json``
+     - ``results/tolerance/pairs.csv`` and ``summary.json``
      - ``reproduce --scope all``
    * - 15466 realized-worse choices within tolerance
-     - ``results/v3/stops.npz`` and ``summary.json``
+     - ``results/tolerance/stops.npz`` and ``summary.json``
      - ``reproduce --scope all``; dependent replays, not independent errors
 
 Units and weighting

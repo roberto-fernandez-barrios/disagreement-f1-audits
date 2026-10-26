@@ -1,7 +1,7 @@
 Audit your own pair
 ===================
 
-The public adapter calls the unchanged ``tolerance.py`` implementation. It
+The public adapter calls the unchanged ``src/tolerance.py`` implementation. It
 accepts only the predictions and labels you provide; it never reads benchmark
 labels. This is a deterministic finite-batch audit, not a trained estimator.
 

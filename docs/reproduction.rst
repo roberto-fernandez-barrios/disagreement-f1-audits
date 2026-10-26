@@ -10,7 +10,7 @@ Environment
 Python 3.13 is the supported and tested runtime. ``requirements.txt`` records
 the direct analysis dependencies; ``requirements.lock`` pins all runtime
 dependency versions resolved in a fresh environment. The archival environment
-in ``CONFIG.json`` describes the original scientific runs and is preserved.
+in ``reproducibility/environment/original.json`` describes the original scientific runs and is preserved.
 The new environment is checked against those frozen results.
 
 Create an environment with ``python -m venv .venv``. Install the lock using
@@ -28,13 +28,13 @@ Verification
 ------------
 
 ``python tools/manage.py verify`` checks the full package manifest and the
-195 frozen scientific files inherited from ``v1.1.0``. It then runs the existing
+191 frozen scientific/provenance files inherited from ``v1.1.0``. It then runs the existing
 exact tests, audit checks and provenance chain, the new label-limited interface
 tests, and the delivered PDF's page size, margins and embedded fonts.
 
 The historical verifiers write result reports. The wrapper therefore copies
-the manifest-listed files to a new ``.work/verify-*`` directory before running
-them. Its final check ensures the reference tree was not changed.
+the manifest-listed files to a new ``.work/verify-*`` directory and reconstructs
+the recorded historical paths under its ``run/`` subdirectory before running them. Its final check ensures the reference tree was not changed.
 
 Reconstruction scopes
 ---------------------
@@ -54,7 +54,7 @@ with newly serialized outputs.
 Scientific CSV/JSON values are compared to the reference with absolute tolerance
 ``1e-12`` and no relative tolerance; integer counts and NPZ arrays must match
 exactly. The only excluded JSON field is
-``results/v3/summary.json: verification.elapsed_seconds``, which measures
+``results/tolerance/summary.json: verification.elapsed_seconds``, which measures
 runtime. The V4 analysis itself checks every weak-zero stop against the saved
 array. Timestamps, platform newline encoding, compressed-file metadata and
 font-library serialization are not scientific estimands. Regenerated figures
@@ -80,10 +80,10 @@ amssymb, array, booktabs and url. On a standard Ubuntu TeX Live installation,
 ``texlive-latex-recommended`` and ``lmodern`` supply the dependencies. Installing
 TeX is a separate environment step; the command never installs it automatically.
 
-The rebuilt PDF is placed under ``.work/build-*/output/pdf/``. It is checked
+The rebuilt PDF is placed under ``.work/build-*/run/output/pdf/``. It is checked
 against the current sources and numerical claims. TeX engines and timestamps
 can change PDF bytes; the canonical delivered PDF remains
-``output/pdf/paper.pdf`` with SHA-256
+``paper/paper.pdf`` with SHA-256
 ``515eddd63862fbdd1240308baba22067b50d9e009d692c61b41cc3cd5cc672ce``.
 
 Runtime and resources
@@ -93,18 +93,27 @@ No GPU, QPU, provider account, model fitting or original feature-table download
 is involved. After dependencies are installed, the workflows operate offline.
 Runs report their own elapsed time; the release validation record provides
 measured reference timings. The full campaign costs more than the V4-only
-reconstruction. Each command copies approximately the size of the expanded
-artifact into ``.work/``; retain reports you need and remove old working copies
+reconstruction. Verification, reconstruction and compilation copy the public
+tree and restore a separate execution tree, using roughly twice the expanded
+artifact size per run (the full campaign uses a second such workspace).
+Retain reports you need and remove old working copies
 using your usual file manager. Reference files are outside those directories.
 
-Historical entry points
------------------------
+Historical execution paths
+--------------------------
 
-The root scripts and ``closure_v4/`` retain their original names and hashes
-because execution records cite them. Use ``tools/manage.py`` as the current
-public entry point. In particular, the old ``package.py`` describes a previous
-local review layout; it is not the release builder. Acquisition scripts contain
-historical workspace paths for provenance and are not used for reproduction.
+Use ``tools/manage.py`` as the public entry point. Scientific source files were
+moved, not edited. Their recorded paths and SHA-256 hashes are mapped explicitly
+by ``reproducibility/frozen_files.json``. Before verification, reconstruction or
+compilation, the wrapper copies those bytes to their historical paths inside
+``.work/<command>-*/run/``. It does not fetch files or reconstruct source code.
+
+This keeps the original protocols, script hashes and execution records valid.
+The raw scripts under ``reproducibility/scripts/`` and ``tests/scientific/`` are
+not independent entry points in the reorganized tree. The current interface
+tests run against the public layout; original scientific verifiers run against
+the restored layout. Both are checked in CI. Legacy acquisition/packaging
+scripts are retained under ``reproducibility/history/scripts/`` for provenance.
 
 Versioning and packaging
 ------------------------
