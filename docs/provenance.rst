@@ -12,7 +12,7 @@ Three distinct references
    `10.5281/zenodo.21776862 <https://doi.org/10.5281/zenodo.21776862>`_. This is
    the source of the frozen derived predictions, target labels and metadata.
 3. The present F1 audit: scientific snapshot ``v1.1.0`` / manuscript V4;
-   current repository interface ``v1.3.0``. See ``reproducibility/release.json`` for access and
+   current release ``v1.4.0`` / manuscript V5. See ``reproducibility/release.json`` for access and
    publication status. A reserved DOI is not evidence of a public deposit.
 
 Reuse and original material
@@ -43,7 +43,7 @@ closes numerical reproducibility without inventing the missing historical script
 Scientific scope
 ----------------
 
-The fixed-prevalence characterization specializes TDC/Polo; enumeration of
+The fixed-prevalence characterization specializes Kuboyama/TDC/Polo; enumeration of
 prevalence and minimax regret are not claimed as new general principles. The
 additional value is the explicit post-disagreement solution, its operational
 choice/query criterion and the empirical information/cost consequences.
@@ -87,3 +87,50 @@ funding are retained. AI assistance and author responsibility are disclosed in
 the paper. Software/results use BSD-3-Clause, the manuscript CC BY 4.0, and the
 ESANN template its original license. See `license notices <licenses.rst>`_ for current paths and details.
 No original dataset rights are conveyed by the derived artifact.
+
+Benchmark lineage and V5 attribution
+-----------------------------------
+
+The F1 audit reuses predictions, not raw records or newly trained models.
+The 20 BRFSS Diabetes and ACS FoodStamps cells derive from TableShift
+(Gardner, Popovic and Schmidt, NeurIPS 36, 2023;
+https://arxiv.org/abs/2312.07577), pinned upstream at
+``fca9429814703a07e3902d005d46563a207b7f0a``. Their original sources are
+CDC BRFSS and US Census ACS PUMS. The other 16 cells use eight security
+scenarios from the TDC 1.1.6 release:
+
+* EMBER histogram/byte-entropy ``m1`` and ``m2`` scenarios; Anderson and Roth,
+  arXiv:1804.04637v2 (2018).
+* UNSW-NB15 DoS/Reconnaissance, constructed and held-out attack scenarios;
+  Moustafa and Slay, MilCIS (2015), DOI 10.1109/MilCIS.2015.7348942.
+  Upstream scripts consume official training/test CSVs and 39 numeric features.
+* ToN-IoT scanning, constructed and held-out attack scenarios. The effective
+  source is original processed **network** ``train_test_network.csv``, not
+  sensor telemetry and not NF-ToN-IoT. The upstream preparation script
+  ``scripts/data/prepare_paper2_ton_iot_q1_gate.py`` names this RAW_PATH;
+  ``scripts/netflow/run_netflow_grid.py`` consumes its
+  ``ton_iot_ref_no_scanning_binary.csv`` / ``ton_iot_cur_scanning_binary.csv``
+  exports. Metadata identifies the corresponding ``02``/``03`` prediction
+  cells and source summary/target-index hashes. Use Moustafa, *A new distributed
+  architecture for evaluating AI-based security systems at the edge: Network
+  TON_IoT datasets*, Sustainable Cities and Society 72:102994 (2021),
+  https://doi.org/10.1016/j.scs.2021.102994. The generic telemetry reference in
+  upstream TDC does not identify this component; the preparation code does.
+
+Original preparation excludes identifiers/label derivatives and encodes network
+categories before the TDC experiments. No transformation is rerun here.
+The exact reused prediction hashes remain in the historical data manifest.
+The network task shift is a held-out attack/capture regime, not a verified
+chronological split. Raw data rights remain with the benchmark providers.
+
+Kuboyama (arXiv:2609.18622v1, Theorem 1, Proposition 1, Section 4.5) already
+provides joint all-completion certificates, agreement relevance and tolerance.
+At known prevalence the weighted-error representation of 1-F1 connects to his
+framework, but sharp bounds must constrain the number of positives. At unknown
+prevalence the denominators vary. V5 claims the explicit two-count F1 solution
+and its consequences, not those general principles. Musgrove et al. (Scientific
+Reports 13:20987, 2023) additionally assume transferable baseline performance.
+Okanovic et al. (AISTATS 2025, 2035-2043) address label-efficient best/near-best
+selection, not our deterministic all-completion F1 guarantee. Lipton's final
+ECML PKDD publication (2014, 225-239) is cited with Narayanaswamy, verified on
+his own homepage despite the publisher metadata spelling variant.

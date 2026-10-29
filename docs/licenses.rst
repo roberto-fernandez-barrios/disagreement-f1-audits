@@ -21,3 +21,9 @@ attribution and acquisition. ``reproducibility/frozen_files.json`` identifies
 the current paths and exact hashes of the reused files. The original
 `third-party notice <../reproducibility/history/THIRD_PARTY_NOTICES.txt>`_ remains
 unchanged as a historical record; the paths above describe the current layout.
+
+The original ToN-IoT provider page (https://research.unsw.edu.au/projects/toniot-datasets)
+requests citation of eight family publications. The six-page paper cites the
+publication matching the network component actually used; the provider page
+lists the broader family references and use conditions. This artifact redistributes
+only the frozen derived TDC predictions, not the raw ToN-IoT dataset.

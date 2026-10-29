@@ -39,3 +39,8 @@ are not required for any computation and are not fetched by the workflow.
 
 Historical records retain their original paths, language and dates. The mapping
 changes how the files are organized, not the chronology or scientific claims.
+
+Version 1.4.0 retains V4 source/PDF in ``history/v4`` and updates their map
+paths without changing hashes. Verification/reproduction use that historical
+snapshot. Build verifies it first, then compiles current ``paper/source/paper.tex``;
+its report identifies the new source and PDF. It does not overwrite the release.

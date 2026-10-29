@@ -1,6 +1,20 @@
 Release history
 ===============
 
+1.4.0 — 29 October 2026
+-----------------------
+
+* V5: explicit relationship to Kuboyama's joint certificates, agreements and
+  tolerance; fixed-positive-count constraint and varying F1 denominators.
+* Musgrove's baseline-performance assumptions and Okanovic's limited-label
+  selection context; benchmark lineage including original network ToN-IoT.
+* Final Lipton publication; author-verified Narayanaswamy spelling.
+* Six-page official-template manuscript; numerical results, protocols, tables,
+  figure, prediction inputs and scientific code unchanged.
+* V4 source/PDF retained in history so historical checks keep their exact inputs.
+  Public build validates that evidence then compiles the current source.
+* Reuses the existing empty Zenodo reservation for 1.4.0; earlier releases preserved.
+
 1.3.0 — 26 October 2026
 -----------------------
 

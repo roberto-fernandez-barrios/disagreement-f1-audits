@@ -191,6 +191,10 @@ def pdf_check(pdf):
 
 
 def build(target):
+    # Validate unchanged historical scientific evidence with its historical PDF.
+    script(target, "closure_v4/verify_v4.py")
+    # Compile the current manuscript, leaving the frozen replay evidence intact.
+    shutil.copy2(target.parent / "paper/source/paper.tex", target / "manuscript/paper.tex")
     tex = shutil.which("pdflatex")
     if not tex: raise RuntimeError("Install MiKTeX or TeX Live separately; pdflatex is not on PATH")
     version = subprocess.check_output([tex, "--version"], text=True, errors="replace")
@@ -205,7 +209,6 @@ def build(target):
     sources = ["tools/manage.py", "manuscript/paper.tex", "manuscript/esannV2.cls",
                "manuscript/cost_rows_v4.tex", "manuscript/tolerance_sensitivity.pdf"]
     write(out / "validation.json", {**layout, "sources": {n: sha(target/n) for n in sources}})
-    script(target, "closure_v4/verify_v4.py")
     return {"pdf": str(out / "paper.pdf"), "engine": version.splitlines()[0], "layout": layout}
 
 

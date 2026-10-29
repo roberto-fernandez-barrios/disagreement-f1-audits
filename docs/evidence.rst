@@ -2,7 +2,7 @@ From claim to evidence
 ======================
 
 All results below come from the frozen V4 scientific snapshot. Repository
-release 1.3.0 adds access and verification tools, not new experiments.
+release 1.4.0 revises literature positioning and attribution, not experiments.
 
 .. list-table:: Evidence map
    :header-rows: 1

@@ -1,7 +1,7 @@
 {
   "tag": "v1.1.0",
   "commit": "c11d6e1bfd34630c075f4a1dd2b8e5b57275011f",
-  "scope": "191 frozen scientific/provenance files retain their exact bytes at mapped public paths. Four AI-review records remain in the immutable v1.2.0 archive.",
+  "scope": "191 original scientific/provenance files retain exact bytes. The V4 paper source and PDF are retained under history/v4; the current paper is the V5 bibliography/positioning revision.",
   "files": {
     ".gitattributes": {
       "path": ".gitattributes",
@@ -460,7 +460,7 @@
       "sha256": "dfb0e6e5346f302194a8c0ed763710d18ddadde8ac1d99b8f0136fc807ecb4ca"
     },
     "manuscript/paper.tex": {
-      "path": "paper/source/paper.tex",
+      "path": "reproducibility/history/v4/paper.tex",
       "sha256": "1272e67478eac83c6fde66c9f3d186b612c072ac3a90b777d8a4599aeca70950"
     },
     "manuscript/tolerance_sensitivity.pdf": {
@@ -484,7 +484,7 @@
       "sha256": "a917c661f0cc0eaaa97151200f521673421abb0f5ebae9b1abc3878d5c372f1a"
     },
     "output/pdf/paper.pdf": {
-      "path": "paper/paper.pdf",
+      "path": "reproducibility/history/v4/paper.pdf",
       "sha256": "515eddd63862fbdd1240308baba22067b50d9e009d692c61b41cc3cd5cc672ce"
     },
     "output/pdf/validation.json": {

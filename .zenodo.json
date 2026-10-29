@@ -1,11 +1,11 @@
 {
   "title": "When Disagreement Labels Do Not Identify F1 Rankings: reproducibility artifact",
   "upload_type": "software",
-  "version": "1.3.0",
-  "publication_date": "2026-10-26",
+  "version": "1.4.0",
+  "publication_date": "2026-10-29",
   "access_right": "open",
   "license": "bsd-3-clause",
-  "description": "Reproducibility artifact for When Disagreement Labels Do Not Identify F1 Rankings. Version 1.3.0 groups code, data, results, paper and documentation in a conventional public layout. An explicit path map preserves 191 frozen scientific/provenance files byte for byte and restores historical execution paths in isolated working copies. Four AI-review reports remain in the immutable v1.2.0 archive. Includes the unchanged V4 manuscript, label-limited audit example, pinned environment and cross-platform CI. Prepared for ESANN 2027 general track; not submitted or accepted. No DOI assigned to 1.3.0. Software BSD-3-Clause, manuscript CC BY 4.0, original template license retained.",
+  "description": "Reproducibility artifact for When Disagreement Labels Do Not Identify F1 Rankings. V5 manuscript positions the explicit F1 audit against Kuboyama, Musgrove, Okanovic, TDC and Polo; correct benchmark attribution and final Lipton reference. Scientific code, frozen predictions, results, figure and protocols remain unchanged. Prepared for ESANN 2027; not submitted or accepted. Version-specific DOI: 10.5281/zenodo.23647323. Software BSD-3-Clause, manuscript CC BY 4.0, original template license retained.",
   "creators": [
     {
       "name": "Fernández-Barrios, Roberto",

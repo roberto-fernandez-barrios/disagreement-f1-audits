@@ -6,8 +6,8 @@
 % Official class retained unchanged. Correct its legacy offsets to current rules.
 \voffset 0cm \hoffset 0cm
 \setlength{\oddsidemargin}{18.6mm}\setlength{\evensidemargin}{18.6mm}
-\setlength{\topmargin}{28.1mm}\setlength{\headheight}{0mm}\setlength{\headsep}{0mm}
-\setlength{\textwidth}{122mm}\setlength{\textheight}{190mm}
+\setlength{\topmargin}{26.6mm}\setlength{\headheight}{0mm}\setlength{\headsep}{0mm}
+\setlength{\textwidth}{122mm}\setlength{\textheight}{191mm}
 \pdfpagewidth=210mm \pdfpageheight=297mm
 \newcommand{\F}{F_1}
 \newcommand{\BA}{\mathrm{BA}}
@@ -22,17 +22,14 @@ Avda. de las Universidades, 24, 48007 Bilbao, Spain
 }
 \maketitle
 \begin{abstract}
-When two binary classifiers agree, their labels cancel from an accuracy
-comparison but can still change an F1 ranking. We specialize partial
-identification to an explicit audit: after labeling all disagreements,
-when can one choose a model, and when must agreements be queried?
-The criterion certifies either an exact ranking or a choice within an F1
-tolerance of the better model for every compatible completion. Across 3,200
-frozen model pairs, retaining the shared completion tightens bounds and a 0.01
-tolerance substantially reduces labeling costs. A zero-loss (weak-winner) control shows that
-this saving comes mainly from tolerating a small positive loss, rather than
-merely permitting ties. The guarantee concerns the evaluated batch; it does not
-estimate performance on future data.
+Agreement labels cancel from an accuracy comparison but can change an F1
+ranking. We specialize partial identification to an explicit audit after
+labeling disagreements: two agreement counts give exact bounds, certifying a
+ranking or a choice within a specified F1 tolerance under every completion.
+Across 3,200 frozen model pairs, shared completions tighten bounds and a 0.01
+tolerance reduces labeling costs. A zero-loss (weak-winner) control attributes
+most savings to positive tolerance, not ties. Guarantees concern the evaluated
+batch, not future data.
 \end{abstract}
 
 \section{What can disagreement labels decide?}
@@ -44,30 +41,27 @@ ranking. Allocating the three remaining positives to negative agreements gives
 F1 scores $(1/5,0)$; allocating them to positive agreements gives $(4/5,6/7)$.
 The same disagreement labels and prevalence support opposite winners.
 
-Given two prediction vectors, their disagreement labels and optional prevalence,
-our audit reduces unknown agreement labels to two counts. The resulting exact
-F1 interval either certifies a choice at the requested tolerance or requires
-more agreement labels. This explicit solution makes the stopping rule directly
-computable while preserving a \emph{shared} label completion.
+Given predictions, disagreement labels and optional prevalence, we reduce
+unknown agreement labels to two counts. Their exact F1 bounds certify a choice
+at the requested tolerance or require agreement queries, preserving a shared
+label completion.
 
-Discordant cases also determine McNemar's paired error-rate statistic
-\cite{dietterich1998}. That is a population hypothesis test; we identify what
-fixed-batch F1 comparisons permit under every compatible labeling.
-
-Active evaluation estimates F-measures \cite{sawade2010}, compares expected
-losses \cite{sawade2012}, estimates risk without bias \cite{kossen2021}, or uses
-Bayesian equivalence and consensus priors \cite{ji2021,kay2025}. Our guarantee
-covers every compatible completion. F1 batch dependence \cite{lipton2014} and
-missing-label bounds \cite{dervovic2025} are established. We specialize the
-target-domain certificate framework (TDC) \cite{tdc} and Polo et al.\
-\cite{polo2024} to an explicit audit.
+Discordant-pair evaluation by Musgrove et al.\ \cite{musgrove2023} uses
+prevalence and baseline sensitivity/specificity assumed to transfer to the
+validation data. We have no such baseline-performance information; the example
+above therefore does not refute their method. Active F-measure estimation \cite{sawade2010} and Okanovic et al.'s
+Bayesian, accuracy-based best-or-near-best selection \cite{okanovic2025}
+address label efficiency without our deterministic all-completion F1 guarantee.
+F1 batch dependence \cite{lipton2014} and single-model missing-label bounds
+\cite{dervovic2025} are established. We give an explicit specialization of
+joint identification frameworks \cite{kuboyama2026,tdc,polo2024}.
 
 \section{An explicit audit criterion}
 Fix binary predictions $q,c\in\{0,1\}^n$ and correct unknown labels.
 Let $a,b$ count disagreements $(q,c)=(1,0),(0,1)$;
 $n_{00},n_{11}$ count agreements. After all $D=a+b$ disagreement labels are
 revealed, let $u,v$ be their respective positive counts. Unknown positive
-agreement counts are $s,t$. Write
+counts on $(0,0)$ and $(1,1)$ agreements are $s,t$, respectively. Write
 \[
  P=u+v+s+t,\quad Q=a+n_{11},\quad C=b+n_{11},\quad d=u-v.
 \]
@@ -93,9 +87,9 @@ Its exact numerator bounds are
  S_-&=K+\min(ds_-,ds_+)+\min(et_-,et_+),\nonumber\\
  S_+&=K+\max(ds_-,ds_+)+\max(et_-,et_+).
 \end{align}
-Both strict rankings are possible iff $S_-<0<S_+$. A strict winner is
-identified when $S_->0$ or $S_+<0$; an exact tie when $S_-=S_+=0$.
-Remaining cases permit a tie and one winner.
+Both strict rankings are possible iff $S_-<0<S_+$; $S_->0$ or $S_+<0$
+identifies a strict winner, and $S_-=S_+=0$ an exact tie. Other cases allow a tie
+and one winner.
 
 \noindent\textit{Proof.} Cross multiplication gives
 $\Delta(P+Q)(P+C)/2=dP+(C-Q)t+uC-vQ=K+ds+et$.
@@ -132,25 +126,31 @@ Choose the smaller, breaking ties in favor of $q$, and stop iff
  \min(R_q,R_c)\le\varepsilon
  \quad\Longleftrightarrow\quad L\ge-\varepsilon\ \text{or}\ U\le\varepsilon.
 \end{equation}
-For every compatible completion, choosing $q$ loses at most $\max(0,-L)$
-relative to the better model; the analogous bound for $c$ is $\max(0,U)$.
-Thus (\ref{eq:stop}) guarantees an $\varepsilon$-best choice on this batch.
+This is Kuboyama's tolerance relaxation and minimum worst-case excess choice
+\cite[\S3, \S5]{kuboyama2026} on the F1 hull. These losses prove the batch guarantee.
 It does not require $[L,U]\subseteq[-\varepsilon,\varepsilon]$.
 At $\varepsilon=0$ it allows a weak winner before distinguishing a strict win
 from an exact tie. Failure means $L<-\varepsilon$ and $U>\varepsilon$: opposite compatible
-advantages exceeding the tolerance. The original material-reversal definition
-$L\le-\varepsilon$, $U\ge\varepsilon$ differs only at the boundaries; the
-regret criterion is the decision interpretation of this condition.
+advantages exceeding the tolerance. The inclusive material-reversal condition $L\le-\varepsilon$,
+$U\ge\varepsilon$ differs only at the boundaries.
 
 \medskip\noindent\textbf{Relation to general identification frameworks.}
+Kuboyama \cite{kuboyama2026}, Theorem~1, Proposition~1,
+\S4.5 and \S6.2, gives joint all-completion certificates, agreement relevance
+and tolerance for selective prediction. For $H\in\{Q,C\}$ and known $P$ with $P+H>0$, $1-\F=(\mathrm{FP}+\mathrm{FN})/(P+H)$ is an additive
+weighted error. Sharp bounds must nevertheless retain $\sum_i y_i=P$;
+his unrestricted-label extrema cannot simply be reused under this constraint.
+With unknown $P$, denominators vary across completions. Our contribution is the explicit F1 audit, including degeneracies,
+not general certificate, joint-comparison or tolerance principles.
+
 TDC \cite{tdc}, Theorem~1, gives sharp certificates for fixed additive-loss
 contrasts over unrestricted completions. With $P>0$ fixed,
 \begin{equation}\label{eq:additive}
  \Delta=\sum_i y_i\left[\frac{2q_i}{P+Q}-\frac{2c_i}{P+C}\right].
 \end{equation}
-Imposing $\sum_i y_i=P$ is essential for sharpness; TDC's balanced-accuracy
-construction (\S4.5) already imposes such a constraint and enumerates prevalence.
-Equations (\ref{eq:affine})--(\ref{eq:fixed}) are explicit specializations.
+Imposing $\sum_i y_i=P$ is essential for sharpness; TDC's \S4.5 already groups items by
+prediction signature, constrains their positive counts and enumerates prevalence.
+Equations (\ref{eq:affine})--(\ref{eq:fixed}) carry this reduction to F1.
 
 Polo et al.\ \cite{polo2024}, Eq.~(1.1) and \S3.2, also cover fixed-$P$ F1:
 use uniform batch indices, distinguish audited items and fix the label marginal.
@@ -160,25 +160,25 @@ perturbation; one cannot sum to an integer. Hence linear extrema equal our
 completion extrema. Our contribution is the explicit audit and its consequences.
 
 Separate bounds form
-$[\min\F(q)-\max\F(c),\allowbreak\max\F(q)-\min\F(c)]$. Every extremum uses the
-\emph{same} feasible completions and prevalence constraints, but its optimizers
-may be incompatible. Fixed-$P$ marginals are affine in $t$, so the same
-enumeration computes these conservative bounds exactly.
+$[\min\F(q)-\max\F(c),\allowbreak\max\F(q)-\min\F(c)]$. The feasible set is shared, but the optimizers need not agree.
+Marginals at fixed $P$ are affine in $t$, so enumeration is exact.
 
 \section{Retrospective evaluation}
 \noindent\textbf{Frozen cases and units.} We reuse TDC's prediction artifact,
 release 1.1.6 \cite{tdcartifact}, without refitting models. Each of 36 cells
 contains 500 targets, a validation-selected quantum-kernel predictor, and
-115 classical configurations. Twenty cells cover BRFSS diabetes and ACS
-FoodStamps (five subsampling seeds, SVC and Gaussian-process classification);
-16 cover eight EMBER, ToN-IoT and UNSW-NB15 scenarios with both classifiers.
+115 classical configurations. Twenty cells cover TableShift's \cite{tableshift} BRFSS diabetes and ACS
+FoodStamps (five seeds, SVC and Gaussian-process classification);
+16 cover eight EMBER \cite{ember}, network ToN-IoT \cite{toniot}
+and UNSW-NB15 \cite{unsw} scenarios with both classifiers.
+ToN-IoT uses the original \texttt{train\_test\_network.csv} scanning-task
+variant, not sensor telemetry or a NetFlow re-export. We collect no new data.
 Deduplicating identical classical predictions within cells yields 3,200 pairs.
 The criterion applies to arbitrary fixed binary predictions.
 
-The eight-cell pilot (801 pairs) was fixed before reading labels in this study.
-The 28 reserved cells (2,399 pairs) are an analytical holdout of existing
-evidence. Tolerance, separate-bound and validation-comparator analyses are
-retrospective extensions, not prospective confirmation.
+The pilot (eight cells, 801 pairs) preceded label inspection in this study;
+the reserved 28 cells (2,399 pairs) are an analytical holdout of existing evidence.
+Tolerance, separate-bound and validation analyses are retrospective extensions.
 
 Fractions average equally across cells; costs average orders, pairs within
 cells, then eligible cells. Shared targets and overlapping subsamples preclude
@@ -190,44 +190,42 @@ balanced-accuracy domain; query cohorts and stops allow $P=0,n$.
 uniform; alternating shuffled agreement strata; and decreasing $|d|$ or $|e|$
 (magnitude, shuffled ties). Seeds 0--31 share permutations across policies and
 objectives. Orders use predictions and disagreement labels only; queries shrink
-the count intervals. Magnitude minimizes numerator width, not necessarily cost.
+the count intervals. Magnitude applies Kuboyama's static range order \cite[Eq.~(10)]{kuboyama2026}
+to $S$: it minimizes numerator width, not necessarily F1 query cost.
 We compare strict-sign/exact-tie identification, a weak winner ($\varepsilon=0$),
 and $\varepsilon=0.01$ on the same trajectories. Full labels verify regret;
 they never select pairs, queries or stopping decisions.
 
-We also compare one classical predictor per cell: the closest in Hamming
-distance (original-order tie break), and the maximum validation
-balanced-accuracy candidate (lexicographic configuration tie break).
-Validation scores cover all 115 candidates; choices preceded the new target
-analysis. This retrospective rule follows TDC's
-objective, not validation F1. Hamming proximity is a sensitivity analysis,
-not a deployment rule.
+We select single classical comparators by minimum Hamming distance, with
+original-order ties, or maximum validation balanced accuracy, with ties broken
+lexicographically by configuration.
+All 115 validation scores were available; selection preceded the new target
+analysis and follows TDC's objective, not F1. Hamming proximity is a sensitivity
+analysis, not a deployment rule.
 
 \smallskip\noindent\textbf{Mechanism.} At known $P>0$, interval width is exactly
 $2|C-Q|(h_P-\ell_P)/[(P+Q)(P+C)]$: predicted-count imbalance and freedom to
 allocate positives between agreement groups jointly drive ambiguity.
-Without $P$, initial numerator width is $|d|n_{00}+|e|n_{11}$. All 58 equal-count
-pairs identify the sign, although their mean magnitude interval remains nonzero.
-Disagreement count alone therefore does not describe this uncertainty.
+Without $P$, initial numerator width is $|d|n_{00}+|e|n_{11}$. All 58 equal-count pairs identify the sign but retain nonzero mean magnitude
+uncertainty; disagreement count alone does not explain ambiguity.
 
 \smallskip\noindent\textbf{Initial decisions.} In the 28 reserved
 cells, the mean material-reversal fraction is 20.54\% without $P$, and 10.52\%
-with exact $P$. These count pairs admitting compatible winners in both
-directions with margins at least 0.01, not observed mistakes or a universal
-frequency. No pair lies on the relevant 0.01 boundaries, so the complements
-are certifiable choices at that tolerance.
+with exact $P$. These are compatible opposite advantages of at least 0.01, not observed errors
+or universal frequencies. No pair lies on the 0.01 boundaries, so complements
+are certifiable at that tolerance.
 
 Keeping dependence matters: in the reserved cells, paired bounds
 certify 79.46\% of choices at $\varepsilon=0.01$, versus 6.57\% for separate
 bounds; with exact $P$, 89.48\% versus 18.80\%. Mean widths are respectively
 0.173 versus 1.585, and 0.034 versus 1.005. This is an information ablation
-on identical feasible sets, not a comparison with jointly applied TDC or Polo.
+on identical feasible sets, not superiority over joint Kuboyama, TDC or Polo certificates.
 
 Figure~\ref{fig:tolerance} shows the tolerance dependence: at 0.01, certification
 is 79.15\% over all 36 cells, versus 79.46\% in the 28 reserved cells.
 Hamming selection leaves material
-ambiguity in \textbf{3/36} cells; validation selection leaves
-\textbf{6/36} (both have 11/36 strict reversals). These one-pair-per-cell
+ambiguity in 3/36 cells; validation selection leaves
+6/36 (both have 11/36 strict reversals). These one-pair-per-cell
 designs answer a different question from the all-configuration pool.
 
 \begin{figure}[!ht]
@@ -240,12 +238,10 @@ the eye. Descriptive fractions, not confidence estimates.}
 \label{fig:tolerance}
 \end{figure}
 
-\smallskip\noindent\textbf{Label costs.} Table~\ref{tab:costs} uses common cohorts for both goals,
-including pairs already decided. Under magnitude ordering, replacing the exact goal by tolerance reduces total
-cost from 121.16 to 74.59 labels across all pairs and from 92.57 to 40.29
-under validation selection, versus 500 for full labeling. The magnitude zero-loss control gives
-120.92 (all pairs) and 92.25 (validation), close to strict/exact costs. Almost
-all the saving at 0.01 comes from permitting positive loss, rather than ties.
+\smallskip\noindent\textbf{Label costs.} Table~\ref{tab:costs} includes already-decided pairs. Under magnitude ordering,
+a 0.01 tolerance reduces total labels from 121.16 to 74.59 (all pairs), and 92.57 to 40.29
+(validation), versus 500 for full labeling. Zero-loss totals, 120.92 and 92.25,
+remain close to strict/exact costs: positive tolerance accounts for most savings.
 
 \begin{table}[!ht]
 \centering
@@ -270,8 +266,7 @@ the all-pair cell means have minimum/median/maximum 14.0/77.0/188.4 labels.
 This is descriptive dispersion, not an uncertainty interval. The overall mean
 is 74.59 with equal cell weights, versus 82.05 with equal pair weights.
 In 15,466 of 307,200 dependent replays, the certified choice is the realized-worse
-model; maximum regret is 0.00927, within tolerance. The guarantee follows
-from (\ref{eq:stop}), rather than from these retrospective checks.
+model; maximum regret is 0.00927, within tolerance. The guarantee is (\ref{eq:stop}); these are retrospective checks.
 
 \section{Use and limitations}
 Given a tolerance, an auditor computes $[L,U]$ from the current count bounds,
@@ -283,7 +278,7 @@ Compatible extremes need not be probable; benchmark reuse limits breadth.
 Disagreement-first labeling is imposed. Costs are neither optimal-acquisition
 lower bounds nor additive across pairs. Statistical alternatives can trade
 assumptions or error probability for fewer labels.
-\par\smallskip\noindent\textbf{Availability.} Code, inputs and results (version 1.1.0):\\
+\par\smallskip\noindent\textbf{Availability.} Code, frozen inputs and results (v1.4.0):
 \url{https://doi.org/10.5281/zenodo.23647323}.
 
 \smallskip\noindent\textbf{Declarations.}
@@ -292,35 +287,45 @@ guidance. No specific funding. OpenAI Codex assisted literature, design,
 mathematical checks, code, analysis and writing; Claude assisted independent
 review. All authors approved the content and accept responsibility.
 \begin{footnotesize}
-\begin{thebibliography}{11}
-\bibitem{dietterich1998} T. G. Dietterich.
-Approximate Statistical Tests for Comparing Supervised Classification Learning
-Algorithms. \emph{Neural Computation}, 10(7):1895--1923, 1998.
+\begin{thebibliography}{99}
+\bibitem{musgrove2023} D. Musgrove, A. Radtke, and T. Haddad.
+Discordant pair analysis for sample efficient model evaluation.
+\emph{Scientific Reports}, 13:20987, 2023.
 \bibitem{sawade2010} C. Sawade, N. Landwehr, and T. Scheffer.
 Active Estimation of F-Measures. \emph{NeurIPS}, 23, 2010.
-\bibitem{sawade2012} C. Sawade, N. Landwehr, and T. Scheffer.
-Active Comparison of Prediction Models. \emph{NeurIPS}, 25, 2012.
-\bibitem{kossen2021} J. Kossen, S. Farquhar, Y. Gal, and T. Rainforth.
-Active Testing: Sample-Efficient Model Evaluation. \emph{ICML}, PMLR 139:5753--5763, 2021.
-\bibitem{ji2021} D. Ji, R. L. Logan IV, P. Smyth, and M. Steyvers.
-Active Bayesian Assessment of Black-Box Classifiers. \emph{AAAI}, 35:7935--7944, 2021.
-\bibitem{kay2025} J. Kay, G. Van Horn, S. Maji, D. Sheldon, and S. Beery.
-Consensus-Driven Active Model Selection. \emph{ICCV}, 4594--4604, 2025.
+\bibitem{okanovic2025} P. Okanovic, A. Kirsch, J. Kasper, T. Hoefler,
+A. Krause, and N. M. G\"urel.
+All models are wrong, some are useful: Model Selection with Limited Labels.
+\emph{AISTATS}, PMLR 258:2035--2043, 2025.
 \bibitem{lipton2014} Z. C. Lipton, C. Elkan, and B. Narayanaswamy.
-Thresholding Classifiers to Maximize F1 Score. arXiv:1402.1892, 2014.
+Optimal Thresholding of Classifiers to Maximize F1 Measure.
+\emph{ECML PKDD}, 225--239, 2014. doi:10.1007/978-3-662-44851-9\_15.
 \bibitem{dervovic2025} D. Dervovic and M. Cashmore.
 Model Evaluation in the Dark: Robust Classifier Metrics with Missing Labels.
 \emph{AISTATS}, PMLR 258:1909--1917, 2025.
+\bibitem{kuboyama2026} T. Kuboyama. How Many Labels Does Model Choice Need?
+Certificates and Budgets for Selective Prediction. arXiv:2609.18622v1, 2026.
 \bibitem{tdc} R. Fern\'andez-Barrios, I. Pastor-L\'opez, A. Gonz\'alez-Santocildes,
 and P. Garc\'ia Bringas. Sharp Target-Domain Certificates for Quantum-Kernel
 Advantage under Distribution Shift. \emph{arXiv:2610.00080v1}, 2026.
-\url{https://arxiv.org/abs/2610.00080v1}.
+
 \bibitem{polo2024} F. M. Polo, S. Maity, M. Yurochkin, M. Banerjee, and Y. Sun.
 Weak Supervision Performance Evaluation via Partial Identification.
 \emph{NeurIPS}, 37, 2024. arXiv:2312.04601.
 \bibitem{tdcartifact} R. Fern\'andez-Barrios et al.
 TDC prediction artifact, v1.1.6. Zenodo, 2026.
 \url{https://doi.org/10.5281/zenodo.21776862}.
+\bibitem{tableshift} J. Gardner, Z. Popovi\'c, and L. Schmidt.
+Benchmarking Distribution Shift in Tabular Data with TableShift.
+\emph{NeurIPS}, 36, 2023.
+\bibitem{ember} H. S. Anderson and P. Roth. EMBER: An Open Dataset for Training
+Static PE Malware Machine Learning Models. arXiv:1804.04637v2, 2018.
+\bibitem{toniot} N. Moustafa. A new distributed architecture for evaluating
+AI-based security systems at the edge: Network TON\_IoT datasets.
+\emph{Sustainable Cities and Society}, 72:102994, 2021.
+\bibitem{unsw} N. Moustafa and J. Slay. UNSW-NB15: a comprehensive data set
+for network intrusion detection systems (UNSW-NB15 network data set).
+\emph{MilCIS}, 1--6, 2015.
 \end{thebibliography}
 \end{footnotesize}
 \end{document}

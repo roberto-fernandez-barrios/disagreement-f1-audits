@@ -13,7 +13,7 @@ and tells you whether to **choose now or query more agreement labels**.
    :alt: Reproducibility checks
 
 `Read the six-page paper <paper/paper.pdf>`_ ·
-`Download release 1.3.0 <https://github.com/roberto-fernandez-barrios/disagreement-f1-audits/releases/tag/v1.3.0>`_ ·
+`Download release 1.4.0 <https://github.com/roberto-fernandez-barrios/disagreement-f1-audits/releases/tag/v1.4.0>`_ ·
 `Reproduce <docs/reproduction.rst>`_ ·
 `Use your own predictions <docs/audit.rst>`_ ·
 `Cite <CITATION.cff>`_
@@ -177,12 +177,13 @@ included; raw feature tables and private portal information are not.
 Availability, citation and status
 ---------------------------------
 
-Repository release **1.3.0** organizes the unchanged **V4** manuscript and
-scientific snapshot ``v1.1.0`` into a reader-facing research layout. Use the
+Repository release **1.4.0** contains manuscript **V5**, with corrected
+literature positioning and data attribution. Numerical science remains the
+frozen ``v1.1.0`` snapshot. Use the
 versioned GitHub release above for access and ``CITATION.cff`` for citation.
-The V4 manuscript's reserved Zenodo identifier
-``10.5281/zenodo.23647323`` is **not yet public**; no DOI is claimed for 1.3.0.
-The earlier published Zenodo version is not a substitute for the V4 package.
+Version-specific archive: https://doi.org/10.5281/zenodo.23647323.
+The previously empty reservation is used for 1.4.0; the published v1.0.0
+record and all earlier GitHub releases are preserved.
 
 The paper is prepared for the **general track of ESANN 2027**; it is not yet
 submitted or accepted. `Release history <docs/changelog.rst>`_ records the changes.
@@ -191,7 +192,7 @@ Software and derived results: `BSD-3-Clause <LICENSE>`_. Manuscript: CC BY 4.0.
 The ESANN template retains its original license; see
 `license and data notices <docs/licenses.rst>`_. Codex assisted the research,
 code, analysis and writing; Claude Fable 5.1, xhigh, provided independent AI
-review of V4. This AI review is distinct from conference peer review. The authors
+review of V4 and the V5 literature correction. This AI review is distinct from conference peer review. The authors
 retain responsibility. No specific funding.
 
 For a reproducible issue or a proposed improvement, see
